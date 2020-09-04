@@ -6,6 +6,7 @@
 					<text class="cuIcon-back"></text>
 					<slot name="backText"></slot>
 				</view>
+				
 				<view class="content" :style="[{top:StatusBar + 'px'}]">
 					<slot name="content"></slot>
 				</view>
@@ -42,6 +43,10 @@
 				default: ''
 			},
 			isBack: {
+				type: [Boolean, String],
+				default: false
+			},
+			isMenu: {
 				type: [Boolean, String],
 				default: false
 			},

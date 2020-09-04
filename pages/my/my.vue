@@ -1,7 +1,7 @@
 <template>
 	<view>
 		
-		<cu-custom bgColor="bg-gradual-blue" >
+		<cu-custom bgColor="bg-gradual-orange" >
 			<block slot="content">我的</block>
 		</cu-custom>
 		<cardSwiper :swiperList="swiperList" @imgClick="navigeteBanner"></cardSwiper>
