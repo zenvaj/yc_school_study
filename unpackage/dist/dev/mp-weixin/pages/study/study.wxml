@@ -1,0 +1,1 @@
+<view><cu-custom vue-id="741027ac-1" bgColor="bg-gradual-blue" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">学习</view></cu-custom></view>

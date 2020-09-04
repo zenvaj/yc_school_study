@@ -1,0 +1,1 @@
+<view><cu-custom vue-id="704e9d00-1" bgColor="bg-gradual-blue" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">我的</view></cu-custom><card-swiper vue-id="704e9d00-2" swiperList="{{swiperList}}" data-event-opts="{{[['^imgClick',[['navigeteBanner']]]]}}" bind:imgClick="__e" bind:__l="__l"></card-swiper></view>

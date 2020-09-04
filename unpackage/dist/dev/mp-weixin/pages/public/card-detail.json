@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "card-detail": "/components/list/list-card-detail"
+  }
+}
