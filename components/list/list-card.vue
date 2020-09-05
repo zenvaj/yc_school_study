@@ -28,6 +28,8 @@
 	}
 </script>
 
-<style>
-
+<style scoped>
+.text-content{
+	height: 4.8em;
+}
 </style>
