@@ -1,5 +1,5 @@
 <template>
-	<view class="cu-card dynamic" :class="isCard?'no-card':''">
+	<view class="cu-card dynamic">
 		<view class="cu-item shadow">
 			<view class="cu-list menu-avatar">
 				<view class="cu-item">
@@ -12,7 +12,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="text-content">
+			<view class="text-content" >
 				折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！
 			</view>
 			<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
@@ -157,5 +157,5 @@
 </script>
 
 <style>
-
+	
 </style>

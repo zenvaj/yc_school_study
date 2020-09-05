@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "card-swiper": "/components/swiper/card-swiper"
+    "list-cell": "/components/mix-list-cell"
   }
 }

@@ -10,7 +10,9 @@
         }
         ,{
             "path" : "pages/group/group",
-            "style" : {}
+            "style" : {
+				"enablePullDownRefresh":true
+			}
         }
         ,{
             "path" : "pages/my/my",
@@ -24,6 +26,14 @@
             "path" : "pages/public/card-detail",
             "style" : {}
         }
+		,{
+		    "path" : "pages/public/login",
+		    "style" : {}
+		},
+		{
+		    "path" : "pages/my/set",
+		    "style" : {}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -39,25 +49,25 @@
 	    "backgroundColor": "#ffffff",
 	    "list": [{
 	        "pagePath": "pages/index/index",
-	        "iconPath": "static/tabbar/component.png",
-	        "selectedIconPath": "static/tabbar/component_cur.png",
-	        "text": "首页"
+	        "iconPath": "static/tabbar/home.png",
+	        "selectedIconPath": "static/tabbar/home_cur.png",
+	        "text": ""
 	    }, {
 	        "pagePath": "pages/study/study",
-	        "iconPath": "static/tabbar/plugin.png",
-	        "selectedIconPath": "static/tabbar/plugin_cur.png",
-	        "text": "学习"
+	        "iconPath": "static/tabbar/study.png",
+	        "selectedIconPath": "static/tabbar/study_cur.png",
+	        "text": ""
 	    },
 		{
 		    "pagePath": "pages/group/group",
-		    "iconPath": "static/tabbar/basics.png",
-		    "selectedIconPath": "static/tabbar/basics_cur.png",
-		    "text": "圈子"
-		}, {
+		    "iconPath": "static/tabbar/group.png",
+		    "selectedIconPath": "static/tabbar/group_cur.png",
+		    "text": ""
+		}, { 
 		    "pagePath": "pages/my/my",
-		    "iconPath": "static/tabbar/about.png",
-		    "selectedIconPath": "static/tabbar/about_cur.png",
-		    "text": "我的"
+		    "iconPath": "static/tabbar/my.png",
+		    "selectedIconPath": "static/tabbar/my_cur.png",
+		    "text": ""
 		}]
 	}
 }

@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "list-card-group": "/components/list/list-card-group"
   }

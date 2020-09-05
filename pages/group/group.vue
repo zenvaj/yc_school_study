@@ -129,6 +129,18 @@
 					url:'/pages/public/card-detail?id='+newsid
 				})
 			}
+		},
+		onPullDownRefresh() {
+			console.log('refresh');
+			setTimeout(function () {
+				uni.stopPullDownRefresh();
+			}, 1000);
+		},
+		onReachBottom() {
+			console.log('onReachBottom');
+			setTimeout(function () {
+				//uni.stopPullDownRefresh();
+			}, 1000);
 		}
 	}
 </script>

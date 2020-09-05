@@ -167,7 +167,7 @@ switch .uni-switch-input {
 }
 switch .wx-switch-input:not([class*="bg-"]),
 switch .uni-switch-input:not([class*="bg-"]) {
-	background: #8799a3 !important;
+	/* background: #8799a3 !important; */
 }
 switch .wx-switch-input::after,
 switch .uni-switch-input::after {
@@ -2144,7 +2144,7 @@ to {
 }
 .cu-card.dynamic>.cu-item>.text-content {
 	padding: 0 30rpx 0;
-	max-height: 6.4em;
+	/* max-height: 6.4em; */
 	overflow: hidden;
 	font-size: 30rpx;
 	margin-bottom: 20rpx;
@@ -2209,7 +2209,13 @@ to {
 .cu-card.article>.cu-item .content .text-content {
 	font-size: 28rpx;
 	color: #888;
-	height: 4.8em;
+	/* height: 4.8em; */
+	overflow: hidden;
+}
+.cu-card>.cu-item .text-content {
+	font-size: 28rpx;
+	color: #888;
+	/* height: 4.8em; */
 	overflow: hidden;
 }
 

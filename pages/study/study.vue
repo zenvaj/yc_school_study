@@ -18,7 +18,7 @@
 				</view>
 			</block>
 		</cu-custom>
-		<menuGrid
+		<menuGrid 
 			:cuIconList="paraMenuGrid.cuIconList" 
 			:gridCol="paraMenuGrid.gridCol" 
 			:gridBorder="paraMenuGrid.gridBorder" 
@@ -282,7 +282,7 @@
 			},
 			//图表数据
 			showGauge(canvasId, chartData) {
-				console.log(canvasId, chartData)
+				//console.log(canvasId, chartData)
 				canvasObj[canvasId] = new uCharts({
 					$this: _self,
 					canvasId: canvasId,
@@ -364,7 +364,7 @@
 				});
 			},
 			showArcbar(canvasId, chartData) {
-				console.log(canvasId, chartData)
+				//console.log(canvasId, chartData)
 				new uCharts({
 					$this: _self,
 					canvasId: canvasId,

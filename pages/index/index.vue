@@ -15,7 +15,7 @@
 		<listCard :newsList="hotNewsList" @cardDetail="cardDetail"></listCard>
 	</view>
 	
-</template>
+</template> 
 
 <script>
 	import cardSwiper from '../../components/swiper/card-swiper.vue'
@@ -185,5 +185,7 @@
 </script>
 
 <style>
-	
+	.cu-card.article>.cu-item .content .text-content {
+		height: 4.8em;
+	}
 </style>

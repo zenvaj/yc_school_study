@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+/*
+	全局公共样式和字体图标
+	mix-mall商城项目全局样式
+*/
+@font-face {
+  font-family: yticon;
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://at.alicdn.com/t/font_1078604_w4kpxh0rafi.ttf") format("truetype");
+}
+.yticon.data-v-0aae71d5 {
+  font-family: "yticon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-yiguoqi1.data-v-0aae71d5:before {
+  content: "\e700";
+}
+.icon-iconfontshanchu1.data-v-0aae71d5:before {
+  content: "\e619";
+}
+.icon-iconfontweixin.data-v-0aae71d5:before {
+  content: "\e611";
+}
+.icon-alipay.data-v-0aae71d5:before {
+  content: "\e636";
+}
+.icon-shang.data-v-0aae71d5:before {
+  content: "\e624";
+}
+.icon-shouye.data-v-0aae71d5:before {
+  content: "\e626";
+}
+.icon-shanchu4.data-v-0aae71d5:before {
+  content: "\e622";
+}
+.icon-xiaoxi.data-v-0aae71d5:before {
+  content: "\e618";
+}
+.icon-jiantour-copy.data-v-0aae71d5:before {
+  content: "\e600";
+}
+.icon-fenxiang2.data-v-0aae71d5:before {
+  content: "\e61e";
+}
+.icon-pingjia.data-v-0aae71d5:before {
+  content: "\e67b";
+}
+.icon-daifukuan.data-v-0aae71d5:before {
+  content: "\e68f";
+}
+.icon-pinglun-copy.data-v-0aae71d5:before {
+  content: "\e612";
+}
+.icon-dianhua-copy.data-v-0aae71d5:before {
+  content: "\e621";
+}
+.icon-shoucang.data-v-0aae71d5:before {
+  content: "\e645";
+}
+.icon-xuanzhong2.data-v-0aae71d5:before {
+  content: "\e62f";
+}
+.icon-gouwuche_.data-v-0aae71d5:before {
+  content: "\e630";
+}
+.icon-icon-test.data-v-0aae71d5:before {
+  content: "\e60c";
+}
+.icon-icon-test1.data-v-0aae71d5:before {
+  content: "\e632";
+}
+.icon-bianji.data-v-0aae71d5:before {
+  content: "\e646";
+}
+.icon-jiazailoading-A.data-v-0aae71d5:before {
+  content: "\e8fc";
+}
+.icon-zuoshang.data-v-0aae71d5:before {
+  content: "\e613";
+}
+.icon-jia2.data-v-0aae71d5:before {
+  content: "\e60a";
+}
+.icon-huifu.data-v-0aae71d5:before {
+  content: "\e68b";
+}
+.icon-sousuo.data-v-0aae71d5:before {
+  content: "\e7ce";
+}
+.icon-arrow-fine-up.data-v-0aae71d5:before {
+  content: "\e601";
+}
+.icon-hot.data-v-0aae71d5:before {
+  content: "\e60e";
+}
+.icon-lishijilu.data-v-0aae71d5:before {
+  content: "\e6b9";
+}
+.icon-zhengxinchaxun-zhifubaoceping-.data-v-0aae71d5:before {
+  content: "\e616";
+}
+.icon-naozhong.data-v-0aae71d5:before {
+  content: "\e64a";
+}
+.icon-xiatubiao--copy.data-v-0aae71d5:before {
+  content: "\e608";
+}
+.icon-shoucang_xuanzhongzhuangtai.data-v-0aae71d5:before {
+  content: "\e6a9";
+}
+.icon-jia1.data-v-0aae71d5:before {
+  content: "\e61c";
+}
+.icon-bangzhu1.data-v-0aae71d5:before {
+  content: "\e63d";
+}
+.icon-arrow-left-bottom.data-v-0aae71d5:before {
+  content: "\e602";
+}
+.icon-arrow-right-bottom.data-v-0aae71d5:before {
+  content: "\e603";
+}
+.icon-arrow-left-top.data-v-0aae71d5:before {
+  content: "\e604";
+}
+.icon-icon--.data-v-0aae71d5:before {
+  content: "\e744";
+}
+.icon-zuojiantou-up.data-v-0aae71d5:before {
+  content: "\e605";
+}
+.icon-xia.data-v-0aae71d5:before {
+  content: "\e62d";
+}
+.icon--jianhao.data-v-0aae71d5:before {
+  content: "\e60b";
+}
+.icon-weixinzhifu.data-v-0aae71d5:before {
+  content: "\e61a";
+}
+.icon-comment.data-v-0aae71d5:before {
+  content: "\e64f";
+}
+.icon-weixin.data-v-0aae71d5:before {
+  content: "\e61f";
+}
+.icon-fenlei1.data-v-0aae71d5:before {
+  content: "\e620";
+}
+.icon-erjiye-yucunkuan.data-v-0aae71d5:before {
+  content: "\e623";
+}
+.icon-Group-.data-v-0aae71d5:before {
+  content: "\e688";
+}
+.icon-you.data-v-0aae71d5:before {
+  content: "\e606";
+}
+.icon-forward.data-v-0aae71d5:before {
+  content: "\e607";
+}
+.icon-tuijian.data-v-0aae71d5:before {
+  content: "\e610";
+}
+.icon-bangzhu.data-v-0aae71d5:before {
+  content: "\e679";
+}
+.icon-share.data-v-0aae71d5:before {
+  content: "\e656";
+}
+.icon-yiguoqi.data-v-0aae71d5:before {
+  content: "\e997";
+}
+.icon-shezhi1.data-v-0aae71d5:before {
+  content: "\e61d";
+}
+.icon-fork.data-v-0aae71d5:before {
+  content: "\e61b";
+}
+.icon-kafei.data-v-0aae71d5:before {
+  content: "\e66a";
+}
+.icon-iLinkapp-.data-v-0aae71d5:before {
+  content: "\e654";
+}
+.icon-saomiao.data-v-0aae71d5:before {
+  content: "\e60d";
+}
+.icon-shezhi.data-v-0aae71d5:before {
+  content: "\e60f";
+}
+.icon-shouhoutuikuan.data-v-0aae71d5:before {
+  content: "\e631";
+}
+.icon-gouwuche.data-v-0aae71d5:before {
+  content: "\e609";
+}
+.icon-dizhi.data-v-0aae71d5:before {
+  content: "\e614";
+}
+.icon-fenlei.data-v-0aae71d5:before {
+  content: "\e706";
+}
+.icon-xingxing.data-v-0aae71d5:before {
+  content: "\e70b";
+}
+.icon-tuandui.data-v-0aae71d5:before {
+  content: "\e633";
+}
+.icon-zuanshi.data-v-0aae71d5:before {
+  content: "\e615";
+}
+.icon-zuo.data-v-0aae71d5:before {
+  content: "\e63c";
+}
+.icon-shoucang2.data-v-0aae71d5:before {
+  content: "\e62e";
+}
+.icon-shouhuodizhi.data-v-0aae71d5:before {
+  content: "\e712";
+}
+.icon-yishouhuo.data-v-0aae71d5:before {
+  content: "\e71a";
+}
+.icon-dianzan-ash.data-v-0aae71d5:before {
+  content: "\e617";
+}
+view.data-v-0aae71d5,
+scroll-view.data-v-0aae71d5,
+swiper.data-v-0aae71d5,
+swiper-item.data-v-0aae71d5,
+cover-view.data-v-0aae71d5,
+cover-image.data-v-0aae71d5,
+icon.data-v-0aae71d5,
+text.data-v-0aae71d5,
+rich-text.data-v-0aae71d5,
+progress.data-v-0aae71d5,
+button.data-v-0aae71d5,
+checkbox.data-v-0aae71d5,
+form.data-v-0aae71d5,
+input.data-v-0aae71d5,
+label.data-v-0aae71d5,
+radio.data-v-0aae71d5,
+slider.data-v-0aae71d5,
+switch.data-v-0aae71d5,
+textarea.data-v-0aae71d5,
+navigator.data-v-0aae71d5,
+audio.data-v-0aae71d5,
+camera.data-v-0aae71d5,
+image.data-v-0aae71d5,
+video.data-v-0aae71d5 {
+  box-sizing: border-box;
+}
+/* 骨架屏替代方案 */
+.Skeleton.data-v-0aae71d5 {
+  background: #f3f3f3;
+  padding: 20rpx 0;
+  border-radius: 8rpx;
+}
+/* 图片载入替代方案 */
+.image-wrapper.data-v-0aae71d5 {
+  font-size: 0;
+  background: #f3f3f3;
+  border-radius: 4px;
+}
+.image-wrapper image.data-v-0aae71d5 {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .6s;
+  transition: .6s;
+  opacity: 0;
+}
+.image-wrapper image.loaded.data-v-0aae71d5 {
+  opacity: 1;
+}
+.clamp.data-v-0aae71d5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.common-hover.data-v-0aae71d5 {
+  background: #f5f5f5;
+}
+/*边框*/
+.b-b.data-v-0aae71d5:after,
+.b-t.data-v-0aae71d5:after {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  height: 0;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  border-bottom: 1px solid #E4E7ED;
+}
+.b-b.data-v-0aae71d5:after {
+  bottom: 0;
+}
+.b-t.data-v-0aae71d5:after {
+  top: 0;
+}
+/* button样式改写 */
+uni-button.data-v-0aae71d5,
+button.data-v-0aae71d5 {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  font-weight: normal;
+}
+uni-button.no-border.data-v-0aae71d5:before, uni-button.no-border.data-v-0aae71d5:after, button.no-border.data-v-0aae71d5:before, button.no-border.data-v-0aae71d5:after {
+  border: 0;
+}
+uni-button[type=default].data-v-0aae71d5,
+button[type=default].data-v-0aae71d5 {
+  color: #303133;
+}
+/* input 样式 */
+.input-placeholder.data-v-0aae71d5 {
+  color: #999999;
+}
+.placeholder.data-v-0aae71d5 {
+  color: #999999;
+}
+.icon .mix-list-cell.b-b.data-v-0aae71d5:after {
+  left: 90rpx;
+}
+.mix-list-cell.data-v-0aae71d5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  padding: 20rpx 30rpx;
+  line-height: 60rpx;
+  position: relative;
+}
+.mix-list-cell.cell-hover.data-v-0aae71d5 {
+  background: #fafafa;
+}
+.mix-list-cell.b-b.data-v-0aae71d5:after {
+  left: 30rpx;
+}
+.mix-list-cell .cell-icon.data-v-0aae71d5 {
+  -webkit-align-self: center;
+          align-self: center;
+  width: 56rpx;
+  max-height: 60rpx;
+  font-size: 38rpx;
+}
+.mix-list-cell .cell-more.data-v-0aae71d5 {
+  -webkit-align-self: center;
+          align-self: center;
+  font-size: 30rpx;
+  color: #303133;
+  margin-left: 10px;
+}
+.mix-list-cell .cell-tit.data-v-0aae71d5 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 28rpx;
+  color: #303133;
+  margin-right: 10rpx;
+}
+.mix-list-cell .cell-tip.data-v-0aae71d5 {
+  font-size: 26rpx;
+  color: #909399;
+}
+
