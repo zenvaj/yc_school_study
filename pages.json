@@ -5,7 +5,35 @@
 			"style": {}
 		}
 	    ,{
+			"path": "pages/index/guid-btn-set",
+			"style": {}
+		}
+	    ,{
+			"path": "pages/index/sign-std-school",
+			"style": {}
+		}
+	    ,{
+			"path": "pages/index/sign-std-home",
+			"style": {}
+		}
+	    ,{
             "path" : "pages/study/study",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/study/course-table",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/study/course-plan",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/study/course-comment",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/study/course-view",
             "style" : {}
         }
         ,{
@@ -18,7 +46,11 @@
             "path" : "pages/my/my",
             "style" : {}
         }
-		,{
+        ,{
+            "path" : "pages/my/moneybag",
+            "style" : {}
+        }
+        ,{
             "path" : "pages/public/content",
             "style" : {}
         }

@@ -45,65 +45,125 @@
 				//九宫格按钮数据
 				paraMenuGrid:{
 					cuIconList: [{
-						cuIcon: 'cardboardfill',
+						cuIcon: 'location',
 						color: 'red',
-						badge: 120,
-						name: 'VR',
-						path: '/pages/public/content'
+						badge: 0,
+						name: '到校签到',
+						path: '/pages/index/sign-std-school'
 					}, {
-						cuIcon: 'recordfill',
+						cuIcon: 'locationfill',
 						color: 'orange',
-						badge: 1,
-						name: '录像',
-						path: '/pages/public/content'
+						badge: 0,
+						name: '离校签到',
+						path: '/pages/index/sign-std-home'
 					}, {
-						cuIcon: 'picfill',
+						cuIcon: 'form',
 						color: 'yellow',
 						badge: 0,
-						name: '图像',
-						path: '/pages/public/content'
+						name: '课表',
+						path: '/pages/study/course-table'
 					}, {
-						cuIcon: 'noticefill',
+						cuIcon: 'time',
 						color: 'olive',
-						badge: 22,
-						name: '通知',
-						path: '/pages/public/content'
+						badge: 3,
+						name: '课堂任务',
+						path: '/pages/study/course-plan'
 					}, {
-						cuIcon: 'upstagefill',
+						cuIcon: 'write',
 						color: 'cyan',
 						badge: 0,
-						name: '排行榜',
-						path: '/pages/public/content'
+						name: '课堂点评',
+						path: '/pages/study/course-comment'
 					}, {
-						cuIcon: 'clothesfill',
+						cuIcon: 'attention',
 						color: 'blue',
 						badge: 0,
-						name: '皮肤',
-						path: '/pages/public/content'
+						name: '课堂一览',
+						path: '/pages/study/course-view'
 					}, {
-						cuIcon: 'discoverfill',
+						cuIcon: 'moneybag',
 						color: 'purple',
 						badge: 0,
-						name: '发现',
+						name: '钱包',
 						path: '/pages/public/content'
 					}, {
-						cuIcon: 'questionfill',
+						cuIcon: 'question',
 						color: 'mauve',
 						badge: 0,
 						name: '帮助',
-						path: '/pages/public/content'
+						path: '/pages/public/help'
 					}, {
-						cuIcon: 'commandfill',
+						cuIcon: 'selection',
 						color: 'purple',
 						badge: 0,
-						name: '问答',
+						name: '学习',
 						path: '/pages/public/content'
-					}, {
-						cuIcon: 'brandfill',
+					},{
+						cuIcon: 'group',
+						color: 'purple',
+						badge: 0,
+						name: '圈子',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'list',
+						color: 'purple',
+						badge: 0,
+						name: '交易记录',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'settings',
+						color: 'purple',
+						badge: 0,
+						name: '设置',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'close',
+						color: 'purple',
+						badge: 0,
+						name: '错题本',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'addressbook',
+						color: 'purple',
+						badge: 0,
+						name: '绑定用户',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'profile',
+						color: 'purple',
+						badge: 0,
+						name: '邀请',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'forward',
+						color: 'purple',
+						badge: 0,
+						name: '发布动态',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'shop',
+						color: 'purple',
+						badge: 0,
+						name: '商圈',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'share',
+						color: 'purple',
+						badge: 0,
+						name: '分享',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'friend',
+						color: 'purple',
+						badge: 0,
+						name: '联盟',
+						path: '/pages/public/content'
+					},{
+						cuIcon: 'more',
 						color: 'mauve',
 						badge: 0,
-						name: '版权',
-						path: '/pages/public/content'
+						name: '更多',
+						path: '/pages/index/guid-btn-set'
 					}],
 					gridCol: 5,
 					gridBorder: 0
@@ -171,6 +231,10 @@
 			},
 			//九宫格点击方法
 			navigeteMenuGrid(name,type){
+				console.log('navigeteMenuGrid',name,type)
+				uni.navigateTo({
+					url:type
+				})
 				console.log('navigeteMenuGrid',name,type)
 			},
 			//热门文章点击方法

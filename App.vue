@@ -26,7 +26,7 @@
 					// #endif
 				}
 			})
-
+			
 			Vue.prototype.ColorList = [{
 					title: '嫣红',
 					name: 'red',
@@ -103,7 +103,35 @@
 					color: '#ffffff'
 				},
 			]
-
+			Vue.prototype.StdList = [{
+				id:"1",
+				name:"张三",
+				grade:"7",
+				class:"5",
+				hometown:"大宋",
+				sex:"1",
+			},{
+				id:"2",
+				name:"张三2",
+				grade:"8",
+				class:"2",
+				hometown:"老庄",
+				sex:"0",
+			},{
+				id:"3",
+				name:"张三3",
+				grade:"9",
+				class:"12",
+				hometown:"卢河",
+				sex:"1",
+			},{
+				id:"4",
+				name:"张三4",
+				grade:"6",
+				class:"4",
+				hometown:"华昌名苑",
+				sex:"0",
+			}]
 		},
 		onShow: function() {
 			console.log('App Show')
