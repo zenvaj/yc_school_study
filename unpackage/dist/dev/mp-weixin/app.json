@@ -1,12 +1,21 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/guid-btn-set",
+    "pages/index/sign-std-school",
+    "pages/index/sign-std-home",
     "pages/study/study",
+    "pages/study/course-table",
+    "pages/study/course-plan",
+    "pages/study/course-comment",
+    "pages/study/course-view",
     "pages/group/group",
     "pages/my/my",
+    "pages/my/moneybag",
     "pages/public/content",
     "pages/public/card-detail",
     "pages/public/login",
+    "pages/public/help",
     "pages/my/set"
   ],
   "subPackages": [],

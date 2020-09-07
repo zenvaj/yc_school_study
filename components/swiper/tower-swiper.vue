@@ -16,7 +16,7 @@
 				cardCur: 0,
 				dotStyle: true,
 				towerStart: 0,
-				direction: 'aaa'
+				direction: ''
 			};
 		},
 		props: [

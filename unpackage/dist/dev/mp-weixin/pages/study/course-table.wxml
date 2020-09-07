@@ -1,0 +1,1 @@
+<cu-custom vue-id="0dca830b-1" bgColor="bg-gradual-blue" isBack="{{true}}" bind:__l="__l" vue-slots="{{['backText','content']}}"><view slot="backText"></view><view slot="content">课表</view></cu-custom>

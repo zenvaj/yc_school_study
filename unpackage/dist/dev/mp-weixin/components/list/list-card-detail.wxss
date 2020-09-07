@@ -1,8 +1,0 @@
-
-.cu-card.article>.cu-item .content .text-content {
-	font-size: 28rpx;
-	color: #888;
-	height: 4.8em;
-	overflow: hidden;
-}
-

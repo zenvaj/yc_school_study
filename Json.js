@@ -646,7 +646,747 @@ const cateList = [{
 		picture: '/static/temp/cate24.jpg'
 	},
 ]
+//轮播数据
+const swiperList = [{
+	id: 0,
+	type: 'image',
+	url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
+},{
+	id: 5,
+	type: 'image',
+	url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99007.jpg'
+},{
+	id: 6,
+	type: 'image',
+	url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+}]
+//九宫格按钮数据
+const menuGridList =  [{
+		cuIcon: 'location',
+		color: 'red',
+		badge: 0,
+		name: '到校签到',
+		path: '/pages/index/sign-std-school'
+	}, {
+		cuIcon: 'locationfill',
+		color: 'orange',
+		badge: 0,
+		name: '离校签到',
+		path: '/pages/index/sign-std-home'
+	},{
+		cuIcon: 'form',
+		color: 'yellow',
+		badge: 0,
+		name: '课表',
+		path: '/pages/study/course-table'
+	},{
+		cuIcon: 'time',
+		color: 'olive',
+		badge: 3,
+		name: '课堂任务',
+		path: '/pages/study/course-plan'
+	}, {
+		cuIcon: 'write',
+		color: 'cyan',
+		badge: 0,
+		name: '课堂点评',
+		path: '/pages/study/course-comment'
+	}, {
+		cuIcon: 'attention',
+		color: 'blue',
+		badge: 0,
+		name: '课堂一览',
+		path: '/pages/study/course-view'
+	}, {
+		cuIcon: 'moneybag',
+		color: 'purple',
+		badge: 0,
+		name: '钱包',
+		path: '/pages/public/content'
+	}, {
+		cuIcon: 'question',
+		color: 'mauve',
+		badge: 0,
+		name: '帮助',
+		path: '/pages/public/help'
+	}, {
+		cuIcon: 'selection',
+		color: 'purple',
+		badge: 0,
+		name: '学习',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'group',
+		color: 'purple',
+		badge: 0,
+		name: '圈子',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'list',
+		color: 'purple',
+		badge: 0,
+		name: '交易记录',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'settings',
+		color: 'purple',
+		badge: 0,
+		name: '设置',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'close',
+		color: 'purple',
+		badge: 0,
+		name: '错题本',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'addressbook',
+		color: 'purple',
+		badge: 0,
+		name: '绑定用户',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'profile',
+		color: 'purple',
+		badge: 0,
+		name: '邀请',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'forward',
+		color: 'purple',
+		badge: 0,
+		name: '发布动态',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'shop',
+		color: 'purple',
+		badge: 0,
+		name: '商圈',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'share',
+		color: 'purple',
+		badge: 0,
+		name: '分享',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '联盟',
+		path: '/pages/public/content'
+	},{
+		cuIcon: 'more',
+		color: 'mauve',
+		badge: 0,
+		name: '更多',
+		path: '/pages/index/guid-btn-set'
+	}]
+//推荐话题数据
+const hotNewsList = [{
+	id:1,
+	imgurl:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+	mark:'史诗',
+	title:'1我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
+	headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+	nickname:'1正义天使 凯尔',
+	time:'十天前',
+	num:{
+		view:1999999,
+		up:155,
+		comment:41
+	}
+}]
+//热门话题数据
+const newNewsList = [{
+	id:1,
+	imgurl:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+	mark:'史诗',
+	title:'1我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
+	headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
+	nickname:'1正义天使 凯尔',
+	time:'十天前',
+	num:{
+		view:1999999,
+		up:155,
+		comment:41
+	}
+},{
+	id:2,
+	imgurl:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10005.jpg',
+	mark:'神话',
+	title:'2我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
+	headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10005.jpg',
+	nickname:'3正义天使 凯尔',
+	time:'十一天前',
+	num:{
+		view:1999999,
+		up:155,
+		comment:41
+	}
+},{
+	id:3,
+	imgurl:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
+	mark:'神仙打架',
+	title:'3我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
+	headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
+	nickname:'2正义天使 凯尔',
+	time:'十二天前',
+	num:{
+		view:19999,
+		up:155,
+		comment:41
+	}
+},{
+	id:4,
+	imgurl:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
+	mark:'神仙打架',
+	title:'4我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
+	headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
+	nickname:'4正义天使 凯尔',
+	time:'十二天前',
+	num:{
+		view:19999,
+		up:155,
+		comment:41
+	}
+}]
+//常用菜单
+const ofenUseMenuList = [
+	{
+		icon:"location",
+		name:"到校签到",
+		id:"1",
+		path:"/pages/index/sign-std-school"
+	},
+	{
+		icon:"locationfill",
+		name:"离校签到",
+		id:"2",
+		path:"/pages/index/sign-std-home"
+	},
+	{
+		icon:"form",
+		name:"课表",
+		id:"3",
+		path:"/pages/study/course-table"
+	},
+	{
+		icon:"time",
+		name:"课堂任务",
+		id:"3",
+		path:"/pages/study/course-plan"
+	},
+	{
+		icon:"write",
+		name:"课堂点评",
+		id:"3",
+		path:"/pages/study/course-comment"
+	},
+	{
+		icon:"attention",
+		name:"课堂一览",
+		id:"3",
+		path:"/pages/study/course-comment"
+	},
+	{
+		icon:"moneybag",
+		name:"钱包",
+		id:"3",
+		path:"/pages/study/course-comment"
+	},
+	{
+		icon:"question",
+		name:"帮助",
+		id:"3",
+		path:"/pages/study/course-comment"
+	},
+]
+//所有菜单
+const allMenuGridList = [
+	{
+		icon:"",
+		title:"通用功能",
+		menuList:[
+			{
+				icon:"location",
+				name:"到校签到",
+				id:"1",
+				path:"/pages/index/sign-std-school"
+			},
+			{
+				icon:"locationfill",
+				name:"离校签到",
+				id:"2",
+				path:"/pages/index/sign-std-home"
+			},
+			{
+				icon:"form",
+				name:"课表",
+				id:"3",
+				path:"/pages/study/course-table"
+			},
+			{
+				icon:"time",
+				name:"课堂任务",
+				id:"3",
+				path:"/pages/study/course-plan"
+			},
+			{
+				icon:"write",
+				name:"课堂点评",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"attention",
+				name:"课堂一览",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"moneybag",
+				name:"钱包",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"question",
+				name:"帮助",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"selection",
+				name:"学习",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"group",
+				name:"圈子",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"list",
+				name:"交易记录",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"settings",
+				name:"设置",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"close",
+				name:"错题本",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"addressbook",
+				name:"绑定",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"profile",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"forward",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"shop",
+				name:"本地商圈",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"share",
+				name:"分享",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"friend",
+				name:"社交",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+		]
+	},
+	{
+		icon:"",
+		title:"学习功能",
+		menuList:[
+			{
+				icon:"location",
+				name:"到校签到",
+				id:"1",
+				path:"/pages/index/sign-std-school"
+			},
+			{
+				icon:"locationfill",
+				name:"离校签到",
+				id:"2",
+				path:"/pages/index/sign-std-home"
+			},
+			{
+				icon:"form",
+				name:"课表",
+				id:"3",
+				path:"/pages/study/course-table"
+			},
+			{
+				icon:"time",
+				name:"课堂任务",
+				id:"3",
+				path:"/pages/study/course-plan"
+			},
+			{
+				icon:"write",
+				name:"课堂点评",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"attention",
+				name:"课堂一览",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"moneybag",
+				name:"钱包",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"question",
+				name:"帮助",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"selection",
+				name:"学习",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"group",
+				name:"圈子",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"list",
+				name:"交易记录",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"settings",
+				name:"设置",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"close",
+				name:"错题本",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"addressbook",
+				name:"绑定",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"profile",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"forward",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"shop",
+				name:"本地商圈",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"share",
+				name:"分享",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"friend",
+				name:"社交",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+		]
+	},
+	{
+		icon:"",
+		title:"圈子功能",
+		menuList:[
+			{
+				icon:"location",
+				name:"到校签到",
+				id:"1",
+				path:"/pages/index/sign-std-school"
+			},
+			{
+				icon:"locationfill",
+				name:"离校签到",
+				id:"2",
+				path:"/pages/index/sign-std-home"
+			},
+			{
+				icon:"form",
+				name:"课表",
+				id:"3",
+				path:"/pages/study/course-table"
+			},
+			{
+				icon:"time",
+				name:"课堂任务",
+				id:"3",
+				path:"/pages/study/course-plan"
+			},
+			{
+				icon:"write",
+				name:"课堂点评",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"attention",
+				name:"课堂一览",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"moneybag",
+				name:"钱包",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"question",
+				name:"帮助",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"selection",
+				name:"学习",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"group",
+				name:"圈子",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"list",
+				name:"交易记录",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"settings",
+				name:"设置",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"close",
+				name:"错题本",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"addressbook",
+				name:"绑定",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"profile",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"forward",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"shop",
+				name:"本地商圈",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"share",
+				name:"分享",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"friend",
+				name:"社交",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+		]
+	},
+	{
+		icon:"",
+		title:"管理功能",
+		menuList:[
+			{
+				icon:"location",
+				name:"到校",
+				id:"1",
+				path:"/pages/index/sign-std-school"
+			},
+			{
+				icon:"locationfill",
+				name:"离校",
+				id:"2",
+				path:"/pages/index/sign-std-home"
+			},
+			{
+				icon:"form",
+				name:"课表",
+				id:"3",
+				path:"/pages/study/course-table"
+			},
+			{
+				icon:"time",
+				name:"任务",
+				id:"3",
+				path:"/pages/study/course-plan"
+			},
+			{
+				icon:"write",
+				name:"点评",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"attention",
+				name:"一览",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"moneybag",
+				name:"钱包",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"question",
+				name:"帮助",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"selection",
+				name:"学习",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"group",
+				name:"圈子",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"list",
+				name:"交易记录",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"settings",
+				name:"设置",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"close",
+				name:"错题本",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"addressbook",
+				name:"绑定",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"profile",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"forward",
+				name:"邀请",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"shop",
+				name:"本地商圈",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"share",
+				name:"分享",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+			{
+				icon:"friend",
+				name:"社交",
+				id:"3",
+				path:"/pages/study/course-comment"
+			},
+		]
+	},
+]
 
+//用法  const result = await this.$api.json('userInfo');
 export default {
 	carouselList,
 	cartList,
@@ -656,5 +1396,11 @@ export default {
 	shareList,
 	goodsList,
 	orderList,
-	cateList
+	cateList,
+	swiperList,
+	menuGridList,
+	hotNewsList,
+	newNewsList,
+	allMenuGridList,
+	ofenUseMenuList
 }

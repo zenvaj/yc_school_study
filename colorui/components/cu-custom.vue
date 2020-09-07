@@ -53,7 +53,7 @@
 			bgImage: {
 				type: String,
 				default: ''
-			},
+			}
 		},
 		methods: {
 			BackPage() {
@@ -65,6 +65,6 @@
 	}
 </script>
 
-<style>
-
+<style lang="scss">
+	
 </style>

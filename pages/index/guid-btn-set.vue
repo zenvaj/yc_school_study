@@ -16,25 +16,24 @@
 					</view>
 				</view>
 			</view>
-			<view class="grid col-4 bg-gray">
-				<view class="margin-tb-sm text-center" v-for="(item,index) in 6" :key="index">
-					<button class="cu-btn round bg-gradual-blue sm shadow"><text class="cuIcon-emojifill"></text>选中方法订单</button>
+			<view class="grid bg-gray justify-start">
+				<view class="padding-lr-sm margin-tb-sm text-center" v-for="(item,index) in ofenUseMenuList" :key="index">
+					<button class="cu-btn bg-blue shadow">
+						<text :class="'cuIcon-'+item.icon"></text>{{item.name}}
+					</button>
 				</view>
 			</view>
 		</view>
-		<view class="" v-for="(value,key) in 6" :key="key">
+		<view class="" v-for="(value,key) in allMenuGridList" :key="key">
 			<view class="cu-bar  bg-white solid-bottom">
 				<view class="action">
-					<text class="cuIcon-title text-blue"></text>通用功能
+					<text class="cuIcon-title text-blue"></text>{{value.title}}
 				</view>
 			</view>
-			<view class="grid col-4" >
-				<view class="margin-tb-sm text-center" v-for="(item,index) in 6" :key="index">
-					<button class="cu-btn round line-blue sm shadow" v-if="index%2==0">
-						<text class="cuIcon-emojifill"></text>未选中功
-					</button>
-					<button class="cu-btn round bg-gradual-blue sm shadow" v-if="index%2==1">
-						<text class="cuIcon-emojifill"></text>选中的
+			<view class="grid justify-start">
+				<view class="padding-lr-sm margin-tb-sm text-center" v-for="(item,index) in value.menuList" :key="index">
+					<button class="cu-btn  shadow" :class="index%2==0?'line-blue':'bg-blue'">
+						<text :class="'cuIcon-'+item.icon"></text>{{item.name}}
 					</button>
 				</view>
 			</view>
@@ -49,14 +48,23 @@
 		data(){
 			return {
 				CustomBar: this.CustomBar,
-				opacityBar:'opacity:0;'
+				isMenuEdit:false,
+				ofenUseMenuList:[],
+				allMenuGridList:[],
 			}
 		},
 		onLoad(){
 			//console.log(this.CustomBar)
+			this.OfenUseGridInit()
+			this.AllMenuGridInit()
 		},
 		methods: {
-			
+			async OfenUseGridInit(){
+				this.ofenUseMenuList = await this.$api.json("ofenUseMenuList")
+			},
+			async AllMenuGridInit(){
+				this.allMenuGridList = await this.$api.json("allMenuGridList")
+			}
 		}
 	} 
 </script>

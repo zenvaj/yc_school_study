@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,kO;AACAA,UAAU,CAACC,wBAAD,CAAV,C","file":"pages/study/course-table-date.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/study/course-table-date.vue'\ncreatePage(Page)"],"sourceRoot":""}

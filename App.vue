@@ -4,6 +4,7 @@
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
+					// #ifndef APP-PLUS-NVUE
 					// #ifndef MP
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					if (e.platform == 'android') {
@@ -23,6 +24,7 @@
 					// #ifdef MP-ALIPAY
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
+					// #endif
 					// #endif
 				}
 			})
@@ -101,37 +103,36 @@
 					title: '雅白',
 					name: 'white',
 					color: '#ffffff'
-				},
-			]
+				}]
 			Vue.prototype.StdList = [{
-				id:"1",
-				name:"张三",
-				grade:"7",
-				class:"5",
-				hometown:"大宋",
-				sex:"1",
-			},{
-				id:"2",
-				name:"张三2",
-				grade:"8",
-				class:"2",
-				hometown:"老庄",
-				sex:"0",
-			},{
-				id:"3",
-				name:"张三3",
-				grade:"9",
-				class:"12",
-				hometown:"卢河",
-				sex:"1",
-			},{
-				id:"4",
-				name:"张三4",
-				grade:"6",
-				class:"4",
-				hometown:"华昌名苑",
-				sex:"0",
-			}]
+					id:"1",
+					name:"张三",
+					grade:"7",
+					class:"5",
+					hometown:"大宋",
+					sex:"1",
+				},{
+					id:"2",
+					name:"张三2",
+					grade:"8",
+					class:"2",
+					hometown:"老庄",
+					sex:"0",
+				},{
+					id:"3",
+					name:"张三3",
+					grade:"9",
+					class:"12",
+					hometown:"卢河",
+					sex:"1",
+				},{
+					id:"4",
+					name:"张三4",
+					grade:"6",
+					class:"4",
+					hometown:"华昌名苑",
+					sex:"0",
+				}]
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -143,9 +144,11 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
+	/* uni.scss */
+	@import 'uview-ui/theme.scss';
 
 	.nav-list {
 		display: flex;
