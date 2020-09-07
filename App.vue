@@ -147,8 +147,7 @@
 <style lang="scss">
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
-	/* uni.scss */
-	@import 'uview-ui/theme.scss';
+	@import "uview-ui/index.scss";
 
 	.nav-list {
 		display: flex;
