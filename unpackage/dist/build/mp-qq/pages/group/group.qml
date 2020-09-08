@@ -1,0 +1,1 @@
+<view><list-card-group vue-id="d9011860-1" newsList="{{newsList}}" data-event-opts="{{[['^cardDetail',[['cardDetail']]]]}}" bind:cardDetail="__e" bind:__l="__l"></list-card-group></view>

@@ -115,12 +115,6 @@
 			async teacherListInit(){
 				this.allTeacherList = await this.$api.json('allTeacherList')
 			},
-			dateChoice(e){
-				console.log(e)
-				this.dateSet = e.result
-				this.courseTable.table_date = e.result
-				this.ourseTableInit()
-			},
 			tabSelect(e) {
 				this.classSet = this.classList[e.currentTarget.dataset.id]
 				console.log(this.classSet)
@@ -167,7 +161,7 @@
 					confirmText: '是的',
 					success: res => {
 						if (res.confirm) {
-							this.courseEditEnable = false;
+							//this.courseEditEnable = false;
 						}
 					}
 				})
@@ -181,6 +175,7 @@
 					this.dateSet = e.value
 					//原始的Date对象
 					//console.log('date => ' + e.date);
+					this.ourseTableInit()
 				}
 			}
 		}

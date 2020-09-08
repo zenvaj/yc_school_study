@@ -43,6 +43,12 @@ const menuGridList =  [{
 		name: '课表',
 		path: '/pages/study/course-table'
 	},{
+		cuIcon: 'attention',
+		color: 'blue',
+		badge: 0,
+		name: '课堂一览',
+		path: '/pages/study/course-view'
+	},{
 		cuIcon: 'time',
 		color: 'olive',
 		badge: 3,
@@ -54,18 +60,12 @@ const menuGridList =  [{
 		badge: 0,
 		name: '课堂点评',
 		path: '/pages/study/course-comment'
-	}, {
-		cuIcon: 'attention',
-		color: 'blue',
-		badge: 0,
-		name: '课堂一览',
-		path: '/pages/study/course-view'
-	}, {
+	},{
 		cuIcon: 'moneybag',
 		color: 'purple',
 		badge: 0,
 		name: '钱包',
-		path: '/pages/public/content'
+		path: '/pages/my/moneybag'
 	}, {
 		cuIcon: 'question',
 		color: 'mauve',
@@ -256,7 +256,7 @@ const ofenUseMenuList = [
 		icon:"moneybag",
 		name:"钱包",
 		id:"3",
-		path:"/pages/study/course-comment"
+		path:"/pages/my/moneybag"
 	},
 	{
 		icon:"question",
@@ -894,6 +894,54 @@ const allStudentList = [
 		area:"淮安",gradeClass:"8年级4班",signStatus:0
 	},
 ]
+const courseInfo = {
+	code:'0000',
+	msg:'success',
+	data:{
+		id:1,
+		course_name:'语文',
+		teacher_id:1,
+		teacher_name:'刘老师',
+		date:"2020-9-9",
+		class_no:"上午第四节",
+		class_name:'7年纪',
+		plan_list:[
+			{id:1,title:'古诗四首背过',num_4_comment:4},
+			{id:2,title:'古诗四首默写',num_4_comment:4},
+			{id:3,title:'散文理解',num_4_comment:10},
+		],
+		comment_list:[
+			
+		],
+		student_list:[
+			{
+				id:1,name:'张三',
+				headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big21002.jpg",
+				area:"大宋",gradeClass:"8年级4班",signStatus:0
+			},
+			{
+				id:2,name:'李四',
+				headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big21003.jpg",
+				area:"陆河",gradeClass:"8年级4班",signStatus:1
+			},
+			{
+				id:3,name:'赵五',
+				headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big21004.jpg",
+				area:"华昌",gradeClass:"8年级4班",signStatus:1
+			},
+			{
+				id:4,name:'王二麻子',
+				headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big21005.jpg",
+				area:"西老庄",gradeClass:"8年级4班",signStatus:0
+			},
+			{
+				id:5,name:'小乔',
+				headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big21006.jpg",
+				area:"淮安",gradeClass:"8年级4班",signStatus:0
+			},
+		],
+	}
+}
 
 
 //用法  const result = await this.$api.json('userInfo');
@@ -910,4 +958,5 @@ export default {
 	allCourseList,
 	allTeacherList,
 	allStudentList,
+	courseInfo,
 }

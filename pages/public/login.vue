@@ -118,8 +118,17 @@
 				let _this = this;
 				uni.getUserInfo({
 					provider: 'qq',
-					success: function(infoRes) {
+					success: infoRes => {
 						console.log('qq1',infoRes)
+						console.log('weixin',infoRes)
+						var userinfo = {
+							id: infoRes.userInfo.gender,
+							mobile: infoRes.userInfo.province,
+							nickname: infoRes.userInfo.nickName,
+							portrait: infoRes.userInfo.avatarUrl,
+						}
+						this.login(userinfo);
+						uni.navigateBack();
 					},
 					fail:function(){
 						uni.login({
@@ -144,8 +153,16 @@
 				let _this = this;
 				uni.getUserInfo({
 					provider: 'weixin',
-					success: function(infoRes) {
+					success: infoRes => {
 						console.log('weixin',infoRes)
+						var userinfo = {
+							id: infoRes.userInfo.gender,
+							mobile: infoRes.userInfo.province,
+							nickname: infoRes.userInfo.nickName,
+							portrait: infoRes.userInfo.avatarUrl,
+						}
+						this.login(userinfo);
+						uni.navigateBack();  
 					},
 					fali:function(){
 						uni.login({

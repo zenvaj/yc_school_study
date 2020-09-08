@@ -73,9 +73,17 @@
         ,{
             "path" : "pages/my/moneybag",
             "style" : {
-				"navigationBarTitleText": "钱包"
+				"navigationBarTitleText": "钱包",
+				"navigationBarBackgroundColor": "#fce3cc"
 			}
         }
+		,{
+		    "path" : "pages/public/icon-all",
+		    "style" : {
+				"navigationBarTitleText": "所有图标",
+				"navigationBarBackgroundColor": "#fce3cc"
+			}
+		}
         ,{
             "path" : "pages/public/content",
             "style" : {
@@ -105,6 +113,12 @@
 		    "path" : "pages/my/set",
 		    "style" : {
 				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+		    "path" : "pages/public/about",
+		    "style" : {
+				"navigationBarTitleText": "关于我们"
 			}
 		}
     ],

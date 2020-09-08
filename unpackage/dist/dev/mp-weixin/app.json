@@ -12,11 +12,13 @@
     "pages/study/course-comment",
     "pages/study/course-view",
     "pages/my/moneybag",
+    "pages/public/icon-all",
     "pages/public/content",
     "pages/public/card-detail",
     "pages/public/login",
     "pages/public/help",
-    "pages/my/set"
+    "pages/my/set",
+    "pages/public/about"
   ],
   "subPackages": [],
   "window": {

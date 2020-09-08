@@ -32,25 +32,44 @@
 		<view class="padding-lr">
 			<view class="search-result">
 				<view class="cu-list menu-avatar" v-if="searchVal">
-					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 11" :key="index"
+					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in studentList" :key="index"
 					 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + index">
-						<view class="cu-avatar round lg" :style="[{backgroundImage:'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100'+ (index+2) +'.jpg)'}]"></view>
+						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ item.headpic}]"></view>
 						<view class="content">
-							<view class="text-grey">文晓港</view>
+							<view class="text-grey">{{item.name}}</view>
 							<view class="text-gray text-sm">
-								<text class="cuIcon-location text-red margin-right-xs"></text> 大宋</view>
+								<text class="cuIcon-location text-red margin-right-xs"></text> {{item.area}}</view>
 						</view>
 						<view class="action">
-							<view class="text-grey text-xs">8年纪3班</view>
-							<view class="cu-tag round bg-green sm">已经签到</view>
+							<view class="text-grey text-xs">{{item.gradeClass}}</view>
+							<view class="cu-tag round sm" :class="item.signStatus?'bg-green':'bg-grey'">{{item.signStatus?'已经签到':'未签到'}}</view>
 						</view>
 						<view class="move">
-							<view class="bg-green">选择</view>
+							<view :class="item.signStatus?'bg-green':'bg-grey'" @click="ChoiseStd(item)">选择</view>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
+		
+		<view class="cu-bar bg-white margin-top" v-if="studentSelected.length > 0">
+			<view class='action'>
+				<text class='cuIcon-title text-blue'></text>神兽们
+			</view>
+		</view>
+		<view class='padding-sm flex flex-wrap'>
+			<view class="padding-xs" v-for="(item,index) in studentSelected" :key="index" >
+				<view class="cu-capsule radius">
+					<view class='cu-tag bg-blue '>
+						{{item.name}}
+					</view>
+					<view class="cu-tag line-blue" @click="DelStd(index)">
+						<text class="cuIcon-close"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+		
 		<view class="cu-form-group margin-top">
 			<view class="title">是否迟到</view>
 			<switch @change="switchIsLate" :class="stdSignIsLate?'checked':''" :checked="stdSignIsLate?true:false"></switch>
@@ -114,9 +133,16 @@
 				index: -1,
 				picker: ['睡过了','吃多了','帮老爷爷过马路了','手动填写'],
 				stdSignIsLate: false,
+				studentList:[],
+				studentSelected:[],
 			}
+		},onLoad() {
+			this.studentListInit()
 		},
-		methods:{
+		methods: {
+			async studentListInit(){
+				this.studentList = await this.$api.json('allStudentList')
+			},
 			ChooseImage() {
 				uni.chooseImage({
 					count: 4, //默认9
@@ -212,7 +238,15 @@
 			textareaInput(e) {
 				//this.textareaAValue = e.detail.value
 				console.log(e.detail.value)
-			}
+			},
+			ChoiseStd(std){
+				var std = {id:std.id,name:std.name}
+				console.log(std)
+				this.studentSelected.push(std)
+			},
+			DelStd(index){
+				this.studentSelected.splice(index)
+			},
 		}
 	}
 </script>

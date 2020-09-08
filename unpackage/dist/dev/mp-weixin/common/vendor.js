@@ -904,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 13:
-/*!*********************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/Json.js ***!
-  \*********************************************************/
+/*!***************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/Json.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1988,6 +1988,12 @@ var menuGridList = [{
   name: '课表',
   path: '/pages/study/course-table' },
 {
+  cuIcon: 'attention',
+  color: 'blue',
+  badge: 0,
+  name: '课堂一览',
+  path: '/pages/study/course-view' },
+{
   cuIcon: 'time',
   color: 'olive',
   badge: 3,
@@ -2000,17 +2006,11 @@ var menuGridList = [{
   name: '课堂点评',
   path: '/pages/study/course-comment' },
 {
-  cuIcon: 'attention',
-  color: 'blue',
-  badge: 0,
-  name: '课堂一览',
-  path: '/pages/study/course-view' },
-{
   cuIcon: 'moneybag',
   color: 'purple',
   badge: 0,
   name: '钱包',
-  path: '/pages/public/content' },
+  path: '/pages/my/moneybag' },
 {
   cuIcon: 'question',
   color: 'mauve',
@@ -2201,7 +2201,7 @@ var ofenUseMenuList = [
   icon: "moneybag",
   name: "钱包",
   id: "3",
-  path: "/pages/study/course-comment" },
+  path: "/pages/my/moneybag" },
 
 {
   icon: "question",
@@ -2839,6 +2839,54 @@ var allStudentList = [
   area: "淮安", gradeClass: "8年级4班", signStatus: 0 }];
 
 
+var courseInfo = {
+  code: '0000',
+  msg: 'success',
+  data: {
+    id: 1,
+    course_name: '语文',
+    teacher_id: 1,
+    teacher_name: '刘老师',
+    date: "2020-9-9",
+    class_no: "上午第四节",
+    class_name: '7年纪',
+    plan_list: [
+    { id: 1, title: '古诗四首背过', num_4_comment: 4 },
+    { id: 2, title: '古诗四首默写', num_4_comment: 4 },
+    { id: 3, title: '散文理解', num_4_comment: 10 }],
+
+    comment_list: [],
+
+
+    student_list: [
+    {
+      id: 1, name: '张三',
+      headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21002.jpg",
+      area: "大宋", gradeClass: "8年级4班", signStatus: 0 },
+
+    {
+      id: 2, name: '李四',
+      headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21003.jpg",
+      area: "陆河", gradeClass: "8年级4班", signStatus: 1 },
+
+    {
+      id: 3, name: '赵五',
+      headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21004.jpg",
+      area: "华昌", gradeClass: "8年级4班", signStatus: 1 },
+
+    {
+      id: 4, name: '王二麻子',
+      headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21005.jpg",
+      area: "西老庄", gradeClass: "8年级4班", signStatus: 0 },
+
+    {
+      id: 5, name: '小乔',
+      headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21006.jpg",
+      area: "淮安", gradeClass: "8年级4班", signStatus: 0 }] } };
+
+
+
+
 
 
 //用法  const result = await this.$api.json('userInfo');
@@ -2854,7 +2902,8 @@ var _default = {
   courseTableList: courseTableList,
   allCourseList: allCourseList,
   allTeacherList: allTeacherList,
-  allStudentList: allStudentList };exports.default = _default;
+  allStudentList: allStudentList,
+  courseInfo: courseInfo };exports.default = _default;
 
 /***/ }),
 
@@ -8382,7 +8431,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8403,14 +8452,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8495,7 +8544,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8914,9 +8963,9 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ 21);
 /***/ }),
 
 /***/ 208:
-/*!*******************************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
-  \*******************************************************************************/
+/*!*************************************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/components/uni-icons/icons.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9867,9 +9916,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!*********************************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/components/u-charts/u-charts.js ***!
-  \*********************************************************************************/
+/*!***************************************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/components/u-charts/u-charts.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14925,9 +14974,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 4:
-/*!************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/pages.json ***!
-  \************************************************************/
+/*!******************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/pages.json ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14936,9 +14985,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 5:
-/*!****************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/store/index.js ***!
-  \****************************************************************/
+/*!**********************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/store/index.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

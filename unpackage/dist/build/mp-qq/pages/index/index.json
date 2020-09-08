@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "颖超教育",
+  "usingComponents": {
+    "card-swiper": "/components/swiper/card-swiper",
+    "menu-grid": "/components/menu/menu-grid",
+    "list-card-screen": "/components/list/list-card-screen",
+    "list-card": "/components/list/list-card"
+  }
+}

@@ -124,6 +124,15 @@
 				uni.navigateTo({
 					url:'/pages/public/card-detail?id='+newsid
 				})
+			},
+			HideNavigationBar(){
+				uni.hideNavigationBarLoading()
+			}
+		},
+		onPageScroll(e){
+			console.log(e.scrollTop)
+			if(e.scrollTop > 200){
+				this.HideNavigationBar();
 			}
 		},
 		onPullDownRefresh() {
