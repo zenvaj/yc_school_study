@@ -1,23 +1,14 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-pink" >
-			<block slot="content">学习</block>
-			<block slot="right">
-				<view class="lg choice-course" >
-					<image class="book-mark" src="../../static/icon/icon-book.svg"></image>
-					<view class="uni-list">
-						<view class="uni-list-cell">
-							<view class="uni-list-cell-db">
-								<picker mode="multiSelector" @change="sourceChoiceRe" @columnchange="bindMultiPickerColumnChange" :value="multiIndex" :range="multiArray" ref="coursePicker">
-									<!-- <view class="uni-input">{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}</view> -->
-									<view class="uni-input">{{multiArray[0][multiIndex[0]]}}[{{multiArray[1][multiIndex[1]]}}]</view>
-								</picker>
-							</view>
-						</view>
-					</view>
+		
+		<view class="cu-form-group margin-bottom-sm">
+			<view class="title">课本选择</view>
+			<picker mode="multiSelector" @change="sourceChoiceRe" @columnchange="bindMultiPickerColumnChange" :value="multiIndex" :range="multiArray">
+				<view class="picker">
+					{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
 				</view>
-			</block>
-		</cu-custom>
+			</picker>
+		</view>
 		<menuGrid 
 			:cuIconList="paraMenuGrid.cuIconList" 
 			:gridCol="paraMenuGrid.gridCol" 

@@ -37,14 +37,24 @@
 				</view>
 			</view>
 			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
-			<view class="forget-section">
-				忘记密码?
+		</view>
+		<!-- #ifdef MP -->
+		<view class="login-footer">
+			<view class="footer-tip flex">其他登录方式</view>
+			<view class="footer-other flex">
+				<!-- #ifdef MP-QQ -->
+				<view class="other-list">
+					<image src="../../static/ic-QQ@2x.png" mode="aspectFill" @tap="login_qq()"></image>
+				</view>
+				<!-- #endif -->
+				<!-- #ifdef MP-WEIXIN -->
+				<view class="other-list">
+					<image src="../../static/ic-weixin@2x.png" mode="aspectFill" @tap="login_weixin()"></image>
+				</view>
+				<!-- #endif -->
 			</view>
 		</view>
-		<view class="register-section">
-			还没有账号?
-			<text @click="toRegist">马上注册</text>
-		</view>
+		<!-- #endif -->
 	</view>
 </template>
 
@@ -58,7 +68,8 @@
 			return {
 				mobile: '',
 				password: '',
-				logining: false
+				logining: false,
+				isMP:false,
 			}
 		},
 		onLoad(){
@@ -100,7 +111,60 @@
 					this.$api.msg(result.msg);
 					this.logining = false;
 				}
-			}
+			},
+			// #ifdef MP-QQ
+			//QQ登录
+			login_qq() {
+				let _this = this;
+				uni.getUserInfo({
+					provider: 'qq',
+					success: function(infoRes) {
+						console.log('qq1',infoRes)
+					},
+					fail:function(){
+						uni.login({
+							provider: 'qq',
+							success: function(loginRes) {
+								// 获取用户信息
+								uni.getUserInfo({
+									provider: 'qq',
+									success: function(infoRes) {
+										console.log('qq2',loginRes,infoRes)
+									}
+								});
+							}
+						});
+					}
+				});
+			},
+			// #endif
+			// #ifdef MP-WEIXIN
+			//微信登录
+			login_weixin() {
+				let _this = this;
+				uni.getUserInfo({
+					provider: 'weixin',
+					success: function(infoRes) {
+						console.log('weixin',infoRes)
+					},
+					fali:function(){
+						uni.login({
+							provider: 'weixin',
+							success: function(loginRes) {
+								// 获取用户信息
+								uni.getUserInfo({
+									provider: 'weixin',
+									success: function(infoRes) {
+										console.log('weixin',loginRes,infoRes)
+									}
+								});
+							}
+						});
+					}
+				});
+			},
+			// #endif
+			
 		},
 
 	}
@@ -240,6 +304,49 @@
 		text{
 			color: $uni-text-color-spec;
 			margin-left: 10rpx;
+		}
+	}
+	.login-footer {
+		padding: 0 70upx;
+	
+		.footer-tip {
+			align-items: center;
+			font-size: 24upx;
+			color: #999999;
+			text-align: center;
+	
+			&:before {
+				flex: 1;
+				content: '';
+				height: 2upx;
+				background: #D0D0D0;
+				margin-right: 30upx;
+			}
+	
+			&:after {
+				margin-left: 30upx;
+				flex: 1;
+				content: '';
+				height: 2upx;
+				background: #D0D0D0;
+			}
+	
+		}
+	
+		.footer-other {
+			padding: 40upx 0 100upx 0;
+			justify-content: center;
+	
+			.other-list {
+				width: 80upx;
+				height: 80upx;
+				margin: 0 75upx;
+	
+				image {
+					width: 100%;
+					height: 100%;
+				}
+			}
 		}
 	}
 </style>

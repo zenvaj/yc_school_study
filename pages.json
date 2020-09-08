@@ -1,112 +1,145 @@
 {
-	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
-	},
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "颖超教育"
+			}
+		}
+		,{
+            "path" : "pages/study/study",
+            "style" : {
+				"navigationBarTitleText": "学习",
+				"navigationBarBackgroundColor":"#6739b6"
+			}
+        }
+		,{
+		    "path" : "pages/group/group",
+		    "style" : {
+				"navigationBarTitleText": "圈子",
+				"enablePullDownRefresh":true,
+				"navigationBarBackgroundColor":"#39b54a"
+			}
+		}
+		,{
+		    "path" : "pages/my/my",
+		    "style" : {
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor":"#1cbbb4"
+			}
 		}
 	    ,{
 			"path": "pages/index/guid-btn-set",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "常用功能设置"
+			}
 		}
 	    ,{
 			"path": "pages/index/sign-std-school",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "到校签到"
+			}
 		}
 	    ,{
 			"path": "pages/index/sign-std-home",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "离校签到"
+			}
 		}
-	    ,{
-            "path" : "pages/study/study",
-            "style" : {}
-        }
         ,{
             "path" : "pages/study/course-table",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/study/course-plan",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/study/course-comment",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/study/course-view",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/group/group",
             "style" : {
-				"enablePullDownRefresh":true
+				"navigationBarTitleText": "课程表"
 			}
         }
         ,{
-            "path" : "pages/my/my",
-            "style" : {}
+            "path" : "pages/study/course-plan",
+            "style" : {
+				"navigationBarTitleText": "课堂计划"
+			}
+        }
+        ,{
+            "path" : "pages/study/course-comment",
+            "style" : {
+				"navigationBarTitleText": "课堂点评"
+			}
+        }
+        ,{
+            "path" : "pages/study/course-view",
+            "style" : {
+				"navigationBarTitleText": "课堂一览"
+			}
         }
         ,{
             "path" : "pages/my/moneybag",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "钱包"
+			}
         }
         ,{
             "path" : "pages/public/content",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "详情"
+			}
         }
         ,{
             "path" : "pages/public/card-detail",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "动态"
+			}
         }
 		,{
 		    "path" : "pages/public/login",
-		    "style" : {}
+		    "style" : {
+				"navigationBarTitleText": "登录",
+				"navigationStyle":"custom"
+			}
 		},
 		{
 		    "path" : "pages/public/help",
-		    "style" : {}
+		    "style" : {
+				"navigationBarTitleText": "帮助"
+			}
 		},
 		{
 		    "path" : "pages/my/set",
-		    "style" : {}
+		    "style" : {
+				"navigationBarTitleText": "设置"
+			}
 		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "颖超教育",
 		"navigationBarBackgroundColor": "#0081ff",
-		"backgroundColor": "#F8F8F8",
-		"navigationStyle": "custom"
+		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
 	    "color": "#7A7E83",
-	    "selectedColor": "#3cc51f",
+	    "selectedColor": "#7A7E83",
 	    "borderStyle": "black",
 	    "backgroundColor": "#ffffff",
 	    "list": [{
 	        "pagePath": "pages/index/index",
 	        "iconPath": "static/tabbar/home.png",
 	        "selectedIconPath": "static/tabbar/home_cur.png",
-	        "text": ""
+	        "text": "首页"
 	    }, {
 	        "pagePath": "pages/study/study",
 	        "iconPath": "static/tabbar/study.png",
 	        "selectedIconPath": "static/tabbar/study_cur.png",
-	        "text": ""
+	        "text": "学习"
 	    },
 		{
 		    "pagePath": "pages/group/group",
 		    "iconPath": "static/tabbar/group.png",
 		    "selectedIconPath": "static/tabbar/group_cur.png",
-		    "text": ""
+		    "text": "圈子"
 		}, { 
 		    "pagePath": "pages/my/my",
 		    "iconPath": "static/tabbar/my.png",
 		    "selectedIconPath": "static/tabbar/my_cur.png",
-		    "text": ""
+		    "text": "我的"
 		}]
 	}
 }

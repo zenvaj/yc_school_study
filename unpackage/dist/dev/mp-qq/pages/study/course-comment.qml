@@ -1,0 +1,1 @@
+<view><cu-custom vue-id="58166e76-1" bgColor="bg-gradual-blue" isBack="{{true}}" bind:__l="__l" vue-slots="{{['backText','content']}}"><view slot="backText"></view><view slot="content">课堂点评</view></cu-custom></view>

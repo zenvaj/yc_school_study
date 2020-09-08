@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/study/study",
+    "pages/group/group",
+    "pages/my/my",
+    "pages/index/guid-btn-set",
+    "pages/index/sign-std-school",
+    "pages/index/sign-std-home",
+    "pages/study/course-table",
+    "pages/study/course-plan",
+    "pages/study/course-comment",
+    "pages/study/course-view",
+    "pages/my/moneybag",
+    "pages/public/content",
+    "pages/public/card-detail",
+    "pages/public/login",
+    "pages/public/help",
+    "pages/my/set"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "颖超教育",
+    "navigationBarBackgroundColor": "#0081ff",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#7A7E83",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "iconPath": "static/tabbar/study.png",
+        "selectedIconPath": "static/tabbar/study_cur.png",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/group/group",
+        "iconPath": "static/tabbar/group.png",
+        "selectedIconPath": "static/tabbar/group_cur.png",
+        "text": "圈子"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabbar/my.png",
+        "selectedIconPath": "static/tabbar/my_cur.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

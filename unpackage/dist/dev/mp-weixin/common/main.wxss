@@ -4560,7 +4560,6 @@ scroll-view.cu-steps .cu-item {
 .cuIcon-btn:before {
 	content: "\e601";
 }
-/* uni.scss */
 .nav-list {
   display: -webkit-box;
   display: -webkit-flex;

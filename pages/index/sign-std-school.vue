@@ -1,9 +1,5 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText"></block>
-			<block slot="content">到校签到</block>
-		</cu-custom>
 		<view class="cu-bar bg-white margin-top">
 			<view class="action">
 				签到图片
@@ -16,7 +12,7 @@
 			<view class="grid col-4 grid-square flex-sub">
 				<view class="bg-img" v-for="(item,index) in imgList" :key="index" @tap="ViewImage" :data-url="imgList[index]">
 				 <image :src="imgList[index]" mode="aspectFill"></image>
-					<view class="cu-tag bg-red" @tap.stop="DelImg" :data-index="index">
+					<view class="cu-tag bg-red" @click.stop="DelImg" :data-index="index">
 						<text class='cuIcon-close'></text>
 					</view>
 				</view>
@@ -36,7 +32,7 @@
 		<view class="padding-lr">
 			<view class="search-result">
 				<view class="cu-list menu-avatar" v-if="searchVal">
-					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 4" :key="index"
+					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 11" :key="index"
 					 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + index">
 						<view class="cu-avatar round lg" :style="[{backgroundImage:'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100'+ (index+2) +'.jpg)'}]"></view>
 						<view class="content">
@@ -71,7 +67,7 @@
 			<view class="title">迟到原因</view>
 			<textarea maxlength="-1" @input="textareaInput" placeholder="学生迟到原因"></textarea>
 		</view>
-		
+		<view class="cu-tabbar-height"></view>
 		<view class="btn-sign">
 			<view class="cu-bar bg-white margin-top">
 				<view class="action">
@@ -84,8 +80,8 @@
 			<view class="cu-modal bottom-modal" :class="ModelShow?'show':''">
 				<view class="cu-dialog">
 					<view class="cu-bar bg-white">
-						<view class="action text-blue" @tap="hideModalSign">取消</view>
-						<view class="action text-green" @tap="stdSign">确定</view>
+						<view class="action text-blue" @click="hideModalSign">取消</view>
+						<view class="action text-green" @click="stdSign">确定</view>
 					</view>
 					<view class="padding-xl">
 						{{ModelShowDes}}
@@ -142,11 +138,12 @@
 				});
 			},
 			DelImg(e) {
+				console.log('DelImg')
 				uni.showModal({
-					title: '召唤师',
-					content: '确定要删除这段回忆吗？',
-					cancelText: '再看看',
-					confirmText: '再见',
+					title: '这位老师',
+					content: '确定不要这张美美哒照片吗？',
+					cancelText: '留下吧',
+					confirmText: '还能更好',
 					success: res => {
 						if (res.confirm) {
 							this.imgList.splice(e.currentTarget.dataset.index, 1)
@@ -223,7 +220,7 @@
 <style>
 	.btn-sign{
 		position: sticky;
-		z-index: 1;
+		z-index: 1000;
 		position: fixed;
 		width: 100%;
 		left: 0;

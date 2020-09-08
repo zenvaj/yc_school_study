@@ -1,11 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue">
-			<block slot="content">颖超教育Iris</block>
-		</cu-custom>
 		<cardSwiper :swiperList="swiperList" @imgClick="navigeteBanner"></cardSwiper>
-		<!-- <screenSwiper :swiperList="swiperList" @imgClick="navigeteBanner"></screenSwiper> -->
-		<!-- <towerSwiper :swiperList="swiperList" @imgClick="navigeteBanner"></towerSwiper> -->
 		<menuGrid v-if="menuGridList.length > 0"
 			:cuIconList="menuGridList" 
 			:gridCol="menuGridCol" 
@@ -19,12 +14,9 @@
 
 <script>
 	import cardSwiper from '../../components/swiper/card-swiper.vue'
-	// import screenSwiper from '../../components/swiper/screen-swiper.vue'
-	// import towerSwiper from '../../components/swiper/tower-swiper.vue'
 	import menuGrid from '../../components/menu/menu-grid.vue'
 	import listCardScreen from '../../components/list/list-card-screen.vue'
-	import listCard from '../../components/list/list-card.vue' 
-	//Vue.component('plugin',plugin)
+	import listCard from '../../components/list/list-card.vue'
 	export default {
 		data() {
 			return {

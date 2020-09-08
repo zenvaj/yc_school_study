@@ -1,1 +1,1 @@
-<view><cu-custom vue-id="471c2b80-1" bgColor="bg-gradual-green" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">圈子</view></cu-custom><list-card-group vue-id="471c2b80-2" newsList="{{newsList}}" data-event-opts="{{[['^cardDetail',[['cardDetail']]]]}}" bind:cardDetail="__e" bind:__l="__l"></list-card-group></view>
+<view><list-card-group vue-id="471c2b80-1" newsList="{{newsList}}" data-event-opts="{{[['^cardDetail',[['cardDetail']]]]}}" bind:cardDetail="__e" bind:__l="__l"></list-card-group></view>

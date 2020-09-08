@@ -10,10 +10,9 @@
 /* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ 4);var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ 5));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 7));
-var _uviewUi = _interopRequireDefault(__webpack_require__(/*! uview-ui */ 13));
 
 
-var _Json = _interopRequireDefault(__webpack_require__(/*! ./Json */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}_vue.default.use(_uviewUi.default); //测试用数据
+var _Json = _interopRequireDefault(__webpack_require__(/*! ./Json */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //测试用数据
 /**
  *  因工具函数属于公司资产, 所以直接在Vue实例挂载几个常用的函数
  *  所有测试用数据均存放于根目录json.js
@@ -48,7 +47,7 @@ var prePage = function prePage() {
 
 
   return prePage.$vm;
-};var cuCustom = function cuCustom() {__webpack_require__.e(/*! require.ensure | colorui/components/cu-custom */ "colorui/components/cu-custom").then((function () {return resolve(__webpack_require__(/*! ./colorui/components/cu-custom.vue */ 162));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+};var cuCustom = function cuCustom() {__webpack_require__.e(/*! require.ensure | colorui/components/cu-custom */ "colorui/components/cu-custom").then((function () {return resolve(__webpack_require__(/*! ./colorui/components/cu-custom.vue */ 138));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 
 
 _vue.default.component('cu-custom', cuCustom);
@@ -151,12 +150,11 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _i
 
 
 
-
         _vue.default.prototype.StatusBar = e.statusBarHeight;
         var custom = wx.getMenuButtonBoundingClientRect();
+        console.log(custom);
         _vue.default.prototype.Custom = custom;
         _vue.default.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
-
 
 
 
@@ -241,34 +239,6 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _i
       name: 'white',
       color: '#ffffff' }];
 
-    _vue.default.prototype.StdList = [{
-      id: "1",
-      name: "张三",
-      grade: "7",
-      class: "5",
-      hometown: "大宋",
-      sex: "1" },
-    {
-      id: "2",
-      name: "张三2",
-      grade: "8",
-      class: "2",
-      hometown: "老庄",
-      sex: "0" },
-    {
-      id: "3",
-      name: "张三3",
-      grade: "9",
-      class: "12",
-      hometown: "卢河",
-      sex: "1" },
-    {
-      id: "4",
-      name: "张三4",
-      grade: "6",
-      class: "4",
-      hometown: "华昌名苑",
-      sex: "0" }];
 
   },
   onShow: function onShow() {

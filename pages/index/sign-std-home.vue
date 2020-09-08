@@ -1,9 +1,5 @@
 <template>
 	<view class="">
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText"></block>
-			<block slot="content">离校签到</block>
-		</cu-custom>
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
 				<view class="cu-item flex-sub" :class="0==TabCur?'bg-gradual-green':''" @tap="tabSelect" :data-id="0">
@@ -28,35 +24,62 @@
 		<view class="padding-lr">
 			<view class="search-result">
 				<view class="cu-list menu-avatar" v-if="searchVal">
-					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in 4" :key="index"
+					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in studentList" :key="index"
 					 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + index">
 						<view class="cu-avatar round lg" :style="[{backgroundImage:'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100'+ (index+2) +'.jpg)'}]"></view>
 						<view class="content">
-							<view class="text-grey">文晓港</view>
+							<view class="text-grey">{{item.name}}</view>
 							<view class="text-gray text-sm">
-								<text class="cuIcon-location text-red margin-right-xs"></text> 大宋</view>
+								<text class="cuIcon-location text-red margin-right-xs"></text> {{item.area}}</view>
 						</view>
 						<view class="action">
-							<view class="text-grey text-xs">8年纪3班</view>
-							<view class="cu-tag round bg-green sm">已经签到</view>
+							<view class="text-grey text-xs">{{item.gradeClass}}</view>
+							<view class="cu-tag round sm" :class="item.signStatus?'bg-green':'bg-grey'">{{item.signStatus?'已经签到':'未签到'}}</view>
 						</view>
 						<view class="move">
-							<view class="bg-green">选择</view>
+							<view :class="item.signStatus?'bg-green':'bg-grey'" @click="ChoiseStd(item)">选择</view>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		<view class="" v-if="0==TabCur">
-			叮嘱一下路上小心
+		
+		<view class="cu-bar bg-white margin-top" v-if="studentSelected.length > 0">
+			<view class='action'>
+				<text class='cuIcon-title text-blue'></text>神兽们
+			</view>
 		</view>
-		<view class="" v-if="1==TabCur">
-			叮嘱一下路上小心
-		</view>
-		<view class="" v-if="2==TabCur">
-			选择送达地点，叮嘱一下
+		<view class='padding-sm flex flex-wrap'>
+			<view class="padding-xs" v-for="(item,index) in studentSelected" :key="index" >
+				<view class="cu-capsule radius">
+					<view class='cu-tag bg-blue '>
+						{{item.name}}
+					</view>
+					<view class="cu-tag line-blue" @click="DelStd(index)">
+						<text class="cuIcon-close"></text>
+					</view>
+				</view>
+			</view>
 		</view>
 		
+		<view class="cu-form-group">
+			<view class="title">是否早退</view>
+			<switch @change="isEarly = !isEarly" :class="isEarly?'checked':''" :checked="isEarly?true:false"></switch>
+		</view>
+		<view class="cu-form-group margin-top">
+			<view class="title">早退原因</view>
+			<picker @change="PickerChange" :value="index" :range="picker">
+				<view class="picker">
+					{{index>-1?picker[index]:'选择早退原因'}}
+				</view>
+			</picker>
+		</view>
+		<view class="cu-form-group align-start">
+			<view class="title">早退原因</view>
+			<textarea maxlength="-1" @input="textareaInput" placeholder="学生早退原因"></textarea>
+		</view>
+		
+		<view class="cu-tabbar-height"></view>
 		<view class="btn-sign">
 			<view class="cu-bar bg-white margin-top">
 				<view class="action">
@@ -93,7 +116,10 @@
 			return {
 				TabCur: 0,
 				scrollLeft: 0,
-				StdList:this.StdList,
+				studentList:[],
+				studentSelected:[],
+				isEarly:false,
+				picker:['身体不适','家里有事','学校有事','提前放学'],
 				ModelShow:false,
 				ModelShowDes:'',
 				searchVal:'',
@@ -102,7 +128,13 @@
 				stdSelectedIndex:'',
 			};
 		},
+		onLoad() {
+			this.studentListInit()
+		},
 		methods: {
+			async studentListInit(){
+				this.studentList = await this.$api.json('allStudentList')
+			},
 			tabSelect(e) {
 				this.TabCur = e.currentTarget.dataset.id;
 				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
@@ -158,6 +190,18 @@
 				}
 				this.listTouchDirection = null
 			},
+			ChoiseStd(std){
+				console.log(std)
+				var std = {id:std.id,name:std.name}
+				this.studentSelected.push(std)
+			},
+			DelStd(index){
+				this.studentSelected.splice(index)
+			},
+			PickerChange(e) {
+				this.index = e.detail.value
+				console.log(this.index)
+			},
 		}
 	}
 </script>
@@ -165,7 +209,7 @@
 <style scoped>
 	.btn-sign{
 		position: sticky;
-		z-index: 1;
+		z-index: 1000;
 		position: fixed;
 		width: 100%;
 		left: 0;

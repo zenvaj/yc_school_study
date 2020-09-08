@@ -1,10 +1,6 @@
 <template>
 	<view class="">
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText"></block>
-			<block slot="content">常用功能设置</block>
-		</cu-custom>
-		<view class="use-bth bg-white" :style="'top:'+CustomBar+'px'">
+		<view class="use-bth bg-white">
 			<view class="cu-bar bg-white solid-bottom">
 				<view class="flex solid-bottom padding justify-between" style="width: 100%;">
 					<view class="">
@@ -73,5 +69,6 @@
 	.use-bth{
 		position: sticky;
 		z-index: 1;
+		top:0;
 	}
 </style>

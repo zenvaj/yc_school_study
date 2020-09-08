@@ -1,9 +1,5 @@
 <template>
 	<view class="container">
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText"></block>
-			<block slot="content">设置</block>
-		</cu-custom>
 		<view class="list-cell b-b m-t" @click="navTo('个人资料')" hover-class="cell-hover" :hover-stay-time="50">
 			<text class="cell-tit">个人资料</text>
 			<text class="cell-more yticon icon-you"></text>
@@ -82,7 +78,6 @@
 
 <style lang='scss'>
 	@import "colorui/mix-mall-shop-base";
-	
 	page{
 		background: $uni-color-base;
 	}

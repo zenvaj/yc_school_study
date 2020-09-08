@@ -74,8 +74,7 @@
 	}
 </script>
 
-<style lang='scss' scoped>
-	@import "colorui/mix-mall-shop-base";
+<style lang='scss'>
 	.icon .mix-list-cell.b-b:after{
 		left: 90rpx;
 	}

@@ -1,9 +1,5 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-green" >
-			<block slot="content">圈子</block>
-		</cu-custom>
-		
 		
 		<listCardGroup :newsList="newsList" @cardDetail="cardDetail"></listCardGroup>
 	</view>
