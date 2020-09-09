@@ -77,67 +77,121 @@ const menuGridList =  [{
 		color: 'purple',
 		badge: 0,
 		name: '学习',
-		path: '/pages/public/content'
+		path: '/pages/study/study'
 	},{
 		cuIcon: 'group',
 		color: 'purple',
 		badge: 0,
 		name: '圈子',
-		path: '/pages/public/content'
+		path: '/pages/group/center'
 	},{
 		cuIcon: 'list',
 		color: 'purple',
 		badge: 0,
-		name: '交易记录',
-		path: '/pages/public/content'
+		name: '收支记录',
+		path: '/pages/my/money-log'
 	},{
 		cuIcon: 'settings',
 		color: 'purple',
 		badge: 0,
 		name: '设置',
-		path: '/pages/public/content'
+		path: '/pages/my/set'
 	},{
 		cuIcon: 'close',
 		color: 'purple',
 		badge: 0,
 		name: '错题本',
-		path: '/pages/public/content'
+		path: '/pages/study/bad-notice'
 	},{
 		cuIcon: 'addressbook',
 		color: 'purple',
 		badge: 0,
 		name: '绑定用户',
-		path: '/pages/public/content'
+		path: '/pages/my/bind'
 	},{
 		cuIcon: 'profile',
 		color: 'purple',
 		badge: 0,
 		name: '邀请',
-		path: '/pages/public/content'
+		path: '/pages/my/make-join'
 	},{
 		cuIcon: 'forward',
 		color: 'purple',
 		badge: 0,
 		name: '发布动态',
-		path: '/pages/public/content'
+		path: '/pages/group/new-speak'
 	},{
 		cuIcon: 'shop',
 		color: 'purple',
 		badge: 0,
 		name: '商圈',
-		path: '/pages/public/content'
+		path: '/pages/group/shop'
 	},{
 		cuIcon: 'share',
 		color: 'purple',
 		badge: 0,
 		name: '分享',
-		path: '/pages/public/content'
+		path: '/pages/public/share'
 	},{
 		cuIcon: 'friend',
 		color: 'purple',
 		badge: 0,
-		name: '联盟',
-		path: '/pages/public/content'
+		name: '好友',
+		path: '/pages/my/friend'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '标签',
+		path: '/pages/my/marks'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '地址',
+		path: '/pages/my/address'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '帮半帮',
+		path: '/pages/group/ask-help'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '投资',
+		path: '/pages/my/invest'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '转账',
+		path: '/pages/my/transfer'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '提现',
+		path: '/pages/my/take-cash'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '龙虎榜',
+		path: '/pages/my/best-user'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '孩子红包',
+		path: '/pages/my/baby-money'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '挖宝',
+		path: '/pages/my/dig-money'
 	},{
 		cuIcon: 'more',
 		color: 'mauve',

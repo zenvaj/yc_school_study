@@ -4,6 +4,7 @@
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
+					//Vue.prototype.windowWidth = e.windowWidth;
 					// #ifndef MP
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					if (e.platform == 'android') {
@@ -15,8 +16,13 @@
 
 					// #ifdef MP-WEIXIN
 					Vue.prototype.StatusBar = e.statusBarHeight;
-					let custom = wx.getMenuButtonBoundingClientRect();
-					console.log(custom) 
+					let custom = uni.getMenuButtonBoundingClientRect();
+					Vue.prototype.Custom = custom;
+					Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+					// #endif		
+					// #ifdef MP-QQ
+					Vue.prototype.StatusBar = e.statusBarHeight;
+					let custom = uni.getMenuButtonBoundingClientRect();
 					Vue.prototype.Custom = custom;
 					Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
 					// #endif		

@@ -61,6 +61,12 @@
 			//九宫格点击方法
 			navigeteMenuGrid(name,type){
 				console.log('navigeteMenuGrid',name,type)
+				if(name == '学习' || name == '圈子'){
+					console.log(name,type)
+					uni.switchTab({
+					    url: type
+					});
+				}
 				uni.navigateTo({
 					url:type
 				})

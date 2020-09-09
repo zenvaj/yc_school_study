@@ -18,14 +18,16 @@
 		    "style" : {
 				"navigationBarTitleText": "圈子",
 				"enablePullDownRefresh":true,
-				"navigationBarBackgroundColor":"#39b54a"
+				"navigationBarBackgroundColor":"#39b54a",
+				"navigationStyle":"custom"
 			}
 		}
 		,{
 		    "path" : "pages/my/my",
 		    "style" : {
 				"navigationBarTitleText": "我的",
-				"navigationBarBackgroundColor":"#1cbbb4"
+				"navigationBarBackgroundColor":"#1cbbb4",
+				"navigationStyle":"custom"
 			}
 		}
 	    ,{
@@ -119,6 +121,114 @@
 		    "path" : "pages/public/about",
 		    "style" : {
 				"navigationBarTitleText": "关于我们"
+			}
+		},
+		{
+		    "path" : "pages/group/center",
+		    "style" : {
+				"navigationBarTitleText": "我的圈子"
+			}
+		},
+		{
+		    "path" : "pages/my/money-log",
+		    "style" : {
+				"navigationBarTitleText": "收支记录"
+			}
+		},
+		{
+		    "path" : "pages/study/bad-notice",
+		    "style" : {
+				"navigationBarTitleText": "错题本"
+			}
+		},
+		{
+		    "path" : "pages/my/bind",
+		    "style" : {
+				"navigationBarTitleText": "绑定"
+			}
+		},
+		{
+		    "path" : "pages/my/make-join",
+		    "style" : {
+				"navigationBarTitleText": "邀请"
+			}
+		},
+		{
+		    "path" : "pages/group/new-speak",
+		    "style" : {
+				"navigationBarTitleText": "发布"
+			}
+		},
+		{
+		    "path" : "pages/group/shop",
+		    "style" : {
+				"navigationBarTitleText": "铺子"
+			}
+		},
+		{
+		    "path" : "pages/public/share",
+		    "style" : {
+				"navigationBarTitleText": "分享"
+			}
+		},
+		{
+		    "path" : "pages/my/friend",
+		    "style" : {
+				"navigationBarTitleText": "好友"
+			}
+		},
+		{
+		    "path" : "pages/my/marks",
+		    "style" : {
+				"navigationBarTitleText": "标签"
+			}
+		},
+		{
+		    "path" : "pages/my/address",
+		    "style" : {
+				"navigationBarTitleText": "地址"
+			}
+		},
+		{
+		    "path" : "pages/group/ask-help",
+		    "style" : {
+				"navigationBarTitleText": "帮帮办"
+			}
+		},
+		{
+		    "path" : "pages/my/invest",
+		    "style" : {
+				"navigationBarTitleText": "投资"
+			}
+		},
+		{
+		    "path" : "pages/my/transfer",
+		    "style" : {
+				"navigationBarTitleText": "转账"
+			}
+		},
+		{
+		    "path" : "pages/my/take-cash",
+		    "style" : {
+				"navigationBarTitleText": "提现"
+			}
+		},
+		{
+		    "path" : "pages/my/best-user",
+		    "style" : {
+				"navigationBarTitleText": "龙虎榜"
+			}
+		},
+		{
+		    "path" : "pages/my/baby-money",
+		    "style" : {
+				"navigationBarTitleText": "神兽红包"
+			}
+		},
+		{
+		    "path" : "pages/my/dig-money",
+		    "style" : {
+				"navigationBarTitleText": "挖宝"
 			}
 		}
     ],
