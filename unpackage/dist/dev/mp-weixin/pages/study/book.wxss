@@ -4,7 +4,7 @@
 }
 .more {
   position: fixed;
-  z-index: 1111111111114;
+  z-index: 4;
   right: 40rpx;
   top: 340rpx;
 }

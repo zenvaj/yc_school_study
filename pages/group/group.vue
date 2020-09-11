@@ -136,8 +136,8 @@
 		},
 		methods: {
 			//热门文章点击方法
-			cardDetail(newsid){
-				console.log('cardDetail',newsid)
+			cardDetail(newsid,type){
+				console.log('cardDetail',newsid,type)
 				uni.navigateTo({
 					url:'/pages/public/card-detail?id='+newsid
 				})

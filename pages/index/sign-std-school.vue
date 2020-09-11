@@ -72,7 +72,7 @@
 		
 		<view class="cu-form-group margin-top">
 			<view class="title">是否迟到</view>
-			<switch @change="switchIsLate" :class="stdSignIsLate?'checked':''" :checked="stdSignIsLate?true:false"></switch>
+			<switch style="z-index: 0" @change="switchIsLate" :class="stdSignIsLate?'checked':''" :checked="stdSignIsLate?true:false"></switch>
 		</view>
 		<view class="cu-form-group margin-top">
 			<view class="title">迟到原因</view>
@@ -254,7 +254,6 @@
 <style>
 	.btn-sign{
 		position: sticky;
-		z-index: 1000;
 		position: fixed;
 		width: 100%;
 		left: 0;

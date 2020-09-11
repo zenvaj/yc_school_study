@@ -1,9 +1,5 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText"></block>
-			<block slot="content">唠唠详情</block>
-		</cu-custom>
 		<cardDetail></cardDetail>
 	</view>
 </template>

@@ -1,9 +1,12 @@
 <template>
 	<view class="">
-		<!-- #ifndef MP -->
+		<!-- #ifdef H5 -->
 		<view class="cu-bar fixed cu-form-group" :style="[{top:(StatusBar + CustomBar - 3) + 'px'},{zIndex:2}]">
 		<!-- #endif -->
 		<!-- #ifdef MP -->
+		<view class="cu-bar fixed cu-form-group" :style="[{top:'0px'},{zIndex:2}]">
+		<!-- #endif -->
+		<!-- #ifdef APP-PLUS -->
 		<view class="cu-bar fixed cu-form-group" :style="[{top:'0px'},{zIndex:2}]">
 		<!-- #endif -->
 			<view class="title">龙虎榜类型</view>
@@ -13,11 +16,14 @@
 				</view>
 			</picker>
 		</view>
-		<!-- #ifndef MP -->
+		<!-- #ifdef H5 -->
 		<view class="cu-list menu-avatar " :style="{marginTop:(StatusBar+CustomBar) + 'px'}">
 		<!-- #endif -->
 		<!-- #ifdef MP -->
-		<view class="cu-list menu-avatar " :style="{marginTop:(0 + CustomBar) + 'px'}">
+		<view class="cu-list menu-avatar " :style="{marginTop:(CustomBar - 6) + 'px'}">
+		<!-- #endif -->
+		<!-- #ifdef APP-PLUS -->
+		<view class="cu-list menu-avatar " :style="{marginTop:(CustomBar - 6) + 'px'}">
 		<!-- #endif -->
 			<view class="cu-item" v-for="(item,index) in 22" :key="index">
 				<view class="content">

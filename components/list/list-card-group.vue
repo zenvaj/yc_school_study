@@ -12,10 +12,10 @@
 					</view>
 				</view>
 			</view>
-			<view class="text-content" style="margin-top: 12rpx;">
+			<view class="text-content" style="margin-top: 12rpx;" @click="cardDetail(item.id)">
 				{{item.title}}
 			</view>
-			<view class="grid flex-sub padding-lr" :class="isCardShow(index)?'col-3 grid-square':'col-1'">
+			<view class="grid flex-sub padding-lr" :class="isCardShow(index)?'col-3 grid-square':'col-1'" @click="cardDetail(item.id)">
 				<view class="bg-img" :class="isCardShow(index)?'':'only-img'" 
 					:style="'background-image:url('+item1+');'"
 					v-for="(item1,index1) in item.imgurl" :key="index1">
@@ -47,6 +47,9 @@
 			isCardShow(e){
 				//console.log(this.newsList[e].imgurl.length)
 				return this.newsList[e].imgurl.length <= 1?false:true
+			},
+			cardDetail(newsid){
+				this.$emit("cardDetail",newsid)
 			}
 		}
 	}

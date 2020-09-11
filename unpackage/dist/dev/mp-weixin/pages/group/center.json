@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "我的圈子",
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "list-card-group": "/components/list/list-card-group"
+  }
 }

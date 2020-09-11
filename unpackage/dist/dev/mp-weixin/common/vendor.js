@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 13:
-/*!*********************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/Json.js ***!
-  \*********************************************************/
+/*!***************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/Json.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9853,9 +9853,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!*********************************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/components/u-charts/u-charts.js ***!
-  \*********************************************************************************/
+/*!***************************************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/components/u-charts/u-charts.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14911,9 +14911,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 356:
-/*!*******************************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
-  \*******************************************************************************/
+/*!*************************************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/components/uni-icons/icons.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15053,9 +15053,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/pages.json ***!
-  \************************************************************/
+/*!******************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/pages.json ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15064,9 +15064,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 5:
-/*!****************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/store/index.js ***!
-  \****************************************************************/
+/*!**********************************************************************!*\
+  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/store/index.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
