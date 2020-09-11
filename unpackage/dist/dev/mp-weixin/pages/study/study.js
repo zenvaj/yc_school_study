@@ -203,7 +203,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _uCharts = _interopRequireDefault(__webpack_require__(/*! ../../components/u-charts/u-charts.js */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var menuGrid = function menuGrid() {__webpack_require__.e(/*! require.ensure | components/menu/menu-grid */ "components/menu/menu-grid").then((function () {return resolve(__webpack_require__(/*! ../../components/menu/menu-grid.vue */ 166));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+var _uCharts = _interopRequireDefault(__webpack_require__(/*! ../../components/u-charts/u-charts.js */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var menuGrid = function menuGrid() {__webpack_require__.e(/*! require.ensure | components/menu/menu-grid */ "components/menu/menu-grid").then((function () {return resolve(__webpack_require__(/*! ../../components/menu/menu-grid.vue */ 296));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 var _self;
 var canvasObj = {};var _default =
 {

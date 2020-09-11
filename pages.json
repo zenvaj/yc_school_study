@@ -132,7 +132,8 @@
 		{
 		    "path" : "pages/my/money-log",
 		    "style" : {
-				"navigationBarTitleText": "收支记录"
+				"navigationBarTitleText": "收支记录",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
@@ -214,9 +215,10 @@
 			}
 		},
 		{
-		    "path" : "pages/my/best-user",
+		    "path" : "pages/index/best-user",
 		    "style" : {
-				"navigationBarTitleText": "龙虎榜"
+				"navigationBarTitleText": "龙虎榜",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
@@ -229,6 +231,18 @@
 		    "path" : "pages/my/dig-money",
 		    "style" : {
 				"navigationBarTitleText": "挖宝"
+			}
+		},
+		{
+		    "path" : "pages/index/sign-std-log",
+		    "style" : {
+				"navigationBarTitleText": "签到记录"
+			}
+		},
+		{
+		    "path" : "pages/study/book",
+		    "style" : {
+				"navigationBarTitleText": "课本"
 			}
 		}
     ],

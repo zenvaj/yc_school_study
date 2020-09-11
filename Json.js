@@ -28,9 +28,15 @@ const menuGridList =  [{
 		cuIcon: 'location',
 		color: 'red',
 		badge: 0,
+		name: '签到记录',
+		path: '/pages/index/sign-std-log'
+	},{
+		cuIcon: 'location',
+		color: 'red',
+		badge: 0,
 		name: '到校签到',
 		path: '/pages/index/sign-std-school'
-	}, {
+	},{
 		cuIcon: 'locationfill',
 		color: 'orange',
 		badge: 0,
@@ -179,7 +185,7 @@ const menuGridList =  [{
 		color: 'purple',
 		badge: 0,
 		name: '龙虎榜',
-		path: '/pages/my/best-user'
+		path: '/pages/index/best-user'
 	},{
 		cuIcon: 'friend',
 		color: 'purple',
@@ -192,6 +198,12 @@ const menuGridList =  [{
 		badge: 0,
 		name: '挖宝',
 		path: '/pages/my/dig-money'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '课本',
+		path: '/pages/study/book'
 	},{
 		cuIcon: 'more',
 		color: 'mauve',
@@ -996,7 +1008,19 @@ const courseInfo = {
 		],
 	}
 }
-
+//课本知识点目录
+const bookMenus = {
+	id:1,
+	name:"语文",
+	title:"",
+	menu_list:[
+		{id:2,name:"英语",title:""},
+		{id:3,name:"数学",title:""},
+		{id:4,name:"物理",title:""},
+		{id:5,name:"化学",title:""},
+		{id:6,name:"地理",title:""}
+	]
+}
 
 //用法  const result = await this.$api.json('userInfo');
 export default {
@@ -1013,4 +1037,6 @@ export default {
 	allTeacherList,
 	allStudentList,
 	courseInfo,
+	bookMenus,
+	
 }

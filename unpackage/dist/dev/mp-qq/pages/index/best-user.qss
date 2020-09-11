@@ -24,13 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.btn-sign {
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 1000;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
+.cu-list.menu-avatar > .cu-item .content {
+  left: 40rpx;
+}
+.cu-list.menu-avatar > .cu-item .action {
+  width: 330rpx;
+  text-align: right;
 }
 

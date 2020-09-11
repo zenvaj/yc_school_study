@@ -1,23 +1,10 @@
 <template>
 	<view>
-		<view class="cu-list menu-avatar bg-white btn-sign" >
-			<view class="cu-item" :style="[{height:(StatusBar + CustomBar) + 'px'}]" >
+		<view class="cu-bar bg-white fixed" @tap="goTop" :style="[{Top:'0px'},{height:(StatusBar+CustomBar) + 'px'}]">
+			<view class="flex align-center" @tap.stop="groupSelf">
 				<!-- <view class="cu-avatar round lg" :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);'"></view> -->
-				<view class="cu-avatar round lg" :style="{backgroundImage:'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg)',
-					maxWidth:(StatusBar + CustomBar - 4) + 'px',maxHeight:(StatusBar + CustomBar - 4) + 'px',}"  @tap="groupSelf"></view>
-				<view class="content flex-sub" v-if="!isPad" @tap="goTop">
-					<view>走走停停 </view>
-					<view class="text-gray text-sm flex justify-between" v-if="(StatusBar + CustomBar)">
-						巴拉巴拉
-					</view>
-				</view>
-				<view class="content flex-sub" :style="{fontSize:((StatusBar + CustomBar - 10) / 2) + 'px',}" v-if="isPad" @tap="goTop">
-					<view>走走停停
-						<view class="text-gray text-sm flex justify-between padding-left">
-							巴拉巴拉
-						</view>
-					 </view>
-				</view>
+				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+userInfo.headpic+')'}"></view>
+				<view class="padding-lr text-lg">走走停停</view>
 			</view>
 		</view>
 		<view class="" :style="[{height:(StatusBar + CustomBar) + 'px'}]"></view>
@@ -31,7 +18,7 @@
 	export default {
 		data() {
 			return {
-				userInfo:[],
+				userInfo:{headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg"},
 				newsList:[{
 						id:1,
 						imgurl:[
@@ -146,12 +133,6 @@
 		},
 		onLoad(){
 			console.log(this.StatusBar,this.CustomBar,JSON.stringify(this.Custom))
-			const systemInfo = uni.getSystemInfoSync();
-			console.log(systemInfo)
-			if(systemInfo.windowWidth > 760){
-				this.isPad = true
-			}
-			
 		},
 		methods: {
 			//热门文章点击方法
@@ -191,12 +172,6 @@
 </script>
 
 <style lang="scss">
-	.btn-sign{
-		position: sticky;
-		z-index: 1000;
-		position: fixed;
-		width: 100%;
-		left: 0;
-		top: 0;
-	}
+	
+	
 </style>

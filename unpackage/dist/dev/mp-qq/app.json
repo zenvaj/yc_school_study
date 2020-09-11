@@ -34,9 +34,11 @@
     "pages/my/invest",
     "pages/my/transfer",
     "pages/my/take-cash",
-    "pages/my/best-user",
+    "pages/index/best-user",
     "pages/my/baby-money",
-    "pages/my/dig-money"
+    "pages/my/dig-money",
+    "pages/index/sign-std-log",
+    "pages/study/book"
   ],
   "window": {
     "navigationBarTextStyle": "white",
