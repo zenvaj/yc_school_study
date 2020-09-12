@@ -76,8 +76,8 @@ const menuGridList =  [{
 		cuIcon: 'question',
 		color: 'mauve',
 		badge: 0,
-		name: '帮助',
-		path: '/pages/public/help'
+		name: '帮助教程',
+		path: '/pages/public/content?title=帮助教程'
 	}, {
 		cuIcon: 'selection',
 		color: 'purple',
@@ -88,7 +88,7 @@ const menuGridList =  [{
 		cuIcon: 'group',
 		color: 'purple',
 		badge: 0,
-		name: '圈子',
+		name: '我的圈子',
 		path: '/pages/group/center'
 	},{
 		cuIcon: 'list',
@@ -156,6 +156,12 @@ const menuGridList =  [{
 		badge: 0,
 		name: '地址',
 		path: '/pages/my/address'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '消息列表',
+		path: '/pages/my/msg-list'
 	},{
 		cuIcon: 'friend',
 		color: 'purple',

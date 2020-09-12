@@ -207,7 +207,7 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active{width:18rpx;height:18rpx}
 .line-olive,
 .lines-olive{color:#8dc63f}.text-green,
 .line-green,
-.lines-green{color:#e10a07}.text-cyan,
+.lines-green{color:#39b54a}.text-cyan,
 .line-cyan,
 .lines-cyan{color:#1cbbb4}.text-blue,
 .line-blue,

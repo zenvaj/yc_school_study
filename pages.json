@@ -138,6 +138,13 @@
 			}
 		},
 		{
+		    "path" : "pages/my/money-detail",
+		    "style" : {
+				"navigationBarTitleText": "钱包详情",
+				"navigationBarBackgroundColor": "#fce3cc"
+			}
+		},
+		{
 		    "path" : "pages/study/bad-notice",
 		    "style" : {
 				"navigationBarTitleText": "错题本"
@@ -147,6 +154,12 @@
 		    "path" : "pages/my/bind",
 		    "style" : {
 				"navigationBarTitleText": "绑定"
+			}
+		},
+		{
+		    "path" : "pages/my/msg-list",
+		    "style" : {
+				"navigationBarTitleText": "消息列表"
 			}
 		},
 		{
@@ -189,6 +202,12 @@
 		    "path" : "pages/my/address",
 		    "style" : {
 				"navigationBarTitleText": "地址"
+			}
+		},
+		{
+		    "path" : "pages/my/address-manager",
+		    "style" : {
+				"navigationBarTitleText": "地址管理"
 			}
 		},
 		{

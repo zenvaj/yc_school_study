@@ -1,0 +1,1 @@
+<view><block qq:for="{{iconArr}}" qq:for-item="item" qq:for-index="index"><view class="order-item"><text class="{{['yticon',item]}}"></text><text>{{item}}</text></view></block></view>

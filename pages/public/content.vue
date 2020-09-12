@@ -1,9 +1,5 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
-			<block slot="backText"></block>
-			<block slot="content">内容展示页面</block>
-		</cu-custom>
 		<view class="">
 			
 		</view>
@@ -20,6 +16,9 @@
 		onLoad(respones){
 			console.log(respones)
 			//根据id展示内容
+			uni.setNavigationBarTitle({
+				title:respones.title
+			})
 		}
 	}
 </script>

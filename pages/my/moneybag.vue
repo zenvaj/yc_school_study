@@ -8,7 +8,7 @@
 				</view>
 				<view class="tit">
 					<text class="yticon icon-iLinkapp-"></text>
-					佣金
+					我的钱包
 				</view>
 				<text class="e-m">一次绑定，永久收益</text>
 				<text class="e-b">邀请学生辅导交费，您就会有相应的佣金回馈，期待您一起和我们成长。</text>
@@ -18,31 +18,31 @@
 		<view class="cover-container">
 			<image class="arc" src="/static/arc.png"></image>
 			<view class="tj-sction">
-				<view class="tj-item">
+				<view class="tj-item" @click="navTo('/pages/my/money-detail?type=余额')">
 					<text class="num">1028.8</text>
 					<text>余额</text>
 				</view>
-				<view class="tj-item">
+				<view class="tj-item" @click="navTo('/pages/my/money-detail?type=佣金')">
 					<text class="num">2000</text>
 					<text>佣金</text>
 				</view>
-				<view class="tj-item">
+				<view class="tj-item" @click="navTo('/pages/my/money-detail?type=佣金')">
 					<text class="num">200</text>
 					<text>备佣金</text>
 				</view>
 			</view>
 			<view class="tj-sction">
-				<view class="tj-item">
+				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=分红')">
 					<text class="num">1028.8</text>
 					<text>分红</text>
 				</view>
-				<view class="tj-item">
+				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=红包')">
 					<text class="num">2000</text>
 					<text>红包</text>
 				</view>
-				<view class="tj-item">
+				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=成本')">
 					<text class="num">2000</text>
-					<text>投资金</text>
+					<text>成本</text>
 				</view>
 			</view>
 			<view class="tj-sction margin-top-sm">
@@ -74,8 +74,8 @@
 			</view>
 			<view class="history-section icon">
 				<listCell icon="icon-tuandui" iconColor="#e07472" title="我的推荐" tips="谁拉的我" @eventClick="navTo('/pages/public/icon-all')"></listCell>
-				<listCell icon="icon-weixin" iconColor="#5fcda2" title="我的好友" tips="我拉的谁" @eventClick="navTo('/pages/address/address')"></listCell>
-				<listCell icon="icon-dianzan-ash" iconColor="#9789f7" title="龙虎榜" tips="意想不到的他在第几层"></listCell>
+				
+				<listCell icon="icon-dianzan-ash" iconColor="#9789f7" title="排行榜" tips="意想不到的他在第几层"></listCell>
 				<listCell icon="icon-iconfontweixin" iconColor="#ee883b" title="孩子红包" tips="看看神兽的小金库"></listCell>
 				<listCell icon="icon-iLinkapp-" iconColor="#54b4ef" title="挖宝" tips="看看神兽的小金库"></listCell>
 				

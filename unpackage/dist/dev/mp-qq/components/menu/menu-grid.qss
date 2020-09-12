@@ -1,0 +1,7 @@
+
+.cu-list.grid>.cu-item [class*=cuIcon] {
+    font-size: 48px;
+    height:48px
+}
+
+

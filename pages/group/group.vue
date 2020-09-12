@@ -144,6 +144,9 @@
 			},
 			groupSelf(){
 				console.log("进入自己的朋友圈")
+				uni.navigateTo({
+					url:'/pages/group/center'
+				})
 			},
 			goTop(){
 				console.log("划到开始未知")

@@ -2,7 +2,7 @@
 	<view>
 		<view class="cu-bar bg-white margin-top">
 			<view class="action">
-				妹妹帅帅大照片
+				美美帅帅大照片
 			</view>
 			<view class="action">
 				{{imgList.length}}/9

@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 13:
-/*!***************************************************************!*\
-  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/Json.js ***!
-  \***************************************************************/
+/*!*********************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/Json.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2021,8 +2021,8 @@ var menuGridList = [{
   cuIcon: 'question',
   color: 'mauve',
   badge: 0,
-  name: '帮助',
-  path: '/pages/public/help' },
+  name: '帮助教程',
+  path: '/pages/public/content?title=帮助教程' },
 {
   cuIcon: 'selection',
   color: 'purple',
@@ -2033,7 +2033,7 @@ var menuGridList = [{
   cuIcon: 'group',
   color: 'purple',
   badge: 0,
-  name: '圈子',
+  name: '我的圈子',
   path: '/pages/group/center' },
 {
   cuIcon: 'list',
@@ -2101,6 +2101,12 @@ var menuGridList = [{
   badge: 0,
   name: '地址',
   path: '/pages/my/address' },
+{
+  cuIcon: 'friend',
+  color: 'purple',
+  badge: 0,
+  name: '消息列表',
+  path: '/pages/my/msg-list' },
 {
   cuIcon: 'friend',
   color: 'purple',
@@ -9853,9 +9859,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!***************************************************************************************!*\
-  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/components/u-charts/u-charts.js ***!
-  \***************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/components/u-charts/u-charts.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14910,10 +14916,10 @@ if ( true && typeof module.exports === "object") {
 
 /***/ }),
 
-/***/ 356:
-/*!*************************************************************************************!*\
-  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/components/uni-icons/icons.js ***!
-  \*************************************************************************************/
+/***/ 380:
+/*!*******************************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15053,9 +15059,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!******************************************************************!*\
-  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/pages.json ***!
-  \******************************************************************/
+/*!************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/pages.json ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15064,9 +15070,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 5:
-/*!**********************************************************************!*\
-  !*** C:/works/uniapp/yingchao_uniapp/yc_school_study/store/index.js ***!
-  \**********************************************************************/
+/*!****************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/store/index.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

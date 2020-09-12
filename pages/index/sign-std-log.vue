@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="cu-timeline">
-			<view class="cu-time date">2020年9月11日</view>
+			<view class="cu-time">2020年9月11日</view>
 			<view class="cu-item cur cuIcon-noticefill">
 				<view class="content bg-green shadow-blur">
 					<text>22:22</text> 【广州市】快件已到达地球
@@ -34,7 +34,12 @@
 </script>
 
 <style>
-	.date{
-		width: 200rpx;
+	.cu-timeline .cu-time {
+	    width: 260rpx;
+	    text-align: center;
+	    padding: 20rpx 0;
+	    font-size: 26rpx;
+	    color: #888;
+	    display: block;
 	}
 </style>

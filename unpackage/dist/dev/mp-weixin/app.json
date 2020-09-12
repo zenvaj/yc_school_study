@@ -21,8 +21,10 @@
     "pages/public/about",
     "pages/group/center",
     "pages/my/money-log",
+    "pages/my/money-detail",
     "pages/study/bad-notice",
     "pages/my/bind",
+    "pages/my/msg-list",
     "pages/my/make-join",
     "pages/group/new-speak",
     "pages/group/shop",
@@ -30,6 +32,7 @@
     "pages/my/friend",
     "pages/my/marks",
     "pages/my/address",
+    "pages/my/address-manager",
     "pages/group/ask-help",
     "pages/my/invest",
     "pages/my/transfer",
@@ -81,6 +84,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap91.json"
+  }
 }

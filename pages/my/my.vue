@@ -11,14 +11,14 @@
 				</view>
 			</view>
 			<view class="vip-card-box">
-				<view class="b-btn">
-					关于我们
+				<view class="b-btn" @click="navToNologin('/pages/public/content')">
+					关于会员
 				</view>
 				<view class="tit">
 					<text class="yticon icon-iLinkapp-"></text>
-					颖超教育培训学校会员
+					颖超教育
 				</view>
-				<text class="e-m">关于我们</text>
+				<text class="e-m">会员</text>
 				<text class="e-b">用数据说话，线上线下协调，避长扬短，提高成绩，提高自信</text>
 			</view>
 		</view>
@@ -35,27 +35,28 @@
 		>
 			<image class="arc" src="/static/arc.png"></image>
 			
-			<view class="tj-sction">
+			<view class="tj-sction" @click="navTo('/pages/my/moneybag')">
 				<view class="tj-item">
 					<text class="num">128.8</text>
 					<text>总资产</text>
 				</view>
 				<view class="tj-item">
-					<text class="num">0</text>
-					<text>优惠券</text>
+					<text class="num">100</text>
+					<text>余额</text>
 				</view>
 				<view class="tj-item">
-					<text class="num">20</text>
-					<text>积分</text>
+					<text class="num">200</text>
+					<text>佣金</text>
 				</view>
 			</view>
 			<!-- 浏览历史 -->
 			<view class="history-section icon">
 				<listCell icon="icon-iconfontweixin" iconColor="#e07472" title="我的钱包" @eventClick="navTo('/pages/my/moneybag')"></listCell>
-				<listCell icon="icon-hot" iconColor="#54b4ef" title="我的标签"></listCell>
-				<listCell icon="icon-dizhi" iconColor="#5fcda2" title="地址管理" @eventClick="navTo('/pages/address/address')"></listCell>
+				<listCell icon="icon-hot" iconColor="#54b4ef" title="我的标签" @eventClick="navTo('/pages/my/marks')"></listCell>
+				<listCell icon="icon-dizhi" iconColor="#5fcda2" title="地址管理" @eventClick="navTo('/pages/my/address')"></listCell>
+				<listCell icon="icon-weixin" iconColor="#5fcda2" title="我的好友" tips="我拉的谁" @eventClick="navTo('/pages/my/friend')"></listCell>
 				<listCell icon="icon-share" iconColor="#9789f7" title="邀请好友" tips="邀请好友赢大礼"></listCell>
-				<listCell icon="icon-pinglun-copy" iconColor="#ee883b" title="绑定" tips="绑定神兽吧"></listCell>
+				<listCell icon="icon-pinglun-copy" iconColor="#ee883b" title="绑定" tips="绑定神兽吧" @eventClick="navTo('/pages/my/bind')"></listCell>
 				<listCell icon="icon-xiatubiao--copy" iconColor="#54b4ef" title="我的门店"></listCell>
 				<listCell icon="icon-shoucang_xuanzhongzhuangtai" iconColor="#54b4ef" title="帮办"></listCell>
 				<listCell icon="icon-shezhi1" iconColor="#e07472" title="设置" border="" @eventClick="navTo('/pages/my/set')"></listCell>
@@ -109,6 +110,11 @@
 				if(0&&!this.hasLogin){
 					url = '/pages/public/login';
 				}
+				uni.navigateTo({  
+					url
+				})  
+			},
+			navToNologin(url){
 				uni.navigateTo({  
 					url
 				})  

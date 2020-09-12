@@ -1,1 +1,1 @@
-<view><cu-custom vue-id="09815f8b-1" bgColor="bg-gradual-blue" isBack="{{true}}" bind:__l="__l" vue-slots="{{['backText','content']}}"><view slot="backText"></view><view slot="content">唠唠详情</view></cu-custom><card-detail vue-id="09815f8b-2" bind:__l="__l"></card-detail></view>
+<view><card-detail vue-id="09815f8b-1" bind:__l="__l"></card-detail></view>
