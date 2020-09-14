@@ -47,7 +47,7 @@ var prePage = function prePage() {
 
 
   return prePage.$vm;
-};var cuCustom = function cuCustom() {__webpack_require__.e(/*! require.ensure | colorui/components/cu-custom */ "colorui/components/cu-custom").then((function () {return resolve(__webpack_require__(/*! ./colorui/components/cu-custom.vue */ 310));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+};var cuCustom = function cuCustom() {__webpack_require__.e(/*! require.ensure | colorui/components/cu-custom */ "colorui/components/cu-custom").then((function () {return resolve(__webpack_require__(/*! ./colorui/components/cu-custom.vue */ 320));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
 
 
 _vue.default.component('cu-custom', cuCustom);
@@ -56,6 +56,54 @@ _vue.default.config.productionTip = false;
 _vue.default.prototype.$fire = new _vue.default();
 _vue.default.prototype.$store = _store.default;
 _vue.default.prototype.$api = { msg: msg, json: json, prePage: prePage };
+
+_vue.default.prototype.$request = function (method, data, header) {
+  header = header || "application/json";
+  var base_url = "https://app.wfycjy.com";
+  var AuthorizationToken = uni.getStorageSync("AuthorizationToken");
+
+  // return new Promise((succ, error) => {
+  // 	uni.request({
+  // 		url: base_url + method,
+  // 		data: data,
+  // 		method: "POST",
+  // 		header: {
+  // 			"Accept":header,
+  // 			"content-type": header,
+  // 			"Authorization": "Bearer "+ AuthorizationToken
+  // 		},
+  // 		success: function (result) {
+  // 			console.error(result);
+  // 			succ.call(self, result.data)
+  // 		},
+  // 		fail: function (e) {
+  // 			error.call(self, e)
+  // 		}
+  // 	})
+  // })
+
+
+  uni.request({
+    url: base_url + method,
+    data: data,
+    header: {
+      "Accept": header,
+      "content-type": header,
+      "Authorization": "Bearer " + AuthorizationToken },
+
+    method: "POST",
+    success: function success(res) {
+      console.log('success', res);
+      return res;
+    },
+    fail: function fail(err) {
+      console.log('fail', err);
+    },
+    complete: function complete() {
+
+    } });
+
+};
 
 _App.default.mpType = 'app';
 

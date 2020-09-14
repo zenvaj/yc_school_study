@@ -5,21 +5,20 @@
 	},
 	"setting": {
 		"es6": true,
-		"postcss": false,
+		"postcss": true,
 		"minified": true,
 		"urlCheck": false,
-		"newFeature": true,
-		"nodeModules": true,
-		"autoAudits": true,
-		"uploadWithSourceMap": true,
-		"uglifyFileName": true,
-		"remoteDebugLogEnable": false
+		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"projectname": "%E9%A2%96%E8%B6%85%E6%95%99%E8%82%B2",
+	"projectname": "颖超教育",
 	"qqappid": "1110757041",
 	"qqLibVersion": "1.6.3",
-	"scripts": {},
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,

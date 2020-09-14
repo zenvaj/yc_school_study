@@ -233,59 +233,42 @@ var _vuex = __webpack_require__(/*! vuex */ 6);function _interopRequireDefault(o
                                                                     */
                 sendData = {
                   mobile: mobile,
-                  password: password };_context.next = 5;return (
+                  password: password };
 
-                  _this2.$api.json('userInfo'));case 5:result = _context.sent;
-                if (result.status === 1) {
-                  _this2.login(result.data);
-                  uni.navigateBack();
-                } else {
-                  _this2.$api.msg(result.msg);
-                  _this2.logining = false;
-                }case 7:case "end":return _context.stop();}}}, _callee);}))();
+                //const result = await this.$api.json('userInfo');
+                _context.next = 5;return (
+                  _this2.$request('/api/login', { username: "10000", password: "100000", type: "password" }));case 5:result = _context.sent;
+                console.log(result);return _context.abrupt("return");case 9:case "end":return _context.stop();}}}, _callee);}))();
+
+
+
+
+
+
+
+
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //微信登录
-    login_weixin: function login_weixin() {var _this3 = this;
+    // #1ifdef MP-QQ
+    //QQ登录
+    login_qq: function login_qq() {var _this3 = this;
       var _this = this;
+      uni.login({
+        provider: 'qq',
+        success: function success(loginRes) {
+          // 获取用户信息
+          uni.getUserInfo({
+            provider: 'qq',
+            success: function success(infoRes) {
+              console.log('qq2', loginRes, infoRes);
+            } });
+
+        } });
+
+      return;
       uni.getUserInfo({
-        provider: 'weixin',
+        provider: 'qq',
         success: function success(infoRes) {
+          console.log('qq1', infoRes);
           console.log('weixin', infoRes);
           var userinfo = {
             id: infoRes.userInfo.gender,
@@ -296,7 +279,57 @@ var _vuex = __webpack_require__(/*! vuex */ 6);function _interopRequireDefault(o
           _this3.login(userinfo);
           uni.navigateBack();
         },
+        fail: function fail() {
+          uni.login({
+            provider: 'qq',
+            success: function success(loginRes) {
+              // 获取用户信息
+              uni.getUserInfo({
+                provider: 'qq',
+                success: function success(infoRes) {
+                  console.log('qq2', loginRes, infoRes);
+                } });
+
+            } });
+
+        } });
+
+    },
+    // #1endif
+    // #1ifdef MP-WEIXIN
+    //微信登录
+    login_weixin: function login_weixin() {var _this4 = this;
+      console.log(11);
+      var _this = this;
+      uni.login({
+        provider: 'weixin',
+        success: function success(loginRes) {
+          // 获取用户信息
+          uni.getUserInfo({
+            provider: 'weixin',
+            success: function success(infoRes) {
+              console.log('weixin', loginRes, infoRes);
+            } });
+
+        } });
+
+      return;
+      uni.getUserInfo({
+        provider: 'weixin',
+        success: function success(infoRes) {
+          console.log('weixin', infoRes);
+          var userinfo = {
+            id: infoRes.userInfo.gender,
+            mobile: infoRes.userInfo.province,
+            nickname: infoRes.userInfo.nickName,
+            portrait: infoRes.userInfo.avatarUrl };
+
+          _this4.login(userinfo);
+          console.log(userinfo);
+          uni.navigateBack();
+        },
         fali: function fali() {
+          console.log('fali');
           uni.login({
             provider: 'weixin',
             success: function success(loginRes) {
@@ -311,7 +344,9 @@ var _vuex = __webpack_require__(/*! vuex */ 6);function _interopRequireDefault(o
 
         } });
 
-    } }) };exports.default = _default;
+    }
+    // #1endif
+  }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

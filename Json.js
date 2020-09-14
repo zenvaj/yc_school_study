@@ -28,6 +28,12 @@ const menuGridList =  [{
 		cuIcon: 'location',
 		color: 'red',
 		badge: 0,
+		name: '登录',
+		path: '/pages/public/login'
+	},{
+		cuIcon: 'location',
+		color: 'red',
+		badge: 0,
 		name: '签到记录',
 		path: '/pages/index/sign-std-log'
 	},{
@@ -78,12 +84,6 @@ const menuGridList =  [{
 		badge: 0,
 		name: '帮助教程',
 		path: '/pages/public/content?title=帮助教程'
-	}, {
-		cuIcon: 'selection',
-		color: 'purple',
-		badge: 0,
-		name: '学习',
-		path: '/pages/study/study'
 	},{
 		cuIcon: 'group',
 		color: 'purple',
@@ -107,7 +107,7 @@ const menuGridList =  [{
 		color: 'purple',
 		badge: 0,
 		name: '错题本',
-		path: '/pages/study/bad-notice'
+		path: '/pages/study/book_question'
 	},{
 		cuIcon: 'addressbook',
 		color: 'purple',
@@ -166,12 +166,6 @@ const menuGridList =  [{
 		cuIcon: 'friend',
 		color: 'purple',
 		badge: 0,
-		name: '帮半帮',
-		path: '/pages/group/ask-help'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
 		name: '投资',
 		path: '/pages/my/invest'
 	},{
@@ -196,7 +190,7 @@ const menuGridList =  [{
 		cuIcon: 'friend',
 		color: 'purple',
 		badge: 0,
-		name: '孩子红包',
+		name: '孩子钱包',
 		path: '/pages/my/baby-money'
 	},{
 		cuIcon: 'friend',
@@ -210,6 +204,12 @@ const menuGridList =  [{
 		badge: 0,
 		name: '课本',
 		path: '/pages/study/book'
+	},{
+		cuIcon: 'friend',
+		color: 'purple',
+		badge: 0,
+		name: '课后习题',
+		path: '/pages/study/book_question'
 	},{
 		cuIcon: 'more',
 		color: 'mauve',
@@ -1018,7 +1018,7 @@ const courseInfo = {
 const bookMenus = {
 	id:1,
 	name:"语文",
-	title:"",
+	title:"语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟",
 	menu_list:[
 		{id:2,name:"英语",title:""},
 		{id:3,name:"数学",title:""},

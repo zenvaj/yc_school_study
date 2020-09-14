@@ -38,23 +38,23 @@
 			</view>
 			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
 		</view>
-		<!-- #ifdef MP -->
+		<!-- #1ifdef MP -->
 		<view class="login-footer">
 			<view class="footer-tip flex">其他登录方式</view>
 			<view class="footer-other flex">
-				<!-- #ifdef MP-QQ -->
+				<!-- #1ifdef MP-QQ -->
 				<view class="other-list">
 					<image src="../../static/ic-QQ@2x.png" mode="aspectFill" @tap="login_qq()"></image>
 				</view>
-				<!-- #endif -->
-				<!-- #ifdef MP-WEIXIN -->
+				<!-- #1endif -->
+				<!-- #1ifdef MP-WEIXIN -->
 				<view class="other-list">
 					<image src="../../static/ic-weixin@2x.png" mode="aspectFill" @tap="login_weixin()"></image>
 				</view>
-				<!-- #endif -->
+				<!-- #1endif -->
 			</view>
 		</view>
-		<!-- #endif -->
+		<!-- #1endif -->
 	</view>
 </template>
 
@@ -103,7 +103,11 @@
 					mobile,
 					password
 				};
-				const result = await this.$api.json('userInfo');
+				//const result = await this.$api.json('userInfo');
+				
+				const result = await this.$request('/api/login',{username:"10000",password:"100000",type:"password"});
+				console.log(result)
+				return;
 				if(result.status === 1){
 					this.login(result.data);
                     uni.navigateBack();  
@@ -112,10 +116,23 @@
 					this.logining = false;
 				}
 			},
-			// #ifdef MP-QQ
+			// #1ifdef MP-QQ
 			//QQ登录
 			login_qq() {
 				let _this = this;
+				uni.login({
+					provider: 'qq',
+					success: function(loginRes) {
+						// 获取用户信息
+						uni.getUserInfo({
+							provider: 'qq',
+							success: function(infoRes) {
+								console.log('qq2',loginRes,infoRes)
+							}
+						});
+					}
+				});
+				return;
 				uni.getUserInfo({
 					provider: 'qq',
 					success: infoRes => {
@@ -146,11 +163,25 @@
 					}
 				});
 			},
-			// #endif
-			// #ifdef MP-WEIXIN
+			// #1endif
+			// #1ifdef MP-WEIXIN
 			//微信登录
 			login_weixin() {
+				console.log(11)
 				let _this = this;
+				uni.login({
+					provider: 'weixin',
+					success: function(loginRes) {
+						// 获取用户信息
+						uni.getUserInfo({
+							provider: 'weixin',
+							success: function(infoRes) {
+								console.log('weixin',loginRes,infoRes)
+							}
+						});
+					}
+				});
+				return;
 				uni.getUserInfo({
 					provider: 'weixin',
 					success: infoRes => {
@@ -162,9 +193,11 @@
 							portrait: infoRes.userInfo.avatarUrl,
 						}
 						this.login(userinfo);
+						console.log(userinfo)
 						uni.navigateBack();  
 					},
 					fali:function(){
+						console.log('fali')
 						uni.login({
 							provider: 'weixin',
 							success: function(loginRes) {
@@ -180,7 +213,7 @@
 					}
 				});
 			},
-			// #endif
+			// #1endif
 			
 		},
 

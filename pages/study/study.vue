@@ -18,7 +18,7 @@
 		
 		
 		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
-			<view class="qiun-title-dot-light">仪表盘 <text @tap="changeGaugeData()" class="cuIcon-refresh" style="margin-left: 40rpx;"></text></view>
+			<view class="qiun-title-dot-light">学习进度 <text @tap="changeGaugeData()" class="cuIcon-refresh" style="margin-left: 40rpx;"></text></view>
 		</view>
 		<view class="qiun-charts">
 			<!--#ifdef MP-ALIPAY -->
@@ -29,7 +29,7 @@
 			<!--#endif-->
 		</view>
 		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
-			<view class="qiun-title-dot-light">圆弧进度图</view>
+			<view class="qiun-title-dot-light">做题成效</view>
 		</view>
 		<view class="qiun-charts3">
 			<!--#ifdef MP-ALIPAY -->
@@ -94,48 +94,48 @@
 						color: 'red',
 						badge: 0,
 						name: '课本学习',
-						path: '/pages/public/content'
+						path: '/pages/study/book'
 					}, {
 						cuIcon: 'recordfill',
 						color: 'orange',
-						badge: 1,
+						badge: 0,
 						name: '课后习题',
-						path: '/pages/public/content'
+						path: '/pages/study/book_question'
 					}, {
 						cuIcon: 'picfill',
 						color: 'yellow',
 						badge: 0,
 						name: '同步练习',
-						path: '/pages/public/content'
+						path: '/pages/study/book_question'
 					}, {
 						cuIcon: 'noticefill',
 						color: 'olive',
-						badge: 22,
+						badge: 0,
 						name: '单元测试',
-						path: '/pages/public/content'
+						path: '/pages/study/book_question'
 					}, {
 						cuIcon: 'upstagefill',
 						color: 'cyan',
 						badge: 0,
 						name: '错题本',
-						path: '/pages/public/content'
-					}, {
-						cuIcon: 'clothesfill',
-						color: 'blue',
+						path: '/pages/study/book_question'
+					},{
+						cuIcon: 'questionfill',
+						color: 'mauve',
 						badge: 0,
-						name: '搜题',
-						path: '/pages/public/content'
-					}, {
+						name: '复习',
+						path: '/pages/study/book'
+					},{
 						cuIcon: 'discoverfill',
 						color: 'purple',
 						badge: 0,
 						name: '知识树',
 						path: '/pages/public/content'
-					}, {
-						cuIcon: 'questionfill',
-						color: 'mauve',
+					},{
+						cuIcon: 'clothesfill',
+						color: 'blue',
 						badge: 0,
-						name: '难点复习',
+						name: '搜题',
 						path: '/pages/public/content'
 					},{
 						cuIcon: 'brandfill',
@@ -145,7 +145,7 @@
 						path: '/pages/public/content'
 					}],
 					gridCol: 3,
-					gridBorder: 1
+					gridBorder: 0
 				},
 				//图表数据
 				cWidth: '',
@@ -191,24 +191,24 @@
 					}]
 				},
 				"Radar": {
-					"categories": ["维度1", "维度2", "维度3", "维度4", "维度5", "维度6"],
+					"categories": ["维度1", "维度2", "维度3", "维度4", "维度5", "维度6", "维度7", "维度8"],
 					"series": [{
 						"name": "成交量1",
-						"data": [90, 110, 165, 195, 187, 172]
+						"data": [90, 110, 165, 195, 187, 172, 187, 172]
 					}, {
 						"name": "成交量2",
-						"data": [190, 210, 105, 35, 27, 102]
+						"data": [190, 210, 105, 35, 27, 102, 27, 102]
 					}]
 				},
 				"ColumnMeter": {
-						"categories": ["2013", "2014", "2015", "2016", "2017", "2018"],
+						"categories": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
 						"series": [{
 							"name": "目标值",
-							"data": [35, 36, 31, 33, 13, 34],
+							"data": [35, 36, 31, 33, 13, 34, 13, 34, 13, 34],
 							"color": "#2fc25b"
 						}, {
 							"name": "完成量",
-							"data": [18, 27, 21, 24, 6, 28],
+							"data": [18, 27, 21, 24, 6, 28, 6, 28, 6, 28],
 							"color": "#1890ff"
 						}]
 					},
@@ -256,6 +256,9 @@
 			//九宫格点击方法
 			navigeteMenuGrid(name,type){
 				console.log('navigeteMenuGrid',name,type)
+				uni.navigateTo({
+					url:type
+				})
 			},
 			bindMultiPickerColumnChange: function(e) {
 				console.log('修改的列为：' + e.detail.column + '，值为：' + e.detail.value)

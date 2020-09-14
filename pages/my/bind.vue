@@ -2,13 +2,13 @@
 	<view class="">
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
-				<view class="cu-item flex-sub" :class="0==TabCur?'bg-gradual-orange':''" @tap="tabSelect" :data-id="0">
-					<text class="cuIcon-camerafill"></text> 伯乐
+				<view class="cu-item flex-sub" :class="0==TabCur?'bg-gradual-blue':''" @tap="tabSelect" :data-id="0">
+					<text class="cuIcon-camerafill"></text> 好友
 				</view>
-				<view class="cu-item flex-sub" :class="1==TabCur?'bg-gradual-orange':''" @tap="tabSelect" :data-id="1">
-					<text class="cuIcon-camerafill"></text> 母上父山
+				<view class="cu-item flex-sub" :class="1==TabCur?'bg-gradual-blue':''" @tap="tabSelect" :data-id="1">
+					<text class="cuIcon-camerafill"></text> 母上父上
 				</view>
-				<view class="cu-item flex-sub" :class="2==TabCur?'bg-gradual-orange':''" @tap="tabSelect" :data-id="2">
+				<view class="cu-item flex-sub" :class="2==TabCur?'bg-gradual-blue':''" @tap="tabSelect" :data-id="2">
 					<text class="cuIcon-camerafill"></text> 神兽宝宝
 				</view>
 			</view>

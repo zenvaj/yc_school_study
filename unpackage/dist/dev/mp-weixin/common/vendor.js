@@ -1973,6 +1973,12 @@ var menuGridList = [{
   cuIcon: 'location',
   color: 'red',
   badge: 0,
+  name: '登录',
+  path: '/pages/public/login' },
+{
+  cuIcon: 'location',
+  color: 'red',
+  badge: 0,
   name: '签到记录',
   path: '/pages/index/sign-std-log' },
 {
@@ -14916,7 +14922,7 @@ if ( true && typeof module.exports === "object") {
 
 /***/ }),
 
-/***/ 380:
+/***/ 390:
 /*!*******************************************************************************!*\
   !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
   \*******************************************************************************/

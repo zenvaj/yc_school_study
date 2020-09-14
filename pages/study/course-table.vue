@@ -90,8 +90,8 @@
 					],
 				],
 				courseEditEnable:true,
-				allCourseList:'',
-				allTeacherList:'',
+				allCourseList:[],
+				allTeacherList:[],
 				
 			}
 		},

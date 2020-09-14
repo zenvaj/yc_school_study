@@ -2,7 +2,7 @@
 	<view>
 		<view class="cu-bar bg-white margin-top">
 			<view class="action">
-				美美帅帅大照片
+				图片
 			</view>
 			<view class="action">
 				{{imgList.length}}/9
@@ -32,7 +32,7 @@
 		</view>
 		<view class="cu-form-group align-start">
 			<view class="title">叨叨吧</view>
-			<textarea maxlength="-1" @input="textareaInput" style="height: 300rpx;" styplaceholder="想说说吧"></textarea>
+			<textarea maxlength="-1" @input="textareaInput" style="background-color:#f8f6fc; height: 300rpx;" styplaceholder="想说说吧"></textarea>
 		</view>
 		<view class="cu-tabbar-height"></view>
 		<view class="btn-sign">

@@ -211,12 +211,6 @@
 			}
 		},
 		{
-		    "path" : "pages/group/ask-help",
-		    "style" : {
-				"navigationBarTitleText": "帮帮办"
-			}
-		},
-		{
 		    "path" : "pages/my/invest",
 		    "style" : {
 				"navigationBarTitleText": "投资"
@@ -263,6 +257,12 @@
 		    "path" : "pages/study/book",
 		    "style" : {
 				"navigationBarTitleText": "课本"
+			}
+		},
+		{
+		    "path" : "pages/study/book_question",
+		    "style" : {
+				"navigationBarTitleText": "课后习题"
 			}
 		}
     ],

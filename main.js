@@ -48,6 +48,54 @@ Vue.prototype.$fire = new Vue();
 Vue.prototype.$store = store;
 Vue.prototype.$api = {msg, json, prePage};
 
+Vue.prototype.$request = (method,data,header)=>{
+	header = header || "application/json";
+	let base_url = "https://app.wfycjy.com";
+	let AuthorizationToken = uni.getStorageSync("AuthorizationToken");
+	
+	// return new Promise((succ, error) => {
+	// 	uni.request({
+	// 		url: base_url + method,
+	// 		data: data,
+	// 		method: "POST",
+	// 		header: {
+	// 			"Accept":header,
+	// 			"content-type": header,
+	// 			"Authorization": "Bearer "+ AuthorizationToken
+	// 		},
+	// 		success: function (result) {
+	// 			console.error(result);
+	// 			succ.call(self, result.data)
+	// 		},
+	// 		fail: function (e) {
+	// 			error.call(self, e)
+	// 		}
+	// 	})
+	// })
+	
+	
+	uni.request({
+		url:base_url + method,
+		data:data,
+		header:{
+			"Accept":header,
+			"content-type": header,
+			"Authorization": "Bearer "+ AuthorizationToken
+		},
+		method:"POST",
+		success:(res)=>{
+			console.log('success',res)
+			return res;
+		},
+		fail:(err)=>{
+			console.log('fail',err)
+		},
+		complete:()=>{
+			
+		}
+	})
+};
+
 App.mpType = 'app'
 
 const app = new Vue({

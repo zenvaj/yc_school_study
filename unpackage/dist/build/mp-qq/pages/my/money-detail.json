@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "钱包详情",
+  "navigationBarBackgroundColor": "#fce3cc",
+  "usingComponents": {
+    "list-cell": "/components/mix-list-cell"
+  }
+}
