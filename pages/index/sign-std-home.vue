@@ -203,6 +203,9 @@
 				this.index = e.detail.value
 				console.log(this.index)
 			},
+			textareaInput(e){
+				console.log(e.detail.value)
+			}
 		}
 	}
 </script>

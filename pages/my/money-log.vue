@@ -1,13 +1,13 @@
 <template>
 	<view class="">
 		<!-- #ifdef H5 -->
-		<view class="cu-bar fixed cu-form-group" :style="[{top:(StatusBar + CustomBar - 3) + 'px'},{zIndex:2}]">
+		<view class="cu-bar fixed cu-form-group" :style="[{top:(StatusBar*2 + CustomBar*2 - 2) + 'rpx'},{zIndex:2}]">
 		<!-- #endif -->
 		<!-- #ifdef MP -->
-		<view class="cu-bar fixed cu-form-group" :style="[{top:'0px'},{zIndex:2}]">
+		<view class="cu-bar fixed cu-form-group" :style="[{top:'0rpx'},{zIndex:2}]">
 		<!-- #endif -->
 		<!-- #ifdef APP-PLUS -->
-		<view class="cu-bar fixed cu-form-group" :style="[{top:'0px'},{zIndex:2}]">
+		<view class="cu-bar fixed cu-form-group" :style="[{top:'0rpx'},{zIndex:2}]">
 		<!-- #endif -->
 			<view class="title">筛选</view>
 			<picker mode="date" :value="date_start" start="1970-09-01" end="2050-09-01" @change="DateChange('date_start',$event)">
@@ -27,13 +27,13 @@
 			</picker>
 		</view>
 		<!-- #ifdef H5 -->
-		<view class="cu-list menu-avatar " :style="{marginTop:(StatusBar+CustomBar) + 'px'}">
+		<view class="cu-list menu-avatar " :style="{marginTop:(StatusBar*2+CustomBar*2) + 'rpx'}">
 		<!-- #endif -->
 		<!-- #ifdef MP -->
-		<view class="cu-list menu-avatar " :style="{marginTop:(0 + CustomBar) + 'px'}">
+		<view class="cu-list menu-avatar " :style="{marginTop:(0 + CustomBar*2) + 'rpx'}">
 		<!-- #endif -->
 		<!-- #ifdef APP-PLUS -->
-		<view class="cu-list menu-avatar " :style="{marginTop:(0 + CustomBar) + 'px'}">
+		<view class="cu-list menu-avatar " :style="{marginTop:(0 + CustomBar*2) + 'rpx'}">
 		<!-- #endif -->
 			<view class="cu-item" v-for="(item,index) in 22" :key="index">
 				<view class="content">

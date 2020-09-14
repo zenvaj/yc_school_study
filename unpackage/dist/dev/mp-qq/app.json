@@ -41,12 +41,13 @@
     "pages/my/dig-money",
     "pages/index/sign-std-log",
     "pages/study/book",
-    "pages/study/book_question"
+    "pages/study/book_question",
+    "pages/my/money-book"
   ],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "颖超教育",
-    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarBackgroundColor": "#6ebcff",
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {

@@ -33,7 +33,6 @@
     "pages/my/marks",
     "pages/my/address",
     "pages/my/address-manager",
-    "pages/group/ask-help",
     "pages/my/invest",
     "pages/my/transfer",
     "pages/my/take-cash",
@@ -41,13 +40,15 @@
     "pages/my/baby-money",
     "pages/my/dig-money",
     "pages/index/sign-std-log",
-    "pages/study/book"
+    "pages/study/book",
+    "pages/study/book_question",
+    "pages/my/money-book"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "颖超教育",
-    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarBackgroundColor": "#6ebcff",
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
@@ -84,6 +85,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap25.json"
+  }
 }

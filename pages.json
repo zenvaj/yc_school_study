@@ -177,7 +177,15 @@
 		{
 		    "path" : "pages/group/shop",
 		    "style" : {
-				"navigationBarTitleText": "铺子"
+				"navigationBarTitleText": "铺子",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				},
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F8F8F8"
 			}
 		},
 		{
@@ -264,12 +272,18 @@
 		    "style" : {
 				"navigationBarTitleText": "课后习题"
 			}
+		},
+		{
+		    "path" : "pages/my/money-book",
+		    "style" : {
+				"navigationBarTitleText": "记账本"
+			}
 		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "颖超教育",
-		"navigationBarBackgroundColor": "#0081ff",
+		"navigationBarBackgroundColor": "#6ebcff",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {

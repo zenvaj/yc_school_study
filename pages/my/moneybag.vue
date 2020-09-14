@@ -3,7 +3,7 @@
 		<view class="user-section">
 			<image class="bg" src="/static/user-bg.jpg"></image>
 			<view class="vip-card-box">
-				<view class="b-btn">
+				<view class="b-btn" @click="navToNologin('/pages/public/content?title=查看攻略')">
 					查看攻略
 				</view>
 				<view class="tit">
@@ -73,11 +73,11 @@
 				</view>
 			</view>
 			<view class="history-section icon">
-				<listCell icon="icon-tuandui" iconColor="#e07472" title="我的推荐" tips="谁拉的我" @eventClick="navTo('/pages/public/icon-all')"></listCell>
-				
-				<listCell icon="icon-dianzan-ash" iconColor="#9789f7" title="排行榜" tips="意想不到的他在第几层"></listCell>
-				<listCell icon="icon-iconfontweixin" iconColor="#ee883b" title="孩子红包" tips="看看神兽的小金库"></listCell>
-				<listCell icon="icon-iLinkapp-" iconColor="#54b4ef" title="挖宝" tips="看看神兽的小金库"></listCell>
+				<listCell icon="icon-gouwuche" iconColor="#e07472" title="我的订单" tips="消费记录" @eventClick="navTo('/pages/my/money-book')"></listCell>
+				<listCell icon="icon-shouye" iconColor="#e07472" title="记账本" tips="挣钱有劲花钱有数" @eventClick="navTo('/pages/my/money-book')"></listCell>
+				<listCell icon="icon-dianzan-ash" iconColor="#9789f7" title="排行榜" tips="他/她~在第几层" @eventClick="navTo('/pages/index/best-user')"></listCell>
+				<listCell icon="icon-iconfontweixin" iconColor="#ee883b" title="神兽的钱包" tips="看看神兽的小金库" @eventClick="navTo('/pages/my/baby-money')"></listCell>
+				<listCell icon="icon-iLinkapp-" iconColor="#54b4ef" title="挖宝" tips="运气说来就来" @eventClick="navTo('/pages/my/dig-money')"></listCell>
 				
 			</view>
 			
@@ -123,7 +123,11 @@
 					url
 				})  
 			},
-			
+			navToNologin(url){
+				uni.navigateTo({  
+					url
+				})  
+			},
         }  
     }  
 </script>  

@@ -31,7 +31,7 @@
 						<input placeholder="该计划给分最大值" :value="planDataNew.maxScore" @input="Input('maxScore',$event)">
 					</view>
 					<view class="cu-form-group">
-						<view class="title">开关选择</view>
+						<view class="title">提高类型</view>
 						<switch @change="planDataNew.isHigh = !planDataNew.isHigh" :class="planDataNew.isHigh?'checked':''" :checked="planDataNew.isHigh?true:false"></switch>
 					</view>
 				</view>

@@ -3,8 +3,8 @@
 		<view class="user-section">
 			<image class="bg" src="/static/user-bg.jpg"></image>
 			<view class="vip-card-box">
-				<view class="b-btn">
-					查看攻略
+				<view class="b-btn" @click="navToNologin('/pages/public/content?title='+moneyType+'攻略')">
+					{{moneyType}}攻略
 				</view>
 				<view class="tit">
 					<text class="yticon icon-iLinkapp-"></text>
@@ -136,6 +136,11 @@
 				if(0&&!this.hasLogin){
 					url = '/pages/public/login';
 				}
+				uni.navigateTo({  
+					url
+				})  
+			},
+			navToNologin(url){
 				uni.navigateTo({  
 					url
 				})  

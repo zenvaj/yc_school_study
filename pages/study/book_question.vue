@@ -41,7 +41,7 @@
 				
 				<radio-group class="block" >
 					<view class="cu-list menu text-left">
-					<view class="cu-item cu-item-error" v-for="error in errorList" >
+					<view class="cu-item cu-item-error" v-for="(error,k) in errorList" :key="k">
 						<radio :value="error"></radio>
 						<view class="title text-black margin-left">{{error}}</view>
 					</view>	
@@ -55,7 +55,7 @@
 		</view>
 		<form>
 			<swiper :current="subjectIndex" class="swiper-box" @change="SwiperChange" :style="{'height':swiperHeight}">
-				<swiper-item v-for="(subject,index) in subjectList">
+				<swiper-item v-for="(subject,index) in subjectList" :key="index">
 					
 					<view v-if="index-subjectIndex>=-1&&index-subjectIndex<=1">
 										
@@ -67,14 +67,14 @@
 					<view>
 
 						<radio-group class="block"  @change="RadioboxChange" v-if="subject.type===1||subject.type===2">
-							<view class="cu-form-group" v-for="option in subject.optionList">
+							<view class="cu-form-group" v-for="(option,k) in subject.optionList" :key="k">
 								<radio :value="option.id" :checked="subject.userAnswer.indexOf(option.id) > -1?true:false"></radio>
 								<view class="title text-black">{{option.id}}.{{option.content}}</view>
 							</view>
 						</radio-group>
 
 						<checkbox-group class="block"  @change="CheckboxChange" v-else-if="subject.type===3">
-							<view class="cu-form-group" v-for="option in subject.optionList">
+							<view class="cu-form-group" v-for="(option,k) in subject.optionList" :key="k">
 								<checkbox :value="option.id" :class="subject.userAnswer.indexOf(option.id) > -1?'checked':''" :checked="subject.userAnswer.indexOf(option.id) > -1?true:false"></checkbox>
 								<view class="title  text-black">{{option.id}}.{{option.content}}</view>
 							</view>

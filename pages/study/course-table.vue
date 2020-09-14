@@ -19,21 +19,16 @@
 					{{item}}
 				</view>
 			</scroll-view>
-			<!-- <view class="cu-form-group margin-top-sm">
-				<view class="title">是否开启编辑模式</view>
-				<switch @change="courseEditEnable = !courseEditEnable" :class="courseEditEnable?'checked':''" :checked="courseEditEnable?true:false"></switch>
-			</view> -->
 			<view class="course-table margin-top-sm" v-for="(table,t_index) in courseList" :key="t_index">
 				<view class="cu-form-group" v-for="(item,i_index) in table" :key="i_index">
 					<view class="title">{{item.title}}</view>
-					<!-- <input placeholder="课程名称" :disabled="courseEditEnable?false:true" name="input" :value="item.name"/> -->
-					<picker @change="PickerChangeCourse(t_index,i_index,$event)" :value="pickeKeyCourse(item.name)" :range="allCourseList" :disabled="courseEditEnable?false:true">
+					<picker @change="PickerChangeCourse(t_index,i_index,$event)" :value="pickeKeyCourse(item.name)" :range="allCourseList" >
 						<view class="picker">
 							{{item.name||'选择课程'}}
 						</view>
 					</picker>
 					<!-- <button class='cu-btn line-green shadow margin-left'>{{item.teacher_name||'教师'}}</button> -->
-					<picker @change="PickerChangeTeacher(t_index,i_index,$event)" range-key="teacher_name" :value="pickeKeyTeacher(item.teacher_name)" :range="allTeacherList" :disabled="courseEditEnable?false:true">
+					<picker @change="PickerChangeTeacher(t_index,i_index,$event)" range-key="teacher_name" :value="pickeKeyTeacher(item.teacher_name)" :range="allTeacherList" >
 						<view class="picker">
 							{{item.teacher_name||'选择教师'}}
 						</view>
@@ -41,7 +36,7 @@
 				</view>
 			</view>
 			<view class="cu-tabbar-height"></view>
-			<view class="cu-form-group btn-sign" v-if="courseEditEnable">
+			<view class="cu-form-group btn-sign" >
 				<view class="title"></view>
 				<button class='cu-btn bg-green shadow' @click="SaveCourseTable">模板</button>
 				<button class='cu-btn bg-green shadow' @click="SaveCourseTable">套用昨天</button>
@@ -89,7 +84,6 @@
 						{course_id:0,title:'晚辅第三节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 					],
 				],
-				courseEditEnable:true,
 				allCourseList:[],
 				allTeacherList:[],
 				
@@ -127,7 +121,7 @@
 					let courseTableList = await this.$api.json('courseTableList')
 					this.courseTable = courseTableList[0]
 					this.courseList = this.courseTable.courseList
-					console.log(this.courseTable) 
+					console.log(this.courseList) 
 				}
 			},
 			pickeKeyCourse(courseName){ 
@@ -161,7 +155,7 @@
 					confirmText: '是的',
 					success: res => {
 						if (res.confirm) {
-							//this.courseEditEnable = false;
+							
 						}
 					}
 				})
