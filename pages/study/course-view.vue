@@ -49,7 +49,7 @@
 				dateSet: '',
 				TabCur: 0,
 				scrollLeft: 0,
-				classList:[],
+				classList:[''],
 				classSet:'',
 				courseTable:{
 					table_id:0,

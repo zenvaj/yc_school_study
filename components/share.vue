@@ -117,8 +117,8 @@
 	}
 </script>
 
-<style lang='scss' scoped>
-	@import "colorui/mix-mall-shop-base";
+<style lang='scss'>
+	/* @import "colorui/mix-mall-shop-base"; */
 	.mask{
 		position:fixed;
 		left: 0;

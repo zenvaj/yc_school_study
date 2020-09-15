@@ -4,34 +4,35 @@
 		<view class="back-btn yticon icon-zuojiantou-up" @click="navBack"></view>
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
+		
 		<view class="wrapper">
-			<view class="left-top-sign">LOGIN</view>
+			<view class="left-top-sign">welcome IRIS</view>
 			<view class="welcome">
-				欢迎回来！
+				欢迎！
 			</view>
 			<view class="input-content">
 				<view class="input-item">
-					<text class="tit">手机号码</text>
+					<text class="tit">颖超学号</text>
 					<input 
 						type="number" 
-						:value="mobile" 
-						placeholder="请输入手机号码"
+						:value="username" 
+						placeholder="请输入颖超学号"
 						maxlength="11"
-						data-key="mobile"
-						@input="inputChange"
+						data-key="username"
+						@input="Input('username',$event)"
 					/>
 				</view>
 				<view class="input-item">
 					<text class="tit">密码</text>
 					<input 
-						type="mobile" 
+						type="password" 
 						value="" 
-						placeholder="8-18位不含特殊字符的数字、字母组合"
+						placeholder="6-18位不含特殊字符的数字、字母组合"
 						placeholder-class="input-empty"
 						maxlength="20"
 						password 
 						data-key="password"
-						@input="inputChange"
+						@input="Input('password',$event)"
 						@confirm="toLogin"
 					/>
 				</view>
@@ -54,6 +55,39 @@
 				<!-- #1endif -->
 			</view>
 		</view>
+		<view class="cu-modal" :class="isModal?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar bg-white justify-end">
+					<view class="content">选择登录方式
+					</view>
+					<view class="action" @tap="isModal = false">
+						<text class="cuIcon-close text-red"></text>
+					</view>
+				</view>
+				<view class="">
+					<view class="cu-form-group margin-top-sm">
+						<view class="title cu-avatar radius" :style="'background-image:url('+auth_userinfo.headerpic+');'"></view>{{auth_userinfo.nickname}}
+					</view>
+					<view class="cu-form-group margin-top-sm">
+						<view class="title">颖超学号</view>
+						<input placeholder="已有帐号学号" :value="username" @input="Input('username',$event)">
+					</view>
+					<view class="cu-form-group ">
+						<view class="title">账号密码</view>
+						<input password placeholder="已有账号密码" @input="Input('password',$event)">
+					</view>
+					<view class="cu-form-group ">
+						<view class="text-gray text-xs">PS:注册新账号不需要填写账号密码信息</view>
+					</view>
+				</view>
+				<view class="cu-bar bg-white">
+					<view class="action margin-0 flex-sub text-green " @tap="auth_regin">
+						<text class="cuIcon-discoverfill"></text>注册新账号</view>
+					<view class="action margin-0 flex-sub text-green solid-left" @tap="auth_bind">绑定已有账号</view>
+					<view class="action margin-0 flex-sub  solid-left" @tap="isModal = false">取消</view>
+				</view>
+			</view>
+		</view>
 		<!-- #1endif -->
 	</view>
 </template>
@@ -66,19 +100,22 @@
 	export default{
 		data(){
 			return {
-				mobile: '',
+				username: '',
 				password: '',
 				logining: false,
 				isMP:false,
+				isModal:false,
+				modalTitle:"",
+				auth_userinfo:{},
 			}
 		},
 		onLoad(){
 			
 		},
 		methods: {
-			...mapMutations(['login']),
-			inputChange(e){
-				const key = e.currentTarget.dataset.key;
+			...mapMutations(['userInfo','authLogin']),
+			Input(key,e){
+				console.log(key,e.detail.value)
 				this[key] = e.detail.value;
 			},
 			navBack(){
@@ -88,75 +125,31 @@
 				this.$api.msg('去注册');
 			},
 			async toLogin(){
-				this.logining = true;
-				const {mobile, password} = this;
-				/* 数据验证模块
-				if(!this.$api.match({
-					mobile,
-					password
-				})){
-					this.logining = false;
+				if(this.username == '' || this.password == ''){
+					uni.showModal({
+						content:"学号和密码不能为空。"
+					})
 					return;
 				}
-				*/
-				const sendData = {
-					mobile,
-					password
-				};
-				//const result = await this.$api.json('userInfo');
-				
-				const result = await this.$request('/api/login',{username:"10000",password:"100000",type:"password"});
-				console.log(result)
-				return;
-				if(result.status === 1){
-					this.login(result.data);
-                    uni.navigateBack();  
-				}else{
-					this.$api.msg(result.msg);
-					this.logining = false;
-				}
+				this.logining = true;
+				let data = {username:this.username,password:this.password,type:"password"}
+				this.auth_login(data)
 			},
 			// #1ifdef MP-QQ
 			//QQ登录
 			login_qq() {
-				let _this = this;
 				uni.login({
 					provider: 'qq',
-					success: function(loginRes) {
+					scopes:"auth_user",
+					success: (loginRes) => {
 						// 获取用户信息
 						uni.getUserInfo({
 							provider: 'qq',
-							success: function(infoRes) {
+							success: (infoRes) => {
 								console.log('qq2',loginRes,infoRes)
-							}
-						});
-					}
-				});
-				return;
-				uni.getUserInfo({
-					provider: 'qq',
-					success: infoRes => {
-						console.log('qq1',infoRes)
-						console.log('weixin',infoRes)
-						var userinfo = {
-							id: infoRes.userInfo.gender,
-							mobile: infoRes.userInfo.province,
-							nickname: infoRes.userInfo.nickName,
-							portrait: infoRes.userInfo.avatarUrl,
-						}
-						this.login(userinfo);
-						uni.navigateBack();
-					},
-					fail:function(){
-						uni.login({
-							provider: 'qq',
-							success: function(loginRes) {
-								// 获取用户信息
-								uni.getUserInfo({
-									provider: 'qq',
-									success: function(infoRes) {
-										console.log('qq2',loginRes,infoRes)
-									}
+								this.$request({
+									method:'/api/test/logsave',
+									data:{loginRes:loginRes,infoRes:infoRes}
 								});
 							}
 						});
@@ -166,55 +159,86 @@
 			// #1endif
 			// #1ifdef MP-WEIXIN
 			//微信登录
-			login_weixin() {
-				console.log(11)
-				let _this = this;
+			 login_weixin() {
+				this.logining = true;
+				 // this.isModal = true
+				 // return;
 				uni.login({
 					provider: 'weixin',
-					success: function(loginRes) {
-						// 获取用户信息
+					success: (loginRes) =>  {
 						uni.getUserInfo({
 							provider: 'weixin',
-							success: function(infoRes) {
-								console.log('weixin',loginRes,infoRes)
-							}
-						});
-					}
-				});
-				return;
-				uni.getUserInfo({
-					provider: 'weixin',
-					success: infoRes => {
-						console.log('weixin',infoRes)
-						var userinfo = {
-							id: infoRes.userInfo.gender,
-							mobile: infoRes.userInfo.province,
-							nickname: infoRes.userInfo.nickName,
-							portrait: infoRes.userInfo.avatarUrl,
-						}
-						this.login(userinfo);
-						console.log(userinfo)
-						uni.navigateBack();  
-					},
-					fali:function(){
-						console.log('fali')
-						uni.login({
-							provider: 'weixin',
-							success: function(loginRes) {
-								// 获取用户信息
-								uni.getUserInfo({
-									provider: 'weixin',
-									success: function(infoRes) {
-										console.log('weixin',loginRes,infoRes)
-									}
+							success: async (infoRes) => {
+								console.log('weixin1',loginRes)
+								console.log('weixin2',infoRes)
+								// 获取用户信息 openid
+								const userInfo = await this.$request({
+									method:'/api/auth_wx',
+									data:{js_code:loginRes.code,infoRes:infoRes.userInfo}
+								})
+								this.auth_userinfo = userInfo.data
+								this.$request({
+									method:'/api/test/logsave',
+									data:{'this.auth_userinfo':this.auth_userinfo}
 								});
+								if(this.auth_userinfo.userid > 0){
+									//用微信openid的方式去登录
+									let data = {openid:this.auth_userinfo.openid,type:"wx_auth",method:"login"}
+									this.auth_login(data)
+								}else{
+									//重新注册还是绑定已有账号
+									this.isModal = true
+								}
 							}
-						});
+						})
 					}
-				});
+				})
 			},
 			// #1endif
-			
+			auth_regin(){
+				let data = {username:this.username,password:this.password,openid:this.auth_userinfo.openid,type:"wx_auth",method:"regin"}
+				this.$request({
+					method:'/api/test/logsave',
+					data:{auth_regin3:data}
+				});
+				this.auth_login(data)
+			},
+			auth_bind(){
+				let data = {username:this.username,password:this.password,openid:this.auth_userinfo.openid,type:"wx_auth",method:"bind"}
+				this.auth_login(data)
+			},
+			async auth_login(data){
+				const result = await this.$request({
+					method:'/api/login',
+					data:data
+				});
+				console.log(result)
+				this.$request({
+					method:'/api/test/logsave',
+					data:{result2312:result}
+				});
+				if(result.code === 10000){
+					this.authLogin(result.data)
+					const userinfo = await this.$request({
+						method:'/api/user',
+						data:{}
+					});
+					console.log(userinfo)
+					this.$request({
+						method:'/api/test/logsave',
+						data:{userinfo11212222:userinfo}
+					});
+					if(userinfo.code === 10000){
+						this.userInfo(userinfo.data)
+					}else{
+						this.$api.msg(userinfo.msg||"未知用户信息错误");
+						this.logining = false;
+					}
+				}else{
+					this.$api.msg(result.msg||"未知登录错误");
+					this.logining = false;
+				}
+			}
 		},
 
 	}

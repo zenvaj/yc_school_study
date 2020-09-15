@@ -128,6 +128,7 @@
 				list[i].id = i;
 			}
 			this.list = list;
+			console.log(this.list)
 			this.listCur = list[0];
 		},
 		onReady() {

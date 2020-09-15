@@ -57,9 +57,9 @@
 				<listCell icon="icon-pinglun-copy" iconColor="#ee883b" title="我的消息" tips="系统通知" @eventClick="navTo('/pages/my/msg-list')"></listCell>
 				<listCell icon="icon-hot" iconColor="#54b4ef" title="我的标签" tips="成长记录" @eventClick="navTo('/pages/my/marks')"></listCell>
 				<listCell icon="icon-weixin" iconColor="#5fcda2" title="我的好友" tips="一顿操作猛如虎" @eventClick="navTo('/pages/my/friend')"></listCell>
-				<listCell icon="icon-saomiao" iconColor="#9789f7" title="个人名片" tips="It's show time" @eventClick="navTo('/pages/my/make-join')"></listCell>
+				<listCell icon="icon-saomiao" iconColor="#9789f7" title="个人名片" tips="一看数据零杠五" @eventClick="navTo('/pages/my/make-join')"></listCell>
 				<listCell icon="icon-share" iconColor="#9789f7" title="邀请好友" tips="邀请好友赢大礼" @eventClick="navTo('/pages/my/make-join')"></listCell>
-				<listCell icon="icon-jiazailoading-A" iconColor="#ee883b" title="绑定" tips="绑定神兽一统江湖" @eventClick="navTo('/pages/my/bind')"></listCell>
+				<listCell icon="icon-jiazailoading-A" iconColor="#ee883b" title="绑定" tips="一统江湖" @eventClick="navTo('/pages/my/bind')"></listCell>
 				<listCell icon="icon-xiatubiao--copy" iconColor="#54b4ef" title="我的门店" tips="自己的小店" @eventClick="navTo('/pages/group/shop')"></listCell>
 				<listCell icon="icon-shezhi1" iconColor="#e07472" title="设置" border="" @eventClick="navTo('/pages/my/set')"></listCell>
 			</view>

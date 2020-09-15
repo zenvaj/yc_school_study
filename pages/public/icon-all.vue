@@ -1,6 +1,6 @@
 <template>
 	<view class="">
-		<view class="order-item" v-for="(item,index) in iconArr">
+		<view class="order-item" v-for="(item,index) in iconArr" :key="index">
 			<text class="yticon" :class="item"></text>
 			<text>{{item}}</text>
 		</view>
