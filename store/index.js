@@ -6,45 +6,31 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
 		hasLogin: false,
-		userInfo: {},
-		token:{},
-		AuthorizationToken:""
+		user: {},
+		token:'',
 	},
 	mutations: {
 		authLogin(state, provider) {
-
-			state.hasLogin = true;
-			state.token = provider;
-			state.AuthorizationToken = provider.token_auth
+			
+			state.hasLogin = true
+			state.user = provider
+			state.token = provider.mpuser.token
+			uni.setStorage({
+			    key: 'user',  
+			    data: provider  
+			})
 			uni.setStorage({
 			    key: 'token',  
-			    data: provider  
+			    data: provider.mpuser.token
 			})
-			uni.setStorage({
-			    key: 'AuthorizationToken',  
-			    data: provider.token_auth 
-			})
-			//console.log(state.token);
-		},
-		userInfo(state, provider) {
-			state.userInfo = provider;
-			uni.setStorage({
-			    key: 'userInfo',  
-			    data: provider  
-			}) 
-			//console.log(state.userInfo);
 		},
 		logout(state) {
 			state.hasLogin = false;
-			state.userInfo = {};
-			state.token = {};
-			state.AuthorizationToken = '';
+			state.user = {};
+			state.token = ''; 
 			uni.removeStorage({  
-                key: 'userInfo'  
+                key: 'user'  
             })
-			uni.removeStorage({
-			    key: 'AuthorizationToken'  
-			})
 			uni.removeStorage({
 			    key: 'token'  
 			})

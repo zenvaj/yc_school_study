@@ -66,7 +66,7 @@ Vue.prototype.$request = (parament)=>{
 				"Authorization": "Bearer "+ AuthorizationToken,
 			},
 			success: function (result) {
-				//console.error(result);
+				console.error(result);
 				succ.call(self, result.data)
 			},
 			fail: function (e) {

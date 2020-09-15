@@ -2,12 +2,12 @@
     <view class="container">
 		<view class="user-section">
 			<image class="bg" src="/static/user-bg.jpg"></image>
-			<view class="user-info-box">
+			<view class="user-info-box" @click="showuser">
 				<view class="portrait-box">
-					<image class="portrait" :src="userInfo.portrait || '/static/missing-face.png'"></image>
+					<image class="portrait" :src="user.mpuser.headerpic || '/static/missing-face.png'"></image>
 				</view>
 				<view class="info-box">
-					<text class="username">{{userInfo.nickname || '游客'}}</text>
+					<text class="username">{{user.real_name || user.mpuser.nickname || '未登录'}}</text>
 				</view>
 			</view>
 			<view class="vip-card-box">
@@ -81,19 +81,34 @@
 				coverTransform: 'translateY(0px)',
 				coverTransition: '0s',
 				moving: false,
+				headerpic:'/static/missing-face.png',
+				username:"未登录"
 			}
 		},
 		onLoad(){
-			
+			console.log(this.user)
+			if(!this.hasLogin){
+				uni.navigateTo({
+					url :'/pages/public/login'
+				}) 
+			}
+			try{
+				this.headerpic = this.user.mpuser.headerpic || '/static/missing-face.png'
+				this.username = this.user.real_name || this.user.mpuser.nickname || '未登录'
+			}catch (e) {
+				
+			}
 		},
         computed: {
-			...mapState(['hasLogin','userInfo'])
+			...mapState(['hasLogin','user'])
 		},
 		onPageScroll(e) {
 			//console.log(e);
 		},
         methods: {
-
+			showuser(){
+				console.log(this.user)
+			},
 			/**
 			 * 统一跳转接口,拦截未登录路由
 			 * navigator标签现在默认没有转场动画，所以用view
@@ -149,6 +164,8 @@
 				this.moving = false;
 				this.coverTransition = 'transform 0.3s cubic-bezier(.21,1.93,.53,.64)';
 				this.coverTransform = 'translateY(0px)';
+				
+				console.log("触底了 刷新数据")
 			}
         }  
     }  
