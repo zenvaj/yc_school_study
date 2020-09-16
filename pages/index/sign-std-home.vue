@@ -2,14 +2,14 @@
 	<view class="">
 		<scroll-view scroll-x class="bg-white nav">
 			<view class="flex text-center">
-				<view class="cu-item flex-sub" :class="0==TabCur?'bg-gradual-green':''" @tap="tabSelect" :data-id="0">
-					<text class="cuIcon-camerafill"></text> 家长自提
+				<view class="cu-item flex-sub" :class="0==TabCur?'bg-gradual-green1':''" @tap="tabSelect" :data-id="0">
+					<text class="cuIcon-likefill"></text> 家长自提
 				</view>
-				<view class="cu-item flex-sub" :class="1==TabCur?'bg-gradual-blue':''" @tap="tabSelect" :data-id="1">
-					<text class="cuIcon-camerafill"></text> 11路公交
+				<view class="cu-item flex-sub" :class="1==TabCur?'bg-gradual-green2':''" @tap="tabSelect" :data-id="1">
+					<text class="cuIcon-warnfill"></text> 11路公交
 				</view>
-				<view class="cu-item flex-sub" :class="2==TabCur?'bg-gradual-orange':''" @tap="tabSelect" :data-id="2">
-					<text class="cuIcon-camerafill"></text> 送货上门
+				<view class="cu-item flex-sub" :class="2==TabCur?'bg-gradual-green3':''" @tap="tabSelect" :data-id="2">
+					<text class="cuIcon-timefill"></text> 送货上门
 				</view>
 			</view>
 		</scroll-view>
@@ -26,7 +26,9 @@
 				<view class="cu-list menu-avatar" v-if="searchVal">
 					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in studentList" :key="index"
 					 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + index">
-						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ item.headpic}]"></view>
+						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ item.headpic}]">
+							<view class="cu-tag badge" :class="k%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'"></view>
+						</view>
 						<view class="content">
 							<view class="text-grey">{{item.name}}</view>
 							<view class="text-gray text-sm">
@@ -221,5 +223,17 @@
 	}
 	.flex-sub{
 		margin: 0;
+	}
+	.bg-gradual-green1 {
+		background-image: linear-gradient(90deg, #b6e9f0, #6ebcff);
+		color: #ffffff;
+	}
+	.bg-gradual-green2 {
+		background-image: linear-gradient(90deg, #6ebcff, #6ebcff);
+		color: #ffffff;
+	}
+	.bg-gradual-green3 {
+		background-image: linear-gradient(90deg, #6ebcff, #b6e9f0);
+		color: #ffffff;
 	}
 </style>

@@ -1,21 +1,6 @@
 <template>
 	<view>
-		<view class="cu-bar bg-white fixed" @tap="goTop" :style="[{top:'0px'},{height:(StatusBar+CustomBar) + 'px'}]">
-			<view class="flex align-center" @tap.stop="groupSelf">
-				<!-- <view class="cu-avatar round lg" :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);'"></view> -->
-				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+userInfo.headpic+')'}"></view>
-				<view class="padding-lr text-lg">走走停停</view>
-			</view>
-			<view class="cu-btn bg-gradual-blue shadow cuIcon fixed more" :style="{top:(StatusBar+CustomBar)+'px',left:'60rpx'}"  @tap.stop="goBack">
-				<text class="cuIcon-pullleft"></text>
-			</view>
-			<view class="cu-btn bg-cyan shadow cuIcon fixed more" :style="{top:(StatusBar+CustomBar) + 'px'}"  @tap.stop="navaTo('/pages/group/new-speak')">
-				<text class="cuIcon-forward"></text>
-			</view>
-			
-		</view>
-		<view class="" :style="[{height:(StatusBar + CustomBar) + 'px'}]"></view>
-		<!-- <view class="cu-tabbar-height"></view> -->
+		
 		<listCardGroup :newsList="newsList" @cardDetail="cardDetail"></listCardGroup>
 	</view>
 </template>

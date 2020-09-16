@@ -1,7 +1,7 @@
 <template>  
     <view class="container">
 		<view class="user-section">
-			<image class="bg" src="/static/user-bg.jpg"></image>
+			<image class="bg" src="/static/bg-imag-004.jpg"></image>
 			<view class="user-info-box" @click="showuser">
 				<view class="portrait-box">
 					<image class="portrait" :src="user.mpuser.headerpic || '/static/missing-face.png'"></image>

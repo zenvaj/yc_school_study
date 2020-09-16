@@ -12,13 +12,31 @@
 			<view class="cu-timeline" v-for="(item,index) in sign_list" :key="index">
 				<view class="cu-time">{{index}}</view>
 				<view class="cu-item cur" :class="v.is_special?'cuIcon-noticefill':(v.type=='到校签到'?'cuIcon-evaluate_fill text-green':'text-blue')" v-for="(v,k) in item" :key="k">
-					<view class="content shadow-blur" :class="v.is_special?'bg-grey':(v.type=='到校签到'?'bg-green':'bg-blue')">
-						<text>{{v.created_at}}</text> 【{{v.type}}】由{{v.t_name}}确认，{{v.u_name}}已经在 [{{v.position}}] {{v.special_des}}
+					<view class="cu-avatar radius margin-right fixed" :style="[{ backgroundImage:'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)' }]">
+						<view class="cu-tag badge" :class="k%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'"></view>
+					</view>
+					<view class="content shadow-blur" :class="v.is_special?'bg-grey':(v.type=='到校签到'?'bg-green':'bg-blue')" @tap="SignImage(v.images)">
+						<text>{{v.created_at}}</text> 【{{v.type}}】由{{v.t_name}}确认，
+							
+							{{v.u_name}}已经在 [{{v.position}}] {{v.special_des}}
 					</view>
 				</view>
 			</view>
 			
-			
+		</view>
+		<view class="cu-modal" :class="modalShow?'show':''">
+			<view class="cu-dialog">
+				<view class="bg-img" :style="'background-image: url('+this.image_url+');'" style="height:400rpx;">
+					<view class="cu-bar justify-end text-white">
+						<view class="action" @tap="modalShow = false">
+							<text class="cuIcon-close "></text>
+						</view>
+					</view>
+				</view>
+				<view class="cu-bar bg-white">
+					<view class="action margin-0 flex-sub  solid-left" @tap="modalShow = false">我知道了</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -31,6 +49,14 @@
 		},
 		data(){
 			return{
+				avatar: [
+					'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+					'https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg',
+					'https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg',
+					'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg'
+				],
+				modalShow:false,
+				image_url:"",
 				date:"2020-02-02",
 				sign_list:{
 					"2020-09-16": [
@@ -220,7 +246,26 @@
 						title:"出错啦"
 					})
 				}
-			}
+			},
+			SignImage(image){
+				this.image_url = 'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg'
+				this.modalShow = true
+			},
+			onPullDownRefresh() {
+				this.isFresh = false
+				console.log('refresh');
+				setTimeout(function () {
+					uni.stopPullDownRefresh();
+					this.isFresh = true
+					console.log(this.isFresh);
+				}, 1000);
+			},
+			onReachBottom() {
+				console.log('onReachBottom');
+				setTimeout(function () {
+					uni.stopPullDownRefresh();
+				}, 1000);
+			},
 		}
 	}
 </script>
@@ -233,5 +278,11 @@
 	    font-size: 26rpx;
 	    color: #888;
 	    display: block;
+	}
+	.cu-avatar{
+		position: absolute;
+		left: 34rpx;
+		top: 44rpx;
+		z-index: 10;
 	}
 </style>

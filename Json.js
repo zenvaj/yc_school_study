@@ -849,18 +849,15 @@ const courseTableList = [
 				{course_id:1,title:'上午第一节',name:"英语",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'上午第二节',name:"数学",teacher_:5,teacher_name:"林老师"},
 				{course_id:3,title:'上午第三节',name:"语文",teacher_:5,teacher_name:"姜老师"},
-				{course_id:3,title:'上午第四节',name:"语文",teacher_:5,teacher_name:"姜老师"},
 			],
 			[
 				{course_id:1,title:'下午第一节',name:"物理",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'下午第二节',name:"化学",teacher_:5,teacher_name:"林老师"},
-				{course_id:3,title:'下午第三节',name:"生物",teacher_:5,teacher_name:"姜老师"},
-				{course_id:3,title:'下午第四节',name:"单词突击",teacher_:5,teacher_name:"姜老师"},
+				{course_id:3,title:'下午第三节',name:"单词突击",teacher_:5,teacher_name:"姜老师"},
 			],
 			[
 				{course_id:1,title:'晚辅第一节',name:"政治",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'晚辅第二节',name:"历史",teacher_:5,teacher_name:"林老师"},
-				{course_id:3,title:'晚辅第三节',name:"地理",teacher_:5,teacher_name:"姜老师"},
 			],
 			
 		]
@@ -878,13 +875,11 @@ const courseTableList = [
 			[
 				{course_id:1,title:'下午第一节',name:"物理",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'下午第二节',name:"化学",teacher_:5,teacher_name:"林老师"},
-				{course_id:3,title:'下午第三节',name:"生物",teacher_:5,teacher_name:"姜老师"},
 				{course_id:3,title:'下午第四节',name:"单词突击",teacher_:5,teacher_name:"姜老师"},
 			],
 			[
 				{course_id:1,title:'晚辅第一节',name:"政治",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'晚辅第二节',name:"历史",teacher_:5,teacher_name:"林老师"},
-				{course_id:3,title:'晚辅第三节',name:"地理",teacher_:5,teacher_name:"姜老师"},
 			],
 			
 		]
@@ -902,13 +897,11 @@ const courseTableList = [
 			[
 				{course_id:1,title:'下午第一节',name:"物理",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'下午第二节',name:"化学",teacher_:5,teacher_name:"林老师"},
-				{course_id:3,title:'下午第三节',name:"生物",teacher_:5,teacher_name:"姜老师"},
 				{course_id:3,title:'下午第四节',name:"单词突击",teacher_:5,teacher_name:"姜老师"},
 			],
 			[
 				{course_id:1,title:'晚辅第一节',name:"政治",teacher_:5,teacher_name:"刘老师"},
 				{course_id:2,title:'晚辅第二节',name:"历史",teacher_:5,teacher_name:"林老师"},
-				{course_id:3,title:'晚辅第三节',name:"地理",teacher_:5,teacher_name:"姜老师"},
 			],
 			
 		]

@@ -70,18 +70,15 @@
 						{course_id:0,title:'上午第一节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 						{course_id:0,title:'上午第二节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 						{course_id:0,title:'上午第三节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
-						{course_id:0,title:'上午第四节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 					],
 					[
 						{course_id:0,title:'下午第一节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 						{course_id:0,title:'下午第二节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 						{course_id:0,title:'下午第三节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
-						{course_id:0,title:'下午第四节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 					],
 					[
 						{course_id:0,title:'晚辅第一节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 						{course_id:0,title:'晚辅第二节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
-						{course_id:0,title:'晚辅第三节',name:"选择课程",teacher_:0,teacher_name:"选择教师"},
 					],
 				],
 				allCourseList:[],

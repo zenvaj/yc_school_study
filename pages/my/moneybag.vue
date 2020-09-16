@@ -1,7 +1,7 @@
 <template>  
     <view class="container">
 		<view class="user-section">
-			<image class="bg" src="/static/user-bg.jpg"></image>
+			<image class="bg" src="/static/bg-imag-002.jpg"></image>
 			<view class="vip-card-box">
 				<view class="b-btn" @click="navToNologin('/pages/public/content?title=查看攻略')">
 					查看攻略

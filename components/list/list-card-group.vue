@@ -1,7 +1,7 @@
 <template>
 	<view class="cu-card dynamic">
 		<view class="cu-item shadow" v-for="(item,index) in newsList" :key="index">
-			<view class="cu-list menu-avatar">
+			<view class="cu-list menu-avatar" @click="UserGroup(item.id)">
 				<view class="cu-item">
 					<view class="cu-avatar round lg" :style="'background-image:url('+item.headpic+');'"></view>
 					<view class="content flex-sub">
@@ -50,6 +50,9 @@
 			},
 			cardDetail(newsid){
 				this.$emit("cardDetail",newsid)
+			},
+			UserGroup(newsid){
+				this.$emit("UserGroup",newsid)
 			}
 		}
 	}

@@ -18,8 +18,8 @@
 				{{item}}
 			</view>
 		</scroll-view>
-		<view class="course-table margin-top-sm" v-for="(table,t_index) in courseList" :key="t_index">
-			<view class="cu-form-group" v-for="(item,i_index) in table" :key="i_index">
+		<view class="course-table text-sm margin-top-sm" v-for="(table,t_index) in courseList" :key="t_index">
+			<view class="cu-form-group " v-for="(item,i_index) in table" :key="i_index">
 				<view class="title">{{item.title}}</view>
 				<view class="picker">
 					{{item.name||'无课程'}}
@@ -61,18 +61,15 @@
 						{course_id:0,title:'上午第一节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 						{course_id:0,title:'上午第二节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 						{course_id:0,title:'上午第三节',name:"无课程",teacher_:0,teacher_name:"无教师"},
-						{course_id:0,title:'上午第四节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 					],
 					[
 						{course_id:0,title:'下午第一节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 						{course_id:0,title:'下午第二节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 						{course_id:0,title:'下午第三节',name:"无课程",teacher_:0,teacher_name:"无教师"},
-						{course_id:0,title:'下午第四节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 					],
 					[
 						{course_id:0,title:'晚辅第一节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 						{course_id:0,title:'晚辅第二节',name:"无课程",teacher_:0,teacher_name:"无教师"},
-						{course_id:0,title:'晚辅第三节',name:"无课程",teacher_:0,teacher_name:"无教师"},
 					],
 				],
 				allCourseList:'',

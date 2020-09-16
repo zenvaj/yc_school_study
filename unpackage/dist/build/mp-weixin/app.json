@@ -83,8 +83,13 @@
       }
     ]
   },
-  "permission": {},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "培训班接送孩子定位，家长确认到家定位"
+    }
+  },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

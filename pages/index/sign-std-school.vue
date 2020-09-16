@@ -34,7 +34,9 @@
 				<view class="cu-list menu-avatar" v-if="searchVal">
 					<view class="cu-item" :class="stdSelectedIndex=='move-box-'+ index?'move-cur':''" v-for="(item,index) in studentList" :key="index"
 					 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + index">
-						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ item.headpic}]"></view>
+						<view class="cu-avatar round lg" :style="[{backgroundImage:'url('+ item.headpic}]">
+							<view class="cu-tag badge" :class="k%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'"></view>
+						</view>
 						<view class="content">
 							<view class="text-grey">{{item.name}}</view>
 							<view class="text-gray text-sm">

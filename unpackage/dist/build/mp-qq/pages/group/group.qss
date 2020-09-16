@@ -1,0 +1,1 @@
+.headerpic{position:absolute;z-index:10;top:82px;left:8px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:end;-webkit-align-items:flex-end;align-items:flex-end}

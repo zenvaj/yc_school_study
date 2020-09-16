@@ -5,7 +5,7 @@
 				<text class="cuIcon-title text-orange"></text> 课程信息 {{courseInfo.date}},{{courseInfo.course_name}}••••••
 			</view>
 			<view class="action">
-				<button class="cu-btn bg-green shadow" @click.stop="planNew">新增</button>
+				<button class="cu-btn bg-green sm shadow" @click.stop="planNew">新增</button>
 			</view>
 		</view>
 		<view class="cu-modal" :class="newPlan?'show':''">
@@ -57,7 +57,7 @@
 						<view class="cu-tag bg-cyan">古诗四首</view>
 						<view class="cu-tag line-cyan">满分（10）</view>
 					</view>
-					<button class="cu-btn line-blue shadow margin-left" @click="planEdit(planDataNew)">修改</button>
+					<button class="cu-btn line-blue shadow sm margin-left" @click="planEdit(planDataNew)">修改</button>
 					<view class="margin-top">这是第一次，我家的铲屎官他狠狠地吼上10分钟，然后再看心情要不要他进门。</view>
 				</view>
 			</view>
@@ -70,7 +70,7 @@
 						<view class="cu-tag bg-cyan">古诗朗诵</view>
 						<view class="cu-tag line-cyan">额外加分（10）</view>
 					</view>
-					<button class="cu-btn line-blue shadow margin-left" @click="planEdit(planDataNew)">修改</button>
+					<button class="cu-btn line-blue shadow sm margin-left" @click="planEdit(planDataNew)">修改</button>
 					<view class="margin-top">这是第一次，我家的铲屎官他狠狠地吼上10分钟，然后再看心情要不要他进门。</view>
 				</view>
 			</view>

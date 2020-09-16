@@ -1,15 +1,31 @@
 <template>
 	<view>
-		<view class="cu-bar bg-white fixed" @tap="goTop" :style="[{Top:'0px'},{height:(StatusBar+CustomBar) + 'px'}]">
-			<view class="flex align-center" @tap.stop="groupSelf">
+		<!-- #ifdef H5 -->
+		<view class="cu-bar bg-white fixed" @tap="goTop" :style="[{Top:'0px'},{height:(0) + 'px'}]">
+		<!-- #endif -->
+		<!-- #ifndef H5 -->
+		<view class="cu-bar bg-white fixed" @tap="goTop" :style="[{Top:'0px'},{height:(0) + 'px'}]">
+		<!-- #endif -->
+		
+			<view class="headerpic" @tap.stop="groupSelf">
 				<!-- <view class="cu-avatar round lg" :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);'"></view> -->
 				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+userInfo.headpic+')'}"></view>
 				<view class="padding-lr text-lg">走走停停</view>
+				<view class="cu-btn sm bg-gradual-blue shadow cuIcon" @tap.stop="navaTo('/pages/group/new-speak')">
+					<text class="cuIcon-forward"></text>
+				</view>
+				<view class="cu-btn sm margin-left shadow cuIcon" :class="self_show?'bg-gradual-green':''" @tap.stop="self_show = !self_show">
+					<text class="cuIcon-profile"></text>
+				</view>
+				<view class="cu-btn bg-gradual-orange margin-left shadow cuIcon lg" @tap.stop="navaTo('/pages/group/shop')">
+					<text class="cuIcon-shop lg"></text>
+				</view>
 			</view>
-		</view>
-		<view class="" :style="[{height:(StatusBar + CustomBar) + 'px'}]"></view>
+			<image src="/static/bg-imag-101.jpg" mode="scaleToFill" class="response"></image>
+		</view> 
+		<view class="" :style="[{height:'140px'}]"></view>
 		<!-- <view class="cu-tabbar-height"></view> -->
-		<listCardGroup :newsList="newsList" @cardDetail="cardDetail"></listCardGroup>
+		<listCardGroup :newsList="newsList" @cardDetail="cardDetail" @UserGroup="UserGroup"></listCardGroup>
 	</view>
 </template>
 
@@ -18,6 +34,7 @@
 	export default {
 		data() {
 			return {
+				self_show:false,
 				userInfo:{headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg"},
 				newsList:[{
 						id:1,
@@ -142,10 +159,16 @@
 					url:'/pages/public/card-detail?id='+newsid
 				})
 			},
+			UserGroup(newsid,type){
+				console.log('UserGroup',newsid,type)
+				uni.navigateTo({
+					url:'/pages/group/center?id='+newsid
+				})
+			},
 			groupSelf(){
 				console.log("进入自己的朋友圈")
 				uni.navigateTo({
-					url:'/pages/group/center'
+					url:'/pages/group/new-speak'
 				})
 			},
 			goTop(){
@@ -154,6 +177,11 @@
 				    scrollTop: 0,
 				    duration: 300
 				});
+			},
+			navaTo(url){
+				uni.navigateTo({
+					url
+				})
 			}
 		},
 		onPullDownRefresh() {
@@ -175,6 +203,13 @@
 </script>
 
 <style lang="scss">
-	
+	.headerpic{
+		position: absolute;
+		z-index: 10;
+		top: 82px;
+		left: 8px;
+		display: flex;
+		align-items: flex-end;
+	}
 	
 </style>

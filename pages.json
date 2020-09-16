@@ -76,7 +76,7 @@
             "path" : "pages/my/moneybag",
             "style" : {
 				"navigationBarTitleText": "钱包",
-				"navigationBarBackgroundColor": "#fce3cc"
+				"navigationBarBackgroundColor": "#5c6ba4"
 			}
         }
 		,{
@@ -126,8 +126,7 @@
 		{
 		    "path" : "pages/group/center",
 		    "style" : {
-				"navigationBarTitleText": "我的圈子",
-				"navigationStyle":"custom"
+				"navigationBarTitleText": "我的圈子"
 			}
 		},
 		{
@@ -141,7 +140,7 @@
 		    "path" : "pages/my/money-detail",
 		    "style" : {
 				"navigationBarTitleText": "钱包详情",
-				"navigationBarBackgroundColor": "#fce3cc"
+				"navigationBarBackgroundColor": "#85afc3"
 			}
 		},
 		{
@@ -258,7 +257,8 @@
 		{
 		    "path" : "pages/index/sign-std-log",
 		    "style" : {
-				"navigationBarTitleText": "签到记录"
+				"navigationBarTitleText": "签到记录",
+				"enablePullDownRefresh":true
 			}
 		},
 		{
