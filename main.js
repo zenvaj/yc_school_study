@@ -49,6 +49,9 @@ Vue.prototype.$store = store;
 Vue.prototype.$api = {msg, json, prePage};
 
 Vue.prototype.$request = (parament)=>{
+	uni.showLoading({
+		title:"加载中..."
+	})
 	let header = parament.header || "application/json";
 	let base_url = "https://app.wfycjy.com";
 	let AuthorizationToken = uni.getStorageSync("AuthorizationToken");
@@ -72,6 +75,9 @@ Vue.prototype.$request = (parament)=>{
 			fail: function (e) {
 				console.log("token : "+AuthorizationToken)
 				error.call(self, e)
+			},
+			complete:function(){
+				uni.hideLoading()
 			}
 		})
 	})

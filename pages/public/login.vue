@@ -57,15 +57,20 @@
 			<view class="footer-other flex">
 				<!-- #ifdef MP-QQ -->
 				<view class="other-list">
-					<image src="../../static/ic-QQ@2x.png" mode="aspectFill" @tap="login_qq()"></image>
+					<button class="cu-btn cuIcon lg" open-type="getUserInfo" @getuserinfo="login_qq" withCredentials="true">
+						<image src="../../static/ic-QQ@2x.png" mode="aspectFill"></image>
+					</button>
 				</view>
 				<!-- #endif -->
 				<!-- #ifdef MP-WEIXIN -->
 				<view class="other-list">
-					<image src="../../static/ic-weixin@2x.png" mode="aspectFill" @tap="login_weixin()"></image>
+					<button class="cu-btn cuIcon lg" open-type="getUserInfo" @getuserinfo="login_weixin" withCredentials="true">
+						<image src="../../static/ic-weixin@2x.png" mode="aspectFill"></image>
+					</button>
 				</view>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
+				
 				<!-- #endif -->
 			</view>
 		</view>
@@ -137,6 +142,12 @@
 				uni.navigateBack();
 			},
 			async toLogin(){
+				if(1){
+					uni.showModal({
+						content:"账号登录维护。"
+					})
+					return;
+				}
 				uni.showLoading({
 					title: '登陆中...',
 					mask: true
@@ -154,81 +165,76 @@
 			// #1ifdef MP-QQ
 			//QQ登录
 			login_qq() {
-				// uni.getProvider({
-				//     service: 'oauth',
-				//     success: function (res) {
-				//         console.log(res.provider)
-				//         if (~res.provider.indexOf('qq')) {
-				//             uni.login({
-				//                 provider: 'qq',
-				//                 success: function (loginRes) {
-				//                     console.log(JSON.stringify(loginRes));
-				//                 }
-				//             });
-				//         }
-				//     }
-				// });
-				// return;
-				// qq.getSetting({ 
-				//    success(res) {
-				//       console.log(res.authSetting)
-				//    }
-				// })
-				// return
 				uni.showLoading({
 					title: '登陆中...',
 					mask: true
 				});
 				this.auth_type = 'qq_auth'
-				uni.login({
-					provider: 'qq',
-					success: (loginRes) => {
-						// 获取用户信息
-						uni.getUserInfo({
-							provider: 'qq',
-							success: async (infoRes) => {
-								//console.log('qq2',loginRes)
-								//console.log('qq3',infoRes)
-								// 获取用户信息 openid
-								const userInfo = await this.$request({
-									method:'/api/auth_qq',
-									data:{js_code:loginRes.code,infoRes:infoRes.userInfo}
-								})
-								this.auth_userinfo = userInfo.data
-								// this.$request({
-								// 	method:'/api/test/logsave',
-								// 	data:{loginRes:loginRes,infoRes:infoRes}
-								// });
-								if(this.auth_userinfo.userid > 0){
-									//用qq openid的方式去登录
-									let data = {openid:this.auth_userinfo.openid,type:this.auth_type,method:"login"}
-									this.auth_login(data)
-								}else{
-									//重新注册还是绑定已有账号
-									this.isModal = true
+				uni.getProvider({
+				    service: 'oauth',
+				    success:  (res)=> {
+				        console.log(res.provider)
+				        if (~res.provider.indexOf('qq')) {
+				            uni.login({
+				                provider: 'qq',
+				                success: (loginRes) => {
+				                    console.log(JSON.stringify(loginRes));
+									// 获取用户信息
+									uni.getUserInfo({
+										provider: 'qq',
+										success: async (infoRes) => {
+											//console.log('qq2',loginRes)
+											//console.log('qq3',infoRes) 
+											if(!loginRes.code){
+												uni.showModal({
+													content:"授权码错误。"
+												})
+												uni.hideLoading();
+												return;
+											}
+											// 获取用户信息 openid
+											const userInfo = await this.$request({
+												method:'/api/auth_qq',
+												data:{js_code:loginRes.code,infoRes:infoRes.userInfo}
+											})
+											this.auth_userinfo = userInfo.data 
+											if(this.auth_userinfo.userid > 0){
+												//用qq openid的方式去登录
+												let data = {openid:this.auth_userinfo.openid,type:this.auth_type,method:"login"}
+												this.auth_login(data)
+											}else{
+												//重新注册还是绑定已有账号
+												this.isModal = true
+												uni.hideLoading();
+											}
+										},
+										fail :(e)=>{
+											console.log(e);
+											this.$request({
+												method:'/api/test/logsave',
+												data:{'uni.getuserinfo.fail qq':e}
+											});
+											uni.showModal({
+												content:"获取信息未知错误。"
+											})
+											uni.hideLoading();
+										}
+									});
+				                },
+								fail :(e)=>{
+									console.log(e);
+									this.$request({
+										method:'/api/test/logsave',
+										data:{'uni.login.fail qq':e}
+									});
+									uni.showModal({
+										content:"授权未知错误。"
+									})
 									uni.hideLoading();
 								}
-							},
-							fail :(e)=>{
-								console.log(e);
-								this.$request({
-									method:'/api/test/logsave',
-									data:{'uni.getuserinfo.fail qq':e}
-								});
-								this.$api.msg("获取信息未知错误");
-								uni.hideLoading();
-							}
-						});
-					},
-					fail :(e) =>{
-						console.log(e);
-						this.$request({
-							method:'/api/test/logsave',
-							data:{'uni.login.fail qq':e}
-						});
-						this.$api.msg("未知登录错误");
-						uni.hideLoading();
-					}
+				            });
+				        }
+				    }
 				});
 			},
 			// #1endif
@@ -248,16 +254,17 @@
 							success: async (infoRes) => {
 								//console.log('weixin1',loginRes)
 								//console.log('weixin2',infoRes)
+								if(!loginRes.code){
+									uni.showModal({content:"授权码错误。"})
+									uni.hideLoading();
+									return;
+								}
 								// 获取用户信息 openid
 								const userInfo = await this.$request({
 									method:'/api/auth_wx',
 									data:{js_code:loginRes.code,infoRes:infoRes.userInfo}
 								})
-								this.auth_userinfo = userInfo.data
-								// this.$request({
-								// 	method:'/api/test/logsave',
-								// 	data:{'uni.getuserinfo.success':userInfo}
-								// });
+								this.auth_userinfo = userInfo.data 
 								if(this.auth_userinfo.userid > 0){
 									//用微信openid的方式去登录
 									let data = {openid:this.auth_userinfo.openid,type:this.auth_type,method:"login"}
@@ -274,7 +281,7 @@
 									method:'/api/test/logsave',
 									data:{'uni.getuserinfo.fail wx':e}
 								});
-								this.$api.msg("获取信息未知错误");
+								uni.showModal({content:"获取信息未知错误。"})
 								uni.hideLoading();
 							}
 						})
@@ -285,7 +292,7 @@
 							method:'/api/test/logsave',
 							data:{'uni.login.fail wx':e}
 						});
-						this.$api.msg("未知登录错误");
+						uni.showModal({content:"授权登录未知错误。"})
 						uni.hideLoading();
 					}
 				})

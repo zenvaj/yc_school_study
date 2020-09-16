@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 13:
-/*!********************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/Json.js ***!
-  \********************************************************************/
+/*!*********************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/Json.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9977,9 +9977,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!********************************************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/components/u-charts/u-charts.js ***!
-  \********************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/components/u-charts/u-charts.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15035,9 +15035,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 4:
-/*!***********************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/pages.json ***!
-  \***********************************************************************/
+/*!************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/pages.json ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15046,9 +15046,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 409:
-/*!******************************************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/components/uni-icons/icons.js ***!
-  \******************************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15188,9 +15188,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 5:
-/*!***************************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/store/index.js ***!
-  \***************************************************************************/
+/*!****************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/store/index.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15203,7 +15203,7 @@ _vue.default.use(_vuex.default);
 var store = new _vuex.default.Store({
   state: {
     hasLogin: false,
-    user: {},
+    user: { mpuser: { nickname: "游客", headerpic: '/static/logo_yingchao.png' } },
     token: '' },
 
   mutations: {

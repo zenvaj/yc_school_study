@@ -87,16 +87,10 @@
 		},
 		onLoad(){
 			console.log(this.user)
-			if(!this.hasLogin){
+			if(0&&!this.hasLogin){
 				uni.navigateTo({
 					url :'/pages/public/login'
 				}) 
-			}
-			try{
-				this.headerpic = this.user.mpuser.headerpic || '/static/missing-face.png'
-				this.username = this.user.real_name || this.user.mpuser.nickname || '未登录'
-			}catch (e) {
-				
 			}
 		},
         computed: {

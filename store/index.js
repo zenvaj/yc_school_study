@@ -6,7 +6,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
 		hasLogin: false,
-		user: {},
+		user: {mpuser:{nickname:"游客",headerpic:'/static/logo_yingchao.png'}},
 		token:'',
 	},
 	mutations: {
