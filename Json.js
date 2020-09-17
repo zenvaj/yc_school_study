@@ -52,6 +52,12 @@ const menuGridList =  [{
 		cuIcon: 'form',
 		color: 'yellow',
 		badge: 0,
+		name: '课程表',
+		path: '/pages/study/course-show'
+	},{
+		cuIcon: 'form',
+		color: 'yellow',
+		badge: 0,
 		name: '课表',
 		path: '/pages/study/course-table'
 	},{

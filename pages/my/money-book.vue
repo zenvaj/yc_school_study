@@ -45,42 +45,7 @@
 			<view class="">
 				<button class="cu-btn round bg-blue sm margin-left" type="primary" @tap="newLog = true">新增记录</button>
 			</view>
-			<view class="cu-modal" :class="newLog?'show':''">
-				<view class="cu-dialog">
-					<view class="cu-bar bg-white justify-end">
-						<view class="content">新增记账记录
-						</view>
-						<view class="action" @tap="newLog = false">
-							<text class="cuIcon-close text-red"></text>
-						</view>
-					</view>
-					<view class="">
-						<view class="cu-form-group margin-top-sm">
-							<view class="title">记录标题</view>
-							<input placeholder="账本记录的简短标题" @input="Input('title',$event)">
-						</view>
-						<view class="cu-form-group ">
-							<view class="title">记录描述</view>
-							<input placeholder="账本记录的描述" @input="Input('des',$event)">
-						</view>
-						<view class="cu-form-group ">
-							<view class="title">记录金额</view>
-							<input placeholder="账本记录金额" @input="Input('money',$event)">
-						</view>
-						<view class="cu-form-group">
-							<view class="title">记录类型</view>
-							<switch @change="moneyLogNew.isIn = !moneyLogNew.isIn" class="checked"></switch>
-						</view>
-					</view>
-					<view class="cu-bar bg-white justify-end margin-top-sm">
-						<view class="action">
-							<button class="cu-btn line-green text-green" @tap="newLog = false">取消</button>
-							<button class="cu-btn bg-green margin-left" @tap="newLogConfirm">确定</button>
 			
-						</view>
-					</view>
-				</view>
-			</view>
 		</view>
 		<!-- #ifdef H5 -->
 		<view class="cu-list menu-avatar " :style="{marginTop:(StatusBar*2+CustomBar*2 + 90) + 'rpx'}">
@@ -104,6 +69,41 @@
 				</view>
 			</view>
 		</view>
+		<view class="cu-modal" :class="newLog?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar bg-white justify-end">
+					<view class="content">新增记账记录
+					</view>
+					<view class="action" @tap="newLog = false">
+						<text class="cuIcon-close text-red"></text>
+					</view>
+				</view>
+				<view class="">
+					<view class="cu-form-group margin-top-sm">
+						<view class="title">记录标题</view>
+						<input placeholder="账本记录的简短标题" @input="Input('title',$event)">
+					</view>
+					<view class="cu-form-group ">
+						<view class="title">记录描述</view>
+						<input placeholder="账本记录的描述" @input="Input('des',$event)">
+					</view>
+					<view class="cu-form-group ">
+						<view class="title">记录金额</view>
+						<input placeholder="账本记录金额" @input="Input('money',$event)">
+					</view>
+					<view class="cu-form-group">
+						<view class="title">记录类型</view>
+						<switch @change="moneyLogNew.isIn = !moneyLogNew.isIn" class="checked"></switch>
+					</view>
+				</view>
+				<view class="cu-bar bg-white justify-end margin-top-sm">
+					<view class="action">
+						<button class="cu-btn line-green text-green" @tap="newLog = false">取消</button>
+						<button class="cu-btn bg-green margin-left" @tap="newLogConfirm">确定</button>
+		
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
