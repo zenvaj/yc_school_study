@@ -32,13 +32,13 @@
 				</view>
 			</view>
 			<view class="tj-sction">
-				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=分红')">
-					<text class="num">1028.8</text>
-					<text>分红</text>
-				</view>
 				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=红包')">
 					<text class="num">2000</text>
 					<text>红包</text>
+				</view>
+				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=分红')">
+					<text class="num">1028.8</text>
+					<text>分红</text>
 				</view>
 				<view class="tj-item" @tap="navTo('/pages/my/money-detail?type=成本')">
 					<text class="num">2000</text>

@@ -45,13 +45,24 @@
 		},
 		methods: {
 			async swiperInit(){
-				this.swiperList = await this.$api.json('swiperList')
+				const result = await this.$request({
+					method:'/api/banner',
+					data:{}
+				})
+				console.log(result)
+				if(result.code !== 10000){
+					uni.showModal({
+						content:result.msg
+					})
+					return;
+				}
+				this.swiperList = result.data
 			},
 			//轮播点击方法
-			navigeteBanner(id,type){
-				console.log('navigeteBanner',id,type)
+			navigeteBanner(title,content){
+				console.log('navigeteBanner',title,content)
 				uni.navigateTo({
-					url:'/pages/public/content?id='+id
+					url:'/pages/public/content?title='+title+'&content='+content
 				})
 			},
 			async menuGridInit(){

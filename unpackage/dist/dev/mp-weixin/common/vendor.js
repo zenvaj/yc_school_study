@@ -904,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 13:
-/*!********************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/Json.js ***!
-  \********************************************************************/
+/*!*********************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/Json.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2018,96 +2018,6 @@ var menuGridList = [{
   name: '课堂点评',
   path: '/pages/study/course-comment' },
 {
-  cuIcon: 'moneybag',
-  color: 'purple',
-  badge: 0,
-  name: '钱包',
-  path: '/pages/my/moneybag' },
-{
-  cuIcon: 'question',
-  color: 'mauve',
-  badge: 0,
-  name: '帮助教程',
-  path: '/pages/public/content?title=帮助教程' },
-{
-  cuIcon: 'group',
-  color: 'purple',
-  badge: 0,
-  name: '我的圈子',
-  path: '/pages/group/center' },
-{
-  cuIcon: 'list',
-  color: 'purple',
-  badge: 0,
-  name: '收支记录',
-  path: '/pages/my/money-log' },
-{
-  cuIcon: 'settings',
-  color: 'purple',
-  badge: 0,
-  name: '设置',
-  path: '/pages/my/set' },
-{
-  cuIcon: 'close',
-  color: 'purple',
-  badge: 0,
-  name: '错题本',
-  path: '/pages/study/book_question' },
-{
-  cuIcon: 'addressbook',
-  color: 'purple',
-  badge: 0,
-  name: '绑定用户',
-  path: '/pages/my/bind' },
-{
-  cuIcon: 'profile',
-  color: 'purple',
-  badge: 0,
-  name: '邀请',
-  path: '/pages/my/make-join' },
-{
-  cuIcon: 'forward',
-  color: 'purple',
-  badge: 0,
-  name: '发布动态',
-  path: '/pages/group/new-speak' },
-{
-  cuIcon: 'shop',
-  color: 'purple',
-  badge: 0,
-  name: '商圈',
-  path: '/pages/group/shop' },
-{
-  cuIcon: 'share',
-  color: 'purple',
-  badge: 0,
-  name: '分享',
-  path: '/pages/public/share' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '好友',
-  path: '/pages/my/friend' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '标签',
-  path: '/pages/my/marks' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '地址',
-  path: '/pages/my/address' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '消息列表',
-  path: '/pages/my/msg-list' },
-{
   cuIcon: 'friend',
   color: 'purple',
   badge: 0,
@@ -2125,42 +2035,6 @@ var menuGridList = [{
   badge: 0,
   name: '提现',
   path: '/pages/my/take-cash' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '龙虎榜',
-  path: '/pages/index/best-user' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '孩子钱包',
-  path: '/pages/my/baby-money' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '挖宝',
-  path: '/pages/my/dig-money' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '课本',
-  path: '/pages/study/book' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '课后习题',
-  path: '/pages/study/book_question' },
-{
-  cuIcon: 'friend',
-  color: 'purple',
-  badge: 0,
-  name: '记账本',
-  path: '/pages/my/money-book' },
 {
   cuIcon: 'more',
   color: 'mauve',
@@ -8627,7 +8501,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8648,14 +8522,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8740,7 +8614,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9970,9 +9844,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!********************************************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/components/u-charts/u-charts.js ***!
-  \********************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/components/u-charts/u-charts.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15028,9 +14902,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 4:
-/*!***********************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/pages.json ***!
-  \***********************************************************************/
+/*!************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/pages.json ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15038,10 +14912,10 @@ if ( true && typeof module.exports === "object") {
 
 /***/ }),
 
-/***/ 411:
-/*!******************************************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/components/uni-icons/icons.js ***!
-  \******************************************************************************************/
+/***/ 419:
+/*!*******************************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15181,9 +15055,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 5:
-/*!***************************************************************************!*\
-  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/store/index.js ***!
-  \***************************************************************************/
+/*!****************************************************************!*\
+  !*** D:/工作/code/yc_shool_study/yc_school_study/store/index.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

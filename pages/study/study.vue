@@ -129,14 +129,14 @@
 						cuIcon: 'discoverfill',
 						color: 'purple',
 						badge: 0,
-						name: '知识树',
-						path: '/pages/public/content'
+						name: '课程表',
+						path: '/pages/study/course-show'
 					},{
 						cuIcon: 'clothesfill',
 						color: 'blue',
 						badge: 0,
-						name: '搜题',
-						path: '/pages/public/content'
+						name: '签到记录',
+						path: '/pages/index/sign-std-log'
 					},{
 						cuIcon: 'brandfill',
 						color: 'mauve',

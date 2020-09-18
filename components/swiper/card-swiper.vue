@@ -3,8 +3,8 @@
 	 :autoplay="true" interval="5000" duration="500" @change="cardSwiper" indicator-color="#8799a3"
 	 indicator-active-color="#0081ff">
 		<swiper-item v-for="(item,index) in swiperList" :key="index" :class="cardCur==index?'cur':''">
-			<view class="swiper-item" @click="imgClick(item.id,item.type)">
-				<image :src="item.url" mode="aspectFill" ></image>
+			<view class="swiper-item" @click="imgClick(item.title)">
+				<image :src="item.image" mode="aspectFill" ></image>
 			</view>
 		</swiper-item>
 	</swiper>
@@ -27,9 +27,9 @@
 			cardSwiper(e) {
 				this.cardCur = e.detail.current
 			},
-			imgClick(id,type){
-				console.log('imgClick',id,type);
-				this.$emit('imgClick',id,type);
+			imgClick(title){
+				console.log('imgClick',title);
+				this.$emit('imgClick',title);
 			}
 		}
 	}

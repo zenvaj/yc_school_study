@@ -10,9 +10,9 @@
 			<view class="headerpic" @tap.stop="groupSelf">
 				<!-- <view class="cu-avatar round lg" :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);'"></view> -->
 				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+userInfo.headpic+')'}"></view>
-				<view class="padding-lr text-lg">走走停停</view>
+				<view class="padding-lr text-lg text-cut" style="width: 300rpx;">走走停停走走停停走走停停走走停停</view>
 				<view class="cu-btn sm bg-gradual-blue shadow cuIcon" @tap.stop="navaTo('/pages/group/new-speak')">
-					<text class="cuIcon-forward"></text>
+					<text class="cuIcon-add"></text>
 				</view>
 				<view class="cu-btn sm margin-left shadow cuIcon" :class="self_show?'bg-gradual-green':''" @tap.stop="self_show = !self_show">
 					<text class="cuIcon-profile"></text>
@@ -168,7 +168,7 @@
 			groupSelf(){
 				console.log("进入自己的朋友圈")
 				uni.navigateTo({
-					url:'/pages/group/new-speak'
+					url:'/pages/group/center'
 				})
 			},
 			goTop(){

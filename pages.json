@@ -143,6 +143,13 @@
 			}
 		},
 		{
+		    "path" : "pages/my/money-order",
+		    "style" : {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh":true
+			}
+		},
+		{
 		    "path" : "pages/my/money-detail",
 		    "style" : {
 				"navigationBarTitleText": "钱包详情",
@@ -274,9 +281,15 @@
 			}
 		},
 		{
-		    "path" : "pages/study/book_question",
+		    "path" : "pages/study/book-question",
 		    "style" : {
 				"navigationBarTitleText": "课后习题"
+			}
+		},
+		{
+		    "path" : "pages/study/book-ask",
+		    "style" : {
+				"navigationBarTitleText": "为题搜索"
 			}
 		},
 		{

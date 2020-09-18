@@ -52,12 +52,6 @@ const menuGridList =  [{
 		cuIcon: 'form',
 		color: 'yellow',
 		badge: 0,
-		name: '课程表',
-		path: '/pages/study/course-show'
-	},{
-		cuIcon: 'form',
-		color: 'yellow',
-		badge: 0,
 		name: '课表',
 		path: '/pages/study/course-table'
 	},{
@@ -79,96 +73,6 @@ const menuGridList =  [{
 		name: '课堂点评',
 		path: '/pages/study/course-comment'
 	},{
-		cuIcon: 'moneybag',
-		color: 'purple',
-		badge: 0,
-		name: '钱包',
-		path: '/pages/my/moneybag'
-	}, {
-		cuIcon: 'question',
-		color: 'mauve',
-		badge: 0,
-		name: '帮助教程',
-		path: '/pages/public/content?title=帮助教程'
-	},{
-		cuIcon: 'group',
-		color: 'purple',
-		badge: 0,
-		name: '我的圈子',
-		path: '/pages/group/center'
-	},{
-		cuIcon: 'list',
-		color: 'purple',
-		badge: 0,
-		name: '收支记录',
-		path: '/pages/my/money-log'
-	},{
-		cuIcon: 'settings',
-		color: 'purple',
-		badge: 0,
-		name: '设置',
-		path: '/pages/my/set'
-	},{
-		cuIcon: 'close',
-		color: 'purple',
-		badge: 0,
-		name: '错题本',
-		path: '/pages/study/book_question'
-	},{
-		cuIcon: 'addressbook',
-		color: 'purple',
-		badge: 0,
-		name: '绑定用户',
-		path: '/pages/my/bind'
-	},{
-		cuIcon: 'profile',
-		color: 'purple',
-		badge: 0,
-		name: '邀请',
-		path: '/pages/my/make-join'
-	},{
-		cuIcon: 'forward',
-		color: 'purple',
-		badge: 0,
-		name: '发布动态',
-		path: '/pages/group/new-speak'
-	},{
-		cuIcon: 'shop',
-		color: 'purple',
-		badge: 0,
-		name: '商圈',
-		path: '/pages/group/shop'
-	},{
-		cuIcon: 'share',
-		color: 'purple',
-		badge: 0,
-		name: '分享',
-		path: '/pages/public/share'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '好友',
-		path: '/pages/my/friend'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '标签',
-		path: '/pages/my/marks'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '地址',
-		path: '/pages/my/address'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '消息列表',
-		path: '/pages/my/msg-list'
-	},{
 		cuIcon: 'friend',
 		color: 'purple',
 		badge: 0,
@@ -186,42 +90,6 @@ const menuGridList =  [{
 		badge: 0,
 		name: '提现',
 		path: '/pages/my/take-cash'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '龙虎榜',
-		path: '/pages/index/best-user'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '孩子钱包',
-		path: '/pages/my/baby-money'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '挖宝',
-		path: '/pages/my/dig-money'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '课本',
-		path: '/pages/study/book'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '课后习题',
-		path: '/pages/study/book_question'
-	},{
-		cuIcon: 'friend',
-		color: 'purple',
-		badge: 0,
-		name: '记账本',
-		path: '/pages/my/money-book'
 	},{
 		cuIcon: 'more',
 		color: 'mauve',

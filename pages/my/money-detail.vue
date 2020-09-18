@@ -3,9 +3,9 @@
 		<view class="user-section">
 			<image class="bg" src="/static/bg-imag-001.jpg"></image>
 			<view class="vip-card-box">
-				<view class="b-btn" @click="navToNologin('/pages/public/content?title='+moneyType+'攻略')">
+				<!-- <view class="b-btn" @click="navToNologin('/pages/public/content?title='+moneyType+'攻略')">
 					{{moneyType}}攻略
-				</view>
+				</view> -->
 				<view class="tit">
 					<text class="yticon icon-iLinkapp-"></text>
 					{{moneyType}}
