@@ -142,7 +142,7 @@
 				uni.navigateBack();
 			},
 			async toLogin(){
-				if(1){
+				if(0){
 					uni.showModal({
 						content:"账号登录维护。"
 					})

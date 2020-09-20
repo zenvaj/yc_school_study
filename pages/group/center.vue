@@ -1,7 +1,7 @@
 <template>
 	<view>
 		
-		<listCardGroup :newsList="newsList" @cardDetail="cardDetail"></listCardGroup>
+		<listCardGroup :newsList="speak_list" @cardDetail="cardDetail"></listCardGroup>
 	</view>
 </template>
 
@@ -10,123 +10,41 @@
 	export default {
 		data() {
 			return {
-				userInfo:{headpic:"https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg"},
-				newsList:[{
-						id:1,
-						imgurl:[
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg'
-						],
-						mark:'史诗',
-						title:'1我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
-						headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-						nickname:'1正义天使 凯尔',
-						time:'十天前',
-						num:{
-							view:1999999,
-							up:155,
-							comment:41
-						}
-					},{
-						id:2,
-						imgurl:[
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg'
-						],
-						mark:'神话',
-						title:'2我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
-						headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10005.jpg',
-						nickname:'3正义天使 凯尔',
-						time:'十一天前',
-						num:{
-							view:1999999,
-							up:155,
-							comment:41
-						}
-					},{
-						id:3,
-						imgurl:[
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg'
-						],
-						mark:'神仙打架',
-						title:'3我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
-						headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
-						nickname:'2正义天使 凯尔',
-						time:'十二天前',
-						num:{
-							view:19999,
-							up:155,
-							comment:41
-						}
-					},{
-						id:4,
-						imgurl:[
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg'
-						],
-						mark:'神仙打架',
-						title:'3我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
-						headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
-						nickname:'2正义天使 凯尔',
-						time:'十二天前',
-						num:{
-							view:19999,
-							up:155,
-							comment:41
-						}
-					},{
-						id:5,
-						imgurl:[
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-							'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg'
-						],
-						mark:'神仙打架',
-						title:'3我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。',
-						headpic:'https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg',
-						nickname:'2正义天使 凯尔',
-						time:'十二天前',
-						num:{
-							view:19999,
-							up:155,
-							comment:41
-						}
-					},
-				],
-				isFresh:true,
-				StatusBar:this.StatusBar,
-				CustomBar:this.CustomBar,
-				isPad:false,
+				page:1,
+				speak_list:[],
+				userid:0
 			}
 		},
 		components:{
 			listCardGroup
 		},
-		onLoad(){
-			console.log(this.StatusBar,this.CustomBar,JSON.stringify(this.Custom))
+		onLoad(respones){
+			if(respones.userid == 0){
+				uni.navigateBack()
+			}
+			this.userid = respones.userid 
+			this.SpeakList()
 		},
 		methods: {
+			async SpeakList(){
+				console.log('朋友圈数据')
+				let data = {page:this.page,userid:this.userid}
+				let result = await this.$request({
+					method:'/api/group-speak',
+					data:data
+				})
+				console.log(result)
+				if(result.code != 10000){
+					uni.showModal({content:"朋友圈列表数据错误。"})
+				}
+				uni.setNavigationBarTitle({
+				    title: result.data[0].username+"的圈子"
+				});
+				result.data.forEach(item =>{
+					this.speak_list.push(item)
+				})
+				uni.stopPullDownRefresh();
+			},
 			//热门文章点击方法
 			cardDetail(newsid,type){
 				console.log('cardDetail',newsid,type)
@@ -134,40 +52,17 @@
 					url:'/pages/public/card-detail?id='+newsid
 				})
 			},
-			groupSelf(){
-				console.log("点击了自己的头像")
-				
-			},
-			goBack(){
-				uni.navigateBack()
-			},
-			goTop(){
-				console.log("划到开始未知")
-				uni.pageScrollTo({
-				    scrollTop: 0,
-				    duration: 300
-				});
-			},
-			navaTo(url){
-				uni.navigateTo({
-					url
-				})
-			}
 		},
 		onPullDownRefresh() {
-			this.isFresh = false
 			console.log('refresh');
-			setTimeout(function () {
-				uni.stopPullDownRefresh();
-				this.isFresh = true
-				console.log(this.isFresh);
-			}, 1000);
+			this.speak_list = []
+			this.page = 1
+			this.SpeakList()
 		},
 		onReachBottom() {
 			console.log('onReachBottom');
-			setTimeout(function () {
-				uni.stopPullDownRefresh();
-			}, 1000);
+			this.page ++
+			this.SpeakList()
 		},
 	}
 </script>

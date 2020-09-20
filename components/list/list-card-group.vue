@@ -1,24 +1,24 @@
 <template>
 	<view class="cu-card dynamic">
 		<view class="cu-item shadow" v-for="(item,index) in newsList" :key="index">
-			<view class="cu-list menu-avatar" @click="UserGroup(item.id)">
+			<view class="cu-list menu-avatar" @click="UserGroup(item.userid)">
 				<view class="cu-item">
-					<view class="cu-avatar round lg" :style="'background-image:url('+item.headpic+');'"></view>
+					<view class="cu-avatar round lg" :style="'background-image:url('+item.headerpic+');'"></view>
 					<view class="content flex-sub">
-						<view>{{item.nickname}}</view>
+						<view>{{item.username}}</view>
 						<view class="text-gray text-sm flex justify-between">
-							{{item.time}}
+							{{item.created_at}}
 						</view>
 					</view>
 				</view>
 			</view>
 			<view class="text-content" style="margin-top: 12rpx;" @click="cardDetail(item.id)">
-				{{item.title}}
+				{{item.content}}
 			</view>
-			<view class="grid flex-sub padding-lr" :class="isCardShow(index)?'col-3 grid-square':'col-1'" @click="cardDetail(item.id)">
-				<view class="bg-img" :class="isCardShow(index)?'':'only-img'" 
+			<view class="grid flex-sub padding-lr" :class="item.images.length>1?'col-3 grid-square':'col-1'" @click="cardDetail(item.id)">
+				<view class="bg-img" :class="item.images.length>1?'':'only-img'" 
 					:style="'background-image:url('+item1+');'"
-					v-for="(item1,index1) in item.imgurl" :key="index1">
+					v-for="(item1,index1) in item.images" :key="index1">
 				</view>
 			</view>
 			<view class="text-gray text-sm text-right padding">
@@ -44,9 +44,11 @@
 			//this.isCard = this.newsList.imgurl.length <= 1?true:false;
 		},
 		methods:{
-			isCardShow(e){
+			isCardShow(images){
 				//console.log(this.newsList[e].imgurl.length)
-				return this.newsList[e].imgurl.length <= 1?false:true
+				console.log(images.length)
+				return (images.length <= 1)?false:true
+				//return this.newsList[e].imgurl.length <= 1?false:true
 			},
 			cardDetail(newsid){
 				this.$emit("cardDetail",newsid)
