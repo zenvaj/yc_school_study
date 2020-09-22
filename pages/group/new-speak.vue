@@ -65,10 +65,12 @@
 		data(){
 			return{
 				imgList: [],
+				imgPathList: [],
 				ModelShow:false,
 				ModelShowDes:'',
 				index: -1,
-				picker: ['牢骚','美丽心情','美丽食物'],
+				picker: ['牢骚','美丽心情','猪队友','作业太多','美丽食物','数学太难'],
+				content:''
 			}
 		},
 		onLoad() {
@@ -110,6 +112,18 @@
 				})
 			},
 			showModalSign() {
+				if(this.imgList.length <= 0){
+					uni.showModal({content: '先上传图片',showCancel:false})
+					return
+				}
+				if(this.index < 0){
+					uni.showModal({content: '先选择类型',showCancel:false})
+					return
+				}
+				if(this.content == ''){
+					uni.showModal({content: '先填写叨叨内容',showCancel:false})
+					return
+				}
 				//判断图片和学生的选中状态
 				this.ModelShowDes = "确定发布该叨叨么？";
 				this.ModelShow = true
@@ -117,14 +131,54 @@
 			hideModalSign() {
 				this.ModelShow = false
 			},
-			stdSign(){
-				console.log("确定发布")
-				//发布数据提交
-				uni.showModal({
-					content: '发布成功',
-					showCancel:false
+			async stdSign(){
+				uni.showLoading({
+					title:"发布中..."
 				})
 				this.ModelShow = false
+				let Token = uni.getStorageSync("token");
+				await this.imgList.forEach(async (item,index)=>{
+					let re = await uni.uploadFile({
+						url: this.$base_url+'/api/uploadSpeakImage', //仅为示例，非真实的接口地址
+						filePath: item,
+						name: 'speak_img',
+						header: {
+							"Accept":"application/json",
+							"content-type": "application/json",
+							"Token": Token,
+						},
+						success: (uploadFileRes) => {
+							console.log(3333,uploadFileRes.data);
+							this.imgPathList.push(uploadFileRes.data)
+						}
+					});
+					
+				})
+				let data = {
+					images:this.imgPathList,
+					type:this.picker[this.index],
+					content:this.content
+				}
+				console.log(2222,data)
+				//return
+				let result = await this.$request({
+					method:'/api/group-new',
+					data:data
+				})
+				console.log(result)
+				if(result.code != 10000){
+					uni.showModal({content:result.msg})
+				}else{
+					//发布数据提交
+					uni.showModal({
+						content: '发布成功',
+						showCancel:false
+					})
+					uni.navigateTo({
+						url:"./group"
+					})
+				}
+				uni.hideLoading()
 			},
 			cancel(res) {
 				uni.showToast({
@@ -136,8 +190,8 @@
 				this.index = e.detail.value
 			},
 			textareaInput(e) {
-				//this.textareaAValue = e.detail.value
-				console.log(e.detail.value)
+				this.content = e.detail.value
+				//console.log(e.detail.value)
 			},
 		}
 	}

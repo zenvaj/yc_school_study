@@ -4,7 +4,7 @@
 			<image class="bg" src="/static/bg-imag-004.jpg"></image>
 			<view class="user-info-box" @click="showuser">
 				<view class="portrait-box">
-					<image class="portrait" :src="user.mpuser.headerpic || '/static/missing-face.png'"></image>
+					<image class="portrait" :src="user.mpuser.headerpic || '/static/logo_yingchao.png'"></image>
 				</view>
 				<view class="info-box">
 					<text class="username">{{user.real_name || user.mpuser.nickname || '未登录'}}</text>
@@ -81,7 +81,7 @@
 				coverTransform: 'translateY(0px)',
 				coverTransition: '0s',
 				moving: false,
-				headerpic:'/static/missing-face.png',
+				headerpic:'/static/logo_yingchao.png',
 				username:"未登录"
 			}
 		},

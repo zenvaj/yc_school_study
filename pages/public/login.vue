@@ -70,7 +70,16 @@
 				</view>
 				<!-- #endif -->
 				<!-- #ifdef APP-PLUS -->
-				
+				<view class="other-list">
+					<button class="cu-btn cuIcon lg" open-type="getUserInfo" @getuserinfo="login_qq" withCredentials="true">
+						<image src="../../static/ic-QQ@2x.png" mode="aspectFill"></image>
+					</button>
+				</view>
+				<view class="other-list">
+					<button class="cu-btn cuIcon lg" open-type="getUserInfo" @getuserinfo="login_weixin" withCredentials="true">
+						<image src="../../static/ic-weixin@2x.png" mode="aspectFill"></image>
+					</button>
+				</view>
 				<!-- #endif -->
 			</view>
 		</view>
@@ -112,7 +121,6 @@
 
 <script>
 	import {mapState,mapMutations} from 'vuex';
-	
 	export default{
 		data(){
 			return {
@@ -245,7 +253,7 @@
 				 	title: '登陆中...',
 				 	mask: true
 				 });
-				 this.auth_type = 'qq_auth'
+				 this.auth_type = 'wx_auth'
 				uni.login({
 					provider: 'weixin',
 					success: (loginRes) =>  {

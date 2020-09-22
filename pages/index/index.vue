@@ -17,7 +17,11 @@
 	import menuGrid from '../../components/menu/menu-grid.vue'
 	import listCardScreen from '../../components/list/list-card-screen.vue'
 	import listCard from '../../components/list/list-card.vue'
+	import {mapState,mapMutations} from 'vuex';
 	export default {
+		computed: {
+			...mapState(['hasLogin','user'])
+		},
 		data() {
 			return {
 				isBarShow:true,
@@ -38,12 +42,21 @@
 			listCardScreen,listCard
 		},
 		onLoad() {
+			let user = uni.getStorageSync("user");
+			if(!user){
+				uni.navigateTo({
+					url:'/pages/public/login'
+				})
+			}else{
+				this.authLogin(user)
+			}
 			this.swiperInit()
 			this.menuGridInit()
 			this.hotNewsInit()
 			this.newNewsInit()
 		},
 		methods: {
+			...mapMutations(['authLogin']),
 			async swiperInit(){
 				const result = await this.$request({
 					method:'/api/banner',

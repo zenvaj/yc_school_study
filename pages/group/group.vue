@@ -9,7 +9,7 @@
 		
 			<view class="headerpic" @tap.stop="groupSelf">
 				<!-- <view class="cu-avatar round lg" :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);'"></view> -->
-				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+ (user.mpuser.headerpic || '/static/missing-face.png') +')'}"></view>
+				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+ (user.mpuser.headerpic || '/static/logo_yingchao.png') +')'}"></view>
 				<view class="padding-lr text-lg text-cut" style="width: 300rpx;">{{user.real_name || user.mpuser.nickname || '未登录'}}</view>
 				<view class="cu-btn sm bg-gradual-blue shadow cuIcon" @tap.stop="navaTo('/pages/group/new-speak')">
 					<text class="cuIcon-add"></text>
@@ -31,7 +31,7 @@
 
 <script>
 	import listCardGroup from '../../components/list/list-card-group.vue'
-	import { mapState } from 'vuex';  
+	import { mapState } from 'vuex';
 	export default {
 		computed: {
 			...mapState(['hasLogin','user'])
@@ -62,18 +62,20 @@
 					method:'/api/group-speak',
 					data:data
 				})
-				//console.log(result)
+				console.log(result)
 				if(result.code != 10000){
-					uni.showModal({content:"朋友圈列表数据错误。"})
+					uni.showModal({content:result.msg})
 				}
-				result.data.forEach(item =>{
-					this.speak_list.push(item)
-				})
+				if(result.data){
+					result.data.forEach(item =>{
+						this.speak_list.push(item)
+					})
+				}
 				uni.stopPullDownRefresh();
 			},
 			//热门文章点击方法
-			cardDetail(newsid,type){
-				console.log('cardDetail',newsid,type)
+			cardDetail(newsid){
+				console.log('cardDetail',newsid)
 				uni.navigateTo({
 					url:'/pages/public/card-detail?id='+newsid
 				})

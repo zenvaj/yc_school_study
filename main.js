@@ -2,7 +2,7 @@ import Vue from 'vue'
 import store from './store'
 import App from './App'
 
-
+const base_url = "https://app.wfycjy.com";
 import Json from './Json' //测试用数据
 /**
  *  因工具函数属于公司资产, 所以直接在Vue实例挂载几个常用的函数
@@ -48,15 +48,15 @@ Vue.prototype.$fire = new Vue();
 Vue.prototype.$store = store;
 Vue.prototype.$api = {msg, json, prePage};
 
+Vue.prototype.$base_url = base_url;
 Vue.prototype.$request = (parament)=>{
 	uni.showLoading({
 		title:"加载中..."
 	})
 	let header = parament.header || "application/json";
-	let base_url = "https://app.wfycjy.com";
-	let AuthorizationToken = uni.getStorageSync("AuthorizationToken");
-	
-	console.error(parament);
+	//let base_url = "https://app.wfycjy.com";
+	let Token = uni.getStorageSync("token");
+
 	return new Promise((succ, error) => {
 		uni.request({
 			url: base_url + parament.method,
@@ -66,42 +66,34 @@ Vue.prototype.$request = (parament)=>{
 			header: {
 				"Accept":header,
 				"content-type": header,
-				"Authorization": "Bearer "+ AuthorizationToken,
+				"Token": Token,
 			},
 			success: function (result) {
-				console.error(result);
+				//console.error(result);
+				if(result.data.code != 10000){
+					console.error(parament);
+					console.error({
+								"Accept":header,
+								"content-type": header,
+								"Token": Token,
+							});
+					console.error(result.data);
+				}
 				succ.call(self, result.data)
 			},
 			fail: function (e) {
-				console.log("token : "+AuthorizationToken)
+				console.error(parament);
+				console.error({
+							"Accept":header,
+							"content-type": header,
+							"Token": Token,
+						});
 				error.call(self, e)
 			},
 			complete:function(){
 				uni.hideLoading()
 			}
 		})
-	})
-	
-	
-	uni.request({
-		url:base_url + method,
-		data:data,
-		header:{
-			"Accept":header,
-			"content-type": header,
-			"Authorization": "Bearer "+ AuthorizationToken
-		},
-		method:"POST",
-		success:(res)=>{
-			console.log('success',res)
-			return res;
-		},
-		fail:(err)=>{
-			console.log('fail',err)
-		},
-		complete:()=>{
-			
-		}
 	})
 };
 

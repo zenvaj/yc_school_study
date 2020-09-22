@@ -8,17 +8,8 @@
 			<text class="cell-tit">地址管理</text>
 			<text class="cell-more yticon icon-you"></text>
 		</view>
-		<view class="list-cell" @click="navToNologin('/pages/public/content?title=实名认证')" hover-class="cell-hover" :hover-stay-time="50">
+		<view class="list-cell b-b" @click="navToNologin('/pages/public/content?title=实名认证')" hover-class="cell-hover" :hover-stay-time="50">
 			<text class="cell-tit">实名认证</text>
-			<text class="cell-more yticon icon-you"></text>
-		</view>
-		
-		<!-- <view class="list-cell m-t">
-			<text class="cell-tit">消息推送</text>
-			<switch checked color="#fa436a" @change="switchChange" />
-		</view> -->
-		<view class="list-cell m-t b-b"  hover-class="cell-hover" :hover-stay-time="50">
-			<text class="cell-tit">清除缓存</text>
 			<text class="cell-more yticon icon-you"></text>
 		</view>
 		<view class="list-cell b-b" @click="navToNologin('/pages/public/content?title=关于我们')" hover-class="cell-hover" :hover-stay-time="50">
@@ -33,8 +24,8 @@
 			<text class="cell-tit">使用手册</text>
 			<text class="cell-more yticon icon-you"></text>
 		</view>
-		<view class="list-cell">
-			<text class="cell-tit">检查更新</text>
+		<view class="list-cell b-b" @click="navToNologin('/pages/public/content?title=版本说明')">
+			<text class="cell-tit">版本说明</text>
 			<text class="cell-tip">当前版本 1.0.3</text>
 			<text class="cell-more yticon icon-you"></text>
 		</view>
