@@ -1,15 +1,14 @@
 <template>
-	<view class="cu-card article" :class="isCard?'no-card':''" >
-		<view class="cu-item shadow" v-for="(item,index) in newsList" :key="index">
-			<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
+	<view class="cu-card article">
+		<view class="cu-item shadow" v-for="(item,index) in newsList" :key="index" @click="cardDetail(item.title)">
+			<view class="title"><view class="text-cut">{{item.title}}</view></view>
 			<view class="content">
-				<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg"
-				 mode="aspectFill"></image>
+				<image :src="item.image" mode="aspectFill"></image>
 				<view class="desc">
-					<view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+					<view class="text-content">{{item.des}}</view>
 					<view>
-						<view class="cu-tag bg-red light sm round">正义天使</view>
-						<view class="cu-tag bg-green light sm round">史诗</view>
+						<view class="cu-tag bg-red light sm round">热门文章</view>
+						<view class="cu-tag bg-green light sm round">鸡汤</view>
 					</view>
 				</view>
 			</view>
@@ -24,7 +23,13 @@
 				isCard:0
 			};
 		},
-		props:['newsList']
+		props:['newsList'],
+		methods:{
+			cardDetail(title){
+				console.log(title)
+				this.$emit("cardDetail",title)
+			}
+		}
 	}
 </script>
 

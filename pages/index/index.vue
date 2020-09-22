@@ -18,7 +18,7 @@
 	import listCardScreen from '../../components/list/list-card-screen.vue'
 	import listCard from '../../components/list/list-card.vue'
 	import {mapState,mapMutations} from 'vuex';
-	export default {
+	export default { 
 		computed: {
 			...mapState(['hasLogin','user'])
 		},
@@ -53,7 +53,6 @@
 			this.swiperInit()
 			this.menuGridInit()
 			this.hotNewsInit()
-			this.newNewsInit()
 		},
 		methods: {
 			...mapMutations(['authLogin']),
@@ -72,10 +71,10 @@
 				this.swiperList = result.data
 			},
 			//轮播点击方法
-			navigeteBanner(title,content){
-				console.log('navigeteBanner',title,content)
+			navigeteBanner(title){
+				console.log('navigeteBanner',title)
 				uni.navigateTo({
-					url:'/pages/public/content?title='+title+'&content='+content
+					url:'/pages/public/content?title='+title
 				})
 			},
 			async menuGridInit(){
@@ -85,29 +84,32 @@
 			//九宫格点击方法
 			navigeteMenuGrid(name,type){
 				console.log('navigeteMenuGrid',name,type)
-				if(name == '学习' || name == '圈子'){
-					console.log(name,type)
-					uni.switchTab({
-					    url: type
-					});
-				}
 				uni.navigateTo({
 					url:type
 				})
 			},
 			async hotNewsInit(){
-				this.hotNewsList = await this.$api.json('hotNewsList')
-			},
-			async newNewsInit(){
-				this.newNewsList = await this.$api.json('newNewsList')
+				const result = await this.$request({
+					method:'/api/index_news',
+					data:{}
+				})
+				console.log(result)
+				if(result.code !== 10000){
+					uni.showModal({
+						content:result.msg
+					})
+					return;
+				}
+				this.hotNewsList = result.data.index_notice
+				this.newNewsList = result.data.index_news
 			},
 			//文章点击方法
-			cardDetail(newsid,type){
-				console.log('cardDetail',newsid,type)
+			cardDetail(title){
+				console.log('cardDetail',title)
 				uni.navigateTo({
-					url:'/pages/public/card-detail?id='+newsid
+					url:'/pages/public/content?title='+title
 				})
-			}
+			},
 		}
 	}
 </script>

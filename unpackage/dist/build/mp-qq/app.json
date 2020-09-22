@@ -8,6 +8,7 @@
     "pages/index/sign-std-school",
     "pages/index/sign-std-home",
     "pages/study/course-table",
+    "pages/study/course-show",
     "pages/study/course-plan",
     "pages/study/course-comment",
     "pages/study/course-view",
@@ -21,6 +22,7 @@
     "pages/public/about",
     "pages/group/center",
     "pages/my/money-log",
+    "pages/my/money-order",
     "pages/my/money-detail",
     "pages/study/bad-notice",
     "pages/my/bind",
@@ -41,7 +43,8 @@
     "pages/my/dig-money",
     "pages/index/sign-std-log",
     "pages/study/book",
-    "pages/study/book_question",
+    "pages/study/book-question",
+    "pages/study/book-ask",
     "pages/my/money-book"
   ],
   "window": {

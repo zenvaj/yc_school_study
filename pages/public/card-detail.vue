@@ -18,7 +18,7 @@
 				</view>
 				<view class="grid flex-sub padding-lr" :class="contents.images.length>1?'col-3 grid-square':'col-1'">
 					<view class="bg-img" :class="contents.images.length>1?'':'only-img'" :style="'background-image:url('+item+');'"
-					 v-for="(item,index) in contents.images" :key="index">
+					 v-for="(item,index) in contents.images" :key="index" @tap="proviewImg">
 					</view>
 				</view>
 				<view class="text-gray text-sm text-right padding">
@@ -188,6 +188,22 @@
 			Input(e){
 				//console.log(e.detail.value)
 				this.comment = e.detail.value
+			},
+			proviewImg(){
+				// 预览图片
+				uni.previewImage({
+					urls: this.contents.images,
+					loop:true,
+					longPressActions: {
+						itemList: ['发送给朋友', '保存图片', '收藏'],
+						success: function(data) {
+							console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
+						},
+						fail: function(err) {
+							console.log(err.errMsg);
+						}
+					}
+				});
 			}
 		}
 	}

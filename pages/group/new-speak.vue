@@ -44,17 +44,6 @@
 					<button class="cu-btn bg-green shadow lg" @tap="showModalSign">发布</button>
 				</view>
 			</view>
-			<view class="cu-modal bottom-modal" :class="ModelShow?'show':''">
-				<view class="cu-dialog">
-					<view class="cu-bar bg-white">
-						<view class="action text-blue" @click="hideModalSign">取消</view>
-						<view class="action text-green" @click="stdSign">确定</view>
-					</view>
-					<view class="padding-xl">
-						{{ModelShowDes}}
-					</view>
-				</view>
-			</view>
 		</view>
 	</view>
 	
@@ -66,8 +55,6 @@
 			return{
 				imgList: [],
 				imgPathList: [],
-				ModelShow:false,
-				ModelShowDes:'',
 				index: -1,
 				picker: ['牢骚','美丽心情','猪队友','作业太多','美丽食物','数学太难'],
 				content:''
@@ -124,9 +111,8 @@
 					uni.showModal({content: '先填写叨叨内容',showCancel:false})
 					return
 				}
-				//判断图片和学生的选中状态
-				this.ModelShowDes = "确定发布该叨叨么？";
-				this.ModelShow = true
+				this.stdSign()
+				
 			},
 			hideModalSign() {
 				this.ModelShow = false
@@ -150,10 +136,15 @@
 						success: (uploadFileRes) => {
 							console.log(3333,uploadFileRes.data);
 							this.imgPathList.push(uploadFileRes.data)
+							if(this.imgPathList.length >= this.imgList.length){
+								this.contentPost()
+							}
 						}
 					});
-					
 				})
+				 
+			},
+			async contentPost(){
 				let data = {
 					images:this.imgPathList,
 					type:this.picker[this.index],
@@ -174,8 +165,8 @@
 						content: '发布成功',
 						showCancel:false
 					})
-					uni.navigateTo({
-						url:"./group"
+					uni.reLaunch({
+						url:"group"
 					})
 				}
 				uni.hideLoading()
