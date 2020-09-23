@@ -44,12 +44,13 @@
 		onLoad() {
 			let user = uni.getStorageSync("user");
 			if(!user){
-				uni.navigateTo({
+				uni.redirectTo({
 					url:'/pages/public/login'
 				})
 			}else{
 				this.authLogin(user)
 			}
+			console.log(this.user)
 			this.swiperInit()
 			this.menuGridInit()
 			this.hotNewsInit()

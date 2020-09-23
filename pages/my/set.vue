@@ -56,7 +56,9 @@
 				    	if(e.confirm){
 				    		this.logout();
 				    		setTimeout(()=>{
-				    			uni.navigateBack();
+				    			uni.reLaunch({
+				    				url:"../index/index"
+				    			});
 				    		}, 200)
 				    	}
 				    }
