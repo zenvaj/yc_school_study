@@ -78,6 +78,12 @@
 				"navigationBarTitleText": "课堂一览"
 			}
         }
+		,{
+		    "path" : "pages/study/study-timeline",
+		    "style" : {
+				"navigationBarTitleText": "学习记录"
+			}
+		}
         ,{
             "path" : "pages/my/moneybag",
             "style" : {

@@ -79,8 +79,19 @@
 				})
 			},
 			async menuGridInit(){
-				//const menuGridList = await this.$api.json('menuGridList')
-				this.menuGridList = await this.$api.json('menuGridList')
+				//this.menuGridList = await this.$api.json('menuGridList')
+				const result = await this.$request({
+					method:'/api/menus',
+					data:{}
+				})
+				console.log(result)
+				if(result.code !== 10000){
+					uni.showModal({
+						content:result.msg
+					})
+					return;
+				}
+				this.menuGridList = result.data
 			},
 			//九宫格点击方法
 			navigeteMenuGrid(name,type){

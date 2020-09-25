@@ -8,7 +8,7 @@
 			</view>
 			<view class="grid justify-start">
 				<view class="padding-lr-sm margin-tb-sm text-center" v-for="(item,index) in value.menus_list" :key="index">
-					<button class="cu-btn line-blue shadow" @click="naviTo(item.app_path)">
+					<button class="cu-btn line-blue shadow sm" @click="naviTo(item.app_path)">
 						<text :class="'cuIcon-'+item.icon_name"></text>{{item.name}}
 					</button>
 				</view>

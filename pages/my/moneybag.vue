@@ -73,7 +73,7 @@
 				</view>
 			</view>
 			<view class="history-section icon">
-				<listCell icon="icon-gouwuche" iconColor="#e07472" title="我的订单" tips="消费记录" @eventClick="navTo('/pages/my/money-book')"></listCell>
+				<listCell icon="icon-gouwuche" iconColor="#e07472" title="我的订单" tips="消费记录" @eventClick="navTo('/pages/my/money-order')"></listCell>
 				<listCell icon="icon-shouye" iconColor="#e07472" title="记账本" tips="挣钱有劲花钱有数" @eventClick="navTo('/pages/my/money-book')"></listCell>
 				<listCell icon="icon-dianzan-ash" iconColor="#9789f7" title="排行榜" tips="他/她~在第几层" @eventClick="navTo('/pages/index/best-user')"></listCell>
 				<listCell icon="icon-iconfontweixin" iconColor="#ee883b" title="神兽的钱包" tips="看看神兽的小金库" @eventClick="navTo('/pages/my/baby-money')"></listCell>

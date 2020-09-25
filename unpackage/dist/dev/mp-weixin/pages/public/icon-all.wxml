@@ -1,1 +1,0 @@
-<view><block wx:for="{{iconArr}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="order-item"><text class="{{['yticon',item]}}"></text><text>{{item}}</text></view></block></view>

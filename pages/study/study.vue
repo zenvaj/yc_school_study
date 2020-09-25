@@ -10,9 +10,9 @@
 			</picker>
 		</view>
 		<menuGrid 
-			:cuIconList="paraMenuGrid.cuIconList" 
-			:gridCol="paraMenuGrid.gridCol" 
-			:gridBorder="paraMenuGrid.gridBorder" 
+			:cuIconList="cuIconList" 
+			:gridCol="gridCol" 
+			:gridBorder="gridBorder" 
 			@menuClick="navigeteMenuGrid"></menuGrid>
 		
 		
@@ -87,66 +87,64 @@
 					['版本','济南版', '青岛版', '人教版', '外研社']
 				],
 				multiIndex: [0, 0, 0],
-				//菜单数据
-				paraMenuGrid:{
-					cuIconList: [{
-						cuIcon: 'cardboardfill',
-						color: 'red',
-						badge: 0,
-						name: '课本学习',
-						path: '/pages/study/book'
-					}, {
-						cuIcon: 'recordfill',
-						color: 'orange',
-						badge: 0,
-						name: '课后习题',
-						path: '/pages/study/book_question'
-					}, {
-						cuIcon: 'picfill',
-						color: 'yellow',
-						badge: 0,
-						name: '同步练习',
-						path: '/pages/study/book_question'
-					}, {
-						cuIcon: 'noticefill',
-						color: 'olive',
-						badge: 0,
-						name: '单元测试',
-						path: '/pages/study/book_question'
-					}, {
-						cuIcon: 'upstagefill',
-						color: 'cyan',
-						badge: 0,
-						name: '错题本',
-						path: '/pages/study/book_question'
-					},{
-						cuIcon: 'questionfill',
-						color: 'mauve',
-						badge: 0,
-						name: '复习',
-						path: '/pages/study/book'
-					},{
-						cuIcon: 'discoverfill',
-						color: 'purple',
-						badge: 0,
-						name: '课程表',
-						path: '/pages/study/course-show'
-					},{
-						cuIcon: 'clothesfill',
-						color: 'blue',
-						badge: 0,
-						name: '签到记录',
-						path: '/pages/index/sign-std-log'
-					},{
-						cuIcon: 'brandfill',
-						color: 'mauve',
-						badge: 0,
-						name: '刁难老师',
-						path: '/pages/public/content'
-					}],
-					gridCol: 3,
-					gridBorder: 0
-				},
+				//菜单数据 
+				cuIconList: [{
+					cuIcon: 'cardboardfill',
+					color: 'red',
+					badge: 0,
+					name: '课本学习',
+					path: '/pages/study/book'
+				}, {
+					cuIcon: 'recordfill',
+					color: 'orange',
+					badge: 0,
+					name: '课后习题',
+					path: '/pages/study/book_question'
+				}, {
+					cuIcon: 'picfill',
+					color: 'yellow',
+					badge: 0,
+					name: '同步练习',
+					path: '/pages/study/book_question'
+				}, {
+					cuIcon: 'noticefill',
+					color: 'olive',
+					badge: 0,
+					name: '单元测试',
+					path: '/pages/study/book_question'
+				}, {
+					cuIcon: 'upstagefill',
+					color: 'cyan',
+					badge: 0,
+					name: '错题本',
+					path: '/pages/study/book_question'
+				},{
+					cuIcon: 'questionfill',
+					color: 'mauve',
+					badge: 0,
+					name: '复习',
+					path: '/pages/study/book'
+				},{
+					cuIcon: 'discoverfill',
+					color: 'purple',
+					badge: 0,
+					name: '课程表',
+					path: '/pages/study/course-show'
+				},{
+					cuIcon: 'clothesfill',
+					color: 'blue',
+					badge: 0,
+					name: '签到记录',
+					path: '/pages/index/sign-std-log'
+				},{
+					cuIcon: 'brandfill',
+					color: 'mauve',
+					badge: 0,
+					name: '刁难老师',
+					path: '/pages/public/content'
+				}],
+				gridCol: 3,
+				gridBorder: 1,
 				//图表数据
 				cWidth: '',
 				cHeight: '',
@@ -243,6 +241,8 @@
 				this.showRadar("canvasRadar", this.Radar);
 				
 				this.showColumnMeter("canvasColumnMeter", this.ColumnMeter);
+				
+				this.menuGridInit();
 			},
 			choiceCourse(){
 				console.log("选择课程")
@@ -250,8 +250,22 @@
 			},
 			sourceChoiceRe(e){
 				console.log(e)
-				//课程数据
-				
+				//课程数据 
+			},
+			async menuGridInit(){
+				const result = await this.$request({
+					method:'/api/study-menus',
+					data:{}
+				})
+				console.log(result)
+				if(result.code !== 10000){
+					uni.showModal({
+						content:result.msg
+					})
+					return;
+				}
+				this.cuIconList = result.data 
+				console.log(this.cuIconList)
 			},
 			//九宫格点击方法
 			navigeteMenuGrid(name,type){

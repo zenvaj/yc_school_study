@@ -4,7 +4,7 @@
 		<view class="cu-timeline" v-for="(item,index) in mark_list">
 			<view class="cu-time">{{item.created_at}}</view>
 			<view class="cu-item cur text-blue cuIcon-evaluate_fill">
-				<view class="content light " :class="color_list[index]">
+				<view class="content light" :class="color_list[index]">
 					<view class="cu-capsule radius">
 						<view class="cu-tag bg-cyan">{{item.mark_name}}</view>
 						<view class="cu-tag line-cyan">{{item.mark_des}}</view>
