@@ -18,10 +18,7 @@
         },
         /* 模块配置 */
         "modules" : {
-            "OAuth" : {},
-            "Payment" : {},
-            "Push" : {},
-            "Share" : {}
+            "OAuth" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -51,7 +48,8 @@
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
                 ],
-                "autoSdkPermissions" : true
+                "autoSdkPermissions" : true,
+                "abiFilters" : [ "armeabi-v7a" ]
             },
             /* ios打包配置 */
             "ios" : {},
@@ -136,7 +134,7 @@
         "usingComponents" : true,
         "permission" : {
             "scope.userLocation" : {
-                "desc" : "培训班接送孩子定位，家长确认到家定位"
+                "desc" : "培训学校接送孩子定位，家长确认到家定位"
             }
         }
     },

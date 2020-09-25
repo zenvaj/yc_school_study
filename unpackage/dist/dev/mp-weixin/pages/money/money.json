@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "钱包",
+  "navigationBarBackgroundColor": "#5c6ba4",
+  "usingComponents": {
+    "list-cell": "/components/mix-list-cell"
+  }
+}

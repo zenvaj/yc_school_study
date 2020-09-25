@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,8N;AACAA,UAAU,CAACC,sBAAD,CAAV,C","file":"pages/stydy/sign-std-school.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/stydy/sign-std-school.vue'\ncreatePage(Page)"],"sourceRoot":""}

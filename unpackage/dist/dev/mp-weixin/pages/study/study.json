@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "学习",
+  "navigationBarBackgroundColor": "#6739b6",
+  "usingComponents": {
+    "menu-grid": "/components/menu/menu-grid"
+  }
+}

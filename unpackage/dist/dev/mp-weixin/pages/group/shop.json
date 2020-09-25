@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "铺子",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "backgroundColor": "#F8F8F8",
+  "usingComponents": {
+    "share": "/components/share"
+  }
+}

@@ -36,14 +36,21 @@
 				"navigationBarTitleText": "常用功能设置"
 			}
 		}
+		,{
+		    "path" : "pages/sign/sign-std-log",
+		    "style" : {
+				"navigationBarTitleText": "签到记录",
+				"enablePullDownRefresh":true
+			}
+		}
 	    ,{
-			"path": "pages/index/sign-std-school",
+			"path": "pages/sign/sign-std-school",
 			"style": {
 				"navigationBarTitleText": "到校签到"
 			}
 		}
 	    ,{
-			"path": "pages/index/sign-std-home",
+			"path": "pages/sign/sign-std-home",
 			"style": {
 				"navigationBarTitleText": "离校签到"
 			}
@@ -85,7 +92,7 @@
 			}
 		}
         ,{
-            "path" : "pages/my/moneybag",
+            "path" : "pages/money/money",
             "style" : {
 				"navigationBarTitleText": "钱包",
 				"navigationBarBackgroundColor": "#5c6ba4"
@@ -105,7 +112,7 @@
 			}
         }
         ,{
-            "path" : "pages/public/card-detail",
+            "path" : "pages/group/card-detail",
             "style" : {
 				"navigationBarTitleText": "动态"
 			}
@@ -118,21 +125,9 @@
 			}
 		},
 		{
-		    "path" : "pages/public/help",
-		    "style" : {
-				"navigationBarTitleText": "帮助"
-			}
-		},
-		{
-		    "path" : "pages/my/set",
+		    "path" : "pages/set/set",
 		    "style" : {
 				"navigationBarTitleText": "设置"
-			}
-		},
-		{
-		    "path" : "pages/public/about",
-		    "style" : {
-				"navigationBarTitleText": "关于我们"
 			}
 		},
 		{
@@ -142,21 +137,21 @@
 			}
 		},
 		{
-		    "path" : "pages/my/money-log",
+		    "path" : "pages/money/money-log",
 		    "style" : {
 				"navigationBarTitleText": "收支记录",
 				"enablePullDownRefresh":true
 			}
 		},
 		{
-		    "path" : "pages/my/money-order",
+		    "path" : "pages/money/money-order",
 		    "style" : {
 				"navigationBarTitleText": "订单",
 				"enablePullDownRefresh":true
 			}
 		},
 		{
-		    "path" : "pages/my/money-detail",
+		    "path" : "pages/money/money-detail",
 		    "style" : {
 				"navigationBarTitleText": "钱包详情",
 				"navigationBarBackgroundColor": "#85afc3"
@@ -225,31 +220,31 @@
 			}
 		},
 		{
-		    "path" : "pages/my/address",
+		    "path" : "pages/set/address",
 		    "style" : {
 				"navigationBarTitleText": "地址"
 			}
 		},
 		{
-		    "path" : "pages/my/address-manager",
+		    "path" : "pages/set/address-manager",
 		    "style" : {
 				"navigationBarTitleText": "地址管理"
 			}
 		},
 		{
-		    "path" : "pages/my/invest",
+		    "path" : "pages/money/invest",
 		    "style" : {
 				"navigationBarTitleText": "投资"
 			}
 		},
 		{
-		    "path" : "pages/my/transfer",
+		    "path" : "pages/money/transfer",
 		    "style" : {
 				"navigationBarTitleText": "转账"
 			}
 		},
 		{
-		    "path" : "pages/my/take-cash",
+		    "path" : "pages/money/take-cash",
 		    "style" : {
 				"navigationBarTitleText": "提现"
 			}
@@ -262,22 +257,15 @@
 			}
 		},
 		{
-		    "path" : "pages/my/baby-money",
+		    "path" : "pages/money/money-baby",
 		    "style" : {
 				"navigationBarTitleText": "神兽红包"
 			}
 		},
 		{
-		    "path" : "pages/my/dig-money",
+		    "path" : "pages/money/money-dig",
 		    "style" : {
 				"navigationBarTitleText": "挖宝"
-			}
-		},
-		{
-		    "path" : "pages/index/sign-std-log",
-		    "style" : {
-				"navigationBarTitleText": "签到记录",
-				"enablePullDownRefresh":true
 			}
 		},
 		{
@@ -295,11 +283,11 @@
 		{
 		    "path" : "pages/study/book-ask",
 		    "style" : {
-				"navigationBarTitleText": "为题搜索"
+				"navigationBarTitleText": "难题搜索"
 			}
 		},
 		{
-		    "path" : "pages/my/money-book",
+		    "path" : "pages/money/money-book",
 		    "style" : {
 				"navigationBarTitleText": "记账本"
 			}

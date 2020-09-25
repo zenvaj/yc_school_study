@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "圈子",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#39b54a",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "list-card-group": "/components/list/list-card-group"
+  }
+}

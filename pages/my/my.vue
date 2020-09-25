@@ -11,7 +11,7 @@
 				</view>
 			</view>
 			<view class="vip-card-box">
-				<view class="b-btn" @click="navToNologin('/pages/public/content?title=关于我们')">
+				<view class="b-btn" @click="navToNologin('/pages/public/content?title=关于会员')">
 					关于会员
 				</view>
 				<view class="tit">
@@ -35,7 +35,7 @@
 		>
 			<image class="arc" src="/static/arc.png"></image>
 			
-			<view class="tj-sction" @click="navTo('/pages/my/moneybag')">
+			<view class="tj-sction" @click="navTo('/pages/money/money')">
 				<view class="tj-item">
 					<text class="num">128.8</text>
 					<text>总资产</text>
@@ -51,17 +51,14 @@
 			</view>
 			<!-- 浏览历史 -->
 			<view class="history-section icon">
-				<listCell icon="icon-tuandui" iconColor="#e07472" title="Icon" tips="" @eventClick="navTo('/pages/public/icon-all')"></listCell>
-				
-				<listCell icon="icon-iconfontweixin" iconColor="#e07472" title="我的钱包" tips="小钱钱" @eventClick="navTo('/pages/my/moneybag')"></listCell>
+				<listCell icon="icon-iconfontweixin" iconColor="#e07472" title="我的钱包" tips="小钱钱" @eventClick="navTo('/pages/money/money')"></listCell>
 				<listCell icon="icon-pinglun-copy" iconColor="#ee883b" title="我的消息" tips="系统通知" @eventClick="navTo('/pages/my/msg-list')"></listCell>
 				<listCell icon="icon-hot" iconColor="#54b4ef" title="我的标签" tips="成长记录" @eventClick="navTo('/pages/my/marks')"></listCell>
 				<listCell icon="icon-weixin" iconColor="#5fcda2" title="我的好友" tips="一顿操作猛如虎" @eventClick="navTo('/pages/my/friend')"></listCell>
 				<listCell icon="icon-saomiao" iconColor="#9789f7" title="个人名片" tips="一看数据零杠五" @eventClick="navTo('/pages/my/make-join')"></listCell>
-				<listCell icon="icon-share" iconColor="#9789f7" title="邀请好友" tips="邀请好友赢大礼" @eventClick="navTo('/pages/my/make-join')"></listCell>
 				<listCell icon="icon-jiazailoading-A" iconColor="#ee883b" title="绑定" tips="一统江湖" @eventClick="navTo('/pages/my/bind')"></listCell>
 				<listCell icon="icon-xiatubiao--copy" iconColor="#54b4ef" title="我的门店" tips="自己的小店" @eventClick="navTo('/pages/group/shop')"></listCell>
-				<listCell icon="icon-shezhi1" iconColor="#e07472" title="设置" border="" @eventClick="navTo('/pages/my/set')"></listCell>
+				<listCell icon="icon-shezhi1" iconColor="#e07472" title="设置" border="" @eventClick="navTo('/pages/set/set')"></listCell>
 			</view>
 		</view>
 			

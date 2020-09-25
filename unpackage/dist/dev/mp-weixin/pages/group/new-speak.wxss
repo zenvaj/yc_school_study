@@ -1,0 +1,10 @@
+
+.btn-sign{
+	position: -webkit-sticky;
+	position: sticky;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+
