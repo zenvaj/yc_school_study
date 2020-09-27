@@ -7,7 +7,7 @@
 		<view class="cu-bar bg-white fixed" @tap="goTop" :style="[{Top:'0px'},{height:(0) + 'px'}]">
 		<!-- #endif -->
 		
-			<view class="headerpic" @tap.stop="groupSelf">
+			<view class="headerpic">
 				<!-- <view class="cu-avatar round lg" :style="'background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);'"></view> -->
 				<view class="cu-avatar radius lg " :style="{backgroundImage:'url('+ (user.mpuser.headerpic || '/static/logo_yingchao.png') +')'}"></view>
 				<view class="padding-lr text-lg text-cut" style="width: 300rpx;">{{user.real_name || user.mpuser.nickname || '未登录'}}</view>

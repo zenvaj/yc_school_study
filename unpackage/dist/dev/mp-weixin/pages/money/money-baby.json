@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "神兽红包",
-  "usingComponents": {}
+  "navigationBarTitleText": "神兽钱包",
+  "navigationBarBackgroundColor": "#556c91",
+  "usingComponents": {
+    "list-cell": "/components/mix-list-cell"
+  }
 }

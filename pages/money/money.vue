@@ -128,6 +128,9 @@
 					url
 				})  
 			},
+			navToMoneyBaby(){
+				
+			}
         }  
     }  
 </script>  

@@ -1,1 +1,1 @@
-<view><view class="uni-common-mt" style="background:#FFF;padding:20rpx;"><rich-text nodes="{{strings}}"></rich-text></view></view>
+<view><view class="cu-bar bg-white"><view class="action sub-title"><text class="text-xl text-bold text-green">{{title}}</text><text class="bg-green"></text></view></view><view class="uni-common-mt" style="background:#FFF;padding:20rpx;"><rich-text nodes="{{strings}}"></rich-text></view></view>

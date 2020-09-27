@@ -257,6 +257,9 @@ var startY = 0,moveY = 0,pageAtTop = true;var _default =
       uni.navigateTo({
         url: url });
 
+    },
+    navToMoneyBaby: function navToMoneyBaby() {
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

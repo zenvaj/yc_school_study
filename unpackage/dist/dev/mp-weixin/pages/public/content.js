@@ -136,22 +136,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      strings: "" };
+      strings: "",
+      title: '' };
 
   },
   onLoad: function onLoad(respones) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var result;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
               console.log(respones);
               //根据id展示内容
               uni.setNavigationBarTitle({
-                title: respones.title });_context.next = 4;return (
+                title: respones.title });
 
+              _this.title = respones.title;_context.next = 5;return (
                 _this.$request({
                   method: '/api/content',
-                  data: { title: respones.title } }));case 4:result = _context.sent;
+                  data: { title: respones.title } }));case 5:result = _context.sent;
 
               if (result.code !== 10000) {
                 uni.showModal({
@@ -161,7 +170,7 @@ var _default =
                   } });
 
               }
-              _this.strings = result.data.content;case 7:case "end":return _context.stop();}}}, _callee);}))();
+              _this.strings = result.data.content;case 8:case "end":return _context.stop();}}}, _callee);}))();
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

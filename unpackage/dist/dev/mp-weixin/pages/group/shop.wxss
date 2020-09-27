@@ -278,19 +278,22 @@ audio,
 camera,
 image,
 video {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /* 骨架屏替代方案 */
 .Skeleton {
   background: #f3f3f3;
   padding: 20rpx 0;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 /* 图片载入替代方案 */
 .image-wrapper {
   font-size: 0;
   background: #f3f3f3;
-  border-radius: 4px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
 }
 .image-wrapper image {
   width: 100%;
@@ -426,7 +429,8 @@ page {
   background: #007aff;
   font-size: 24rpx;
   color: #fff;
-  border-radius: 6rpx;
+  -webkit-border-radius: 6rpx;
+          border-radius: 6rpx;
   line-height: 1;
   -webkit-transform: translateY(-4rpx);
           transform: translateY(-4rpx);
@@ -456,6 +460,7 @@ page {
   -webkit-align-items: center;
           align-items: center;
   color: #333333;
+  background: -webkit-gradient(linear, left top, right top, from(#fdf5f6), to(#fbebf6));
   background: -webkit-linear-gradient(left, #fdf5f6, #fbebf6);
   background: linear-gradient(left, #fdf5f6, #fbebf6);
   padding: 12rpx 30rpx;
@@ -471,7 +476,8 @@ page {
   height: 30rpx;
   line-height: 1;
   border: 1px solid #007aff;
-  border-radius: 4rpx;
+  -webkit-border-radius: 4rpx;
+          border-radius: 4rpx;
   position: relative;
   overflow: hidden;
   font-size: 22rpx;
@@ -481,7 +487,8 @@ page {
   content: '';
   width: 50rpx;
   height: 50rpx;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   left: -20rpx;
   top: -12rpx;
   position: absolute;
@@ -620,7 +627,8 @@ page {
           flex-shrink: 0;
   width: 80rpx;
   height: 80rpx;
-  border-radius: 100px;
+  -webkit-border-radius: 100px;
+          border-radius: 100px;
 }
 .eva-box .right {
   -webkit-box-flex: 1;
@@ -704,7 +712,8 @@ page {
   -webkit-flex-shrink: 0;
           flex-shrink: 0;
   margin-top: -40rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .attr-content .a-t .right {
   display: -webkit-box;
@@ -761,7 +770,8 @@ page {
   background: #eee;
   margin-right: 20rpx;
   margin-bottom: 20rpx;
-  border-radius: 100rpx;
+  -webkit-border-radius: 100rpx;
+          border-radius: 100rpx;
   min-width: 60rpx;
   height: 60rpx;
   padding: 0 20rpx;
@@ -817,13 +827,15 @@ page {
   bottom: 0;
   width: 100%;
   min-height: 40vh;
-  border-radius: 10rpx 10rpx 0 0;
+  -webkit-border-radius: 10rpx 10rpx 0 0;
+          border-radius: 10rpx 10rpx 0 0;
   background-color: #fff;
 }
 .popup .layer .btn {
   height: 66rpx;
   line-height: 66rpx;
-  border-radius: 100rpx;
+  -webkit-border-radius: 100rpx;
+          border-radius: 100rpx;
   background: #007aff;
   font-size: 30rpx;
   color: #fff;
@@ -919,8 +931,10 @@ page {
   width: 690rpx;
   height: 100rpx;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.5);
-  border-radius: 16rpx;
+  -webkit-box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
 }
 .page-bottom .p-b-btn {
   display: -webkit-box;
@@ -962,10 +976,14 @@ page {
   display: -webkit-flex;
   display: flex;
   height: 76rpx;
-  border-radius: 100px;
+  -webkit-border-radius: 100px;
+          border-radius: 100px;
   overflow: hidden;
-  box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
-  box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+  -webkit-box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
+          box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
+  -webkit-box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+          box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(#ffac30), color-stop(#fa436a), to(#F56C6C));
   background: -webkit-linear-gradient(left, #ffac30, #fa436a, #F56C6C);
   background: linear-gradient(to right, #ffac30, #fa436a, #F56C6C);
   margin-left: 20rpx;
@@ -996,7 +1014,8 @@ page {
   height: 100%;
   font-size: 28rpx;
   padding: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   background: transparent;
 }
 /* 购物车列表项 */
@@ -1015,7 +1034,8 @@ page {
   position: relative;
 }
 .cart-item .image-wrapper image {
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .cart-item .checkbox {
   position: absolute;
@@ -1027,7 +1047,8 @@ page {
   padding: 4rpx;
   color: #c0c0c0;
   background: #fff;
-  border-radius: 50px;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
 }
 .cart-item .item-right {
   display: -webkit-box;
@@ -1082,8 +1103,10 @@ page {
   height: 100rpx;
   padding: 0 30rpx;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.5);
-  border-radius: 16rpx;
+  -webkit-box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
 }
 .action-section .checkbox {
   height: 52rpx;
@@ -1107,7 +1130,8 @@ page {
   font-size: 28rpx;
   color: #fff;
   background: #c0c0c0;
-  border-radius: 0 50px 50px 0;
+  -webkit-border-radius: 0 50px 50px 0;
+          border-radius: 0 50px 50px 0;
   opacity: 0;
   -webkit-transition: .2s;
   transition: .2s;
@@ -1144,12 +1168,14 @@ page {
 .action-section .confirm-btn {
   padding: 0 38rpx;
   margin: 0;
-  border-radius: 100px;
+  -webkit-border-radius: 100px;
+          border-radius: 100px;
   height: 76rpx;
   line-height: 76rpx;
   font-size: 30rpx;
   background: #007aff;
-  box-shadow: 1px 2px 5px rgba(217, 60, 93, 0.72);
+  -webkit-box-shadow: 1px 2px 5px rgba(217, 60, 93, 0.72);
+          box-shadow: 1px 2px 5px rgba(217, 60, 93, 0.72);
 }
 .uni-numbox {
   position: absolute;
@@ -1185,13 +1211,17 @@ page {
 }
 .uni-numbox-minus {
   border-right: none;
-  border-top-left-radius: 6rpx;
-  border-bottom-left-radius: 6rpx;
+  -webkit-border-top-left-radius: 6rpx;
+          border-top-left-radius: 6rpx;
+  -webkit-border-bottom-left-radius: 6rpx;
+          border-bottom-left-radius: 6rpx;
 }
 .uni-numbox-plus {
   border-left: none;
-  border-top-right-radius: 6rpx;
-  border-bottom-right-radius: 6rpx;
+  -webkit-border-top-right-radius: 6rpx;
+          border-top-right-radius: 6rpx;
+  -webkit-border-bottom-right-radius: 6rpx;
+          border-bottom-right-radius: 6rpx;
 }
 .uni-numbox-value {
   position: relative;
@@ -1206,11 +1236,13 @@ page {
   color: #d6d6d6;
 }
 .bg-gradual-blue1 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#cafaff), to(#3a83d1));
   background-image: -webkit-linear-gradient(left, #cafaff, #3a83d1);
   background-image: linear-gradient(90deg, #cafaff, #3a83d1);
   color: #ffffff;
 }
 .bg-gradual-blue2 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#3a83d1), to(#cafaff));
   background-image: -webkit-linear-gradient(left, #3a83d1, #cafaff);
   background-image: linear-gradient(90deg, #3a83d1, #cafaff);
   color: #ffffff;

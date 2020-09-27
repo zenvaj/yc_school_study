@@ -1,5 +1,12 @@
 <template>
 	<view>
+		<view class="cu-bar bg-white">
+			<view class="action sub-title">
+				<text class="text-xl text-bold text-green">{{title}}</text>
+				<text class="bg-green"></text>
+				<!-- last-child选择器-->
+			</view>
+		</view>
 		<view class="uni-common-mt" style="background:#FFF; padding:20rpx;">
 			<rich-text :nodes="strings"></rich-text>
 		</view>
@@ -10,7 +17,8 @@
 	export default{
 		data:function (){
 			return {
-				strings:""
+				strings:"",
+				title:''
 			}
 		},
 		async onLoad(respones){
@@ -19,6 +27,7 @@
 			uni.setNavigationBarTitle({
 				title:respones.title
 			})
+			this.title = respones.title
 			const result = await this.$request({
 				method:'/api/content',
 				data:{title:respones.title}

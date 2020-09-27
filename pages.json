@@ -259,7 +259,8 @@
 		{
 		    "path" : "pages/money/money-baby",
 		    "style" : {
-				"navigationBarTitleText": "神兽红包"
+				"navigationBarTitleText": "神兽钱包",
+				"navigationBarBackgroundColor":"#556c91"
 			}
 		},
 		{
