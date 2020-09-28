@@ -93,17 +93,29 @@
 			}
 		},
 		onLoad(){
-			
+			this.childrenInit()
 		},
         computed: {
 			...mapState(['hasLogin','userInfo'])
 		},
         methods: {
-
-			/**
-			 * 统一跳转接口,拦截未登录路由
-			 * navigator标签现在默认没有转场动画，所以用view
-			 */
+			async childrenInit(){
+				let result = await this.$request({
+					method:'/api/children',
+					data:{}
+				})
+				console.log(result)
+				if(result.code == 10000){
+					this.allMenuGridList = result.data
+				}else{
+					uni.showModal({
+						content:result.msg
+					})
+				}
+			},
+			babyChange(){
+				
+			},
 			navTo(url){
 				if(0&&!this.hasLogin){
 					url = '/pages/public/login';

@@ -13,7 +13,7 @@
 						</view>
 					</view>
 				</view>
-				<view class="text-content" >
+				<view class="text-content">
 					{{contents.content}}
 				</view>
 				<view class="grid flex-sub padding-lr" :class="contents.images.length>1?'col-3 grid-square':'col-1'">
@@ -24,11 +24,12 @@
 				<view class="text-gray text-sm text-right padding">
 					<text class="cuIcon-attentionfill margin-lr-sm"></text>{{contents.num.view}}
 					<text class="cuIcon-appreciatefill margin-lr-sm" @click="SpeakUp('speak-isup')"></text>{{contents.num.up}}
-					<text class="cuIcon-messagefill margin-lr-sm" @click="SpeakComment('speak-comment')"></text> {{contents.num.comment}}
+					<text class="cuIcon-messagefill margin-lr-sm" @click="SpeakComment('speak-comment')"></text>
+					{{contents.num.comment}}
 				</view>
-		
+
 				<view class="cu-list menu-avatar comment solids-top" style="padding-bottom: 100rpx;">
-					
+
 					<view class="cu-item" v-for="(item,index) in contents.comment_list" :key="index">
 						<view class="cu-avatar round" :style="'background-image:url('+item.headerpic+');'"></view>
 						<view class="content">
@@ -58,9 +59,9 @@
 				<view class="action">
 					<text class="cuIcon-edit text-grey"></text>
 				</view>
-				<input class="solid-bottom" :adjust-position="false" :focus="false" maxlength="300" cursor-spacing="10"
-				 @focus="InputFocus" @blur="InputBlur" @input="Input"></input>
-				
+				<input class="solid-bottom" :adjust-position="false" :focus="false" maxlength="300" cursor-spacing="10" @focus="InputFocus"
+				 @blur="InputBlur" @input="Input"></input>
+
 				<button class="cu-btn bg-green shadow" @tap="SpeakCommentDo">评论</button>
 			</view>
 		</view>
@@ -68,53 +69,59 @@
 </template>
 
 <script>
-	import { mapState } from 'vuex';
-	export default{
+	import {
+		mapState
+	} from 'vuex';
+	export default {
 		computed: {
-			...mapState(['hasLogin','user'])
+			...mapState(['hasLogin', 'user'])
 		},
-		data:function (){
+		data: function() {
 			return {
-				contents:{},
-				speakid:0,
+				contents: {},
+				speakid: 0,
 				InputBottom: 0,
-				comment_pid:0,
-				comment:'',
-				comment_show:false,
-				comment_at:'',
-				comment_data:{},
+				comment_pid: 0,
+				comment: '',
+				comment_show: false,
+				comment_at: '',
+				comment_data: {},
 			}
 		},
-		onLoad(respones){
+		onLoad(respones) {
 			console.log(respones)
-			if(respones.id == 0){
+			if (respones.id == 0) {
 				uni.navigateBack()
 			}
 			//根据id展示内容
 			this.speakid = respones.id
 			this.SpeakDetail()
 		},
-		methods:{
-			async SpeakDetail(){
+		methods: {
+			async SpeakDetail() {
 				console.log('朋友圈详情')
-				let data = {speakid:this.speakid}
+				let data = {
+					speakid: this.speakid
+				}
 				let result = await this.$request({
-					method:'/api/group-detail',
-					data:data
+					method: '/api/group-detail',
+					data: data
 				})
-				if(result.code != 10000){
-					uni.showModal({content:"朋友圈数据错误。"})
+				if (result.code != 10000) {
+					uni.showModal({
+						content: "朋友圈数据错误。"
+					})
 					console.log(result)
 				}
 				this.contents = result.data
 				uni.stopPullDownRefresh();
 			},
-			async SpeakUp(type,pid = 0){
+			async SpeakUp(type, pid = 0) {
 				console.log(type)
 				var data = {
-					speakid:this.speakid,
+					speakid: this.speakid,
 				}
-				switch(type){
+				switch (type) {
 					case 'speak-isup':
 						data.isup = 1
 						break
@@ -123,59 +130,67 @@
 						data.isup = 1
 						break
 					default:
-						uni.showModal({content:'请选择正确的点赞方式'})
+						uni.showModal({
+							content: '请选择正确的点赞方式'
+						})
 						return
 				}
 				console.log(data)
 				//return 
 				let result = await this.$request({
-					method:'/api/group-comment',
-					data:data
+					method: '/api/group-comment',
+					data: data
 				})
 				console.log(result)
-				if(result.code != 10000){
-					uni.showModal({content:result.msg})
+				if (result.code != 10000) {
+					uni.showModal({
+						content: result.msg
+					})
 				}
 				this.SpeakDetail()
 			},
-			SpeakComment(type,pid = 0){
+			SpeakComment(type, pid = 0) {
 				console.log(type)
 				var data = {
-					speakid:this.speakid,
+					speakid: this.speakid,
 				}
-				switch(type){
+				switch (type) {
 					case 'speak-comment':
-						this.comment_show = true 
-						data.comment = '' 
+						this.comment_show = true
+						data.comment = ''
 						break
 					case 'comment-comment':
 						this.comment_show = true
-						data.pid = pid 
-						data.comment = '' 
+						data.pid = pid
+						data.comment = ''
 						break
 					default:
-						uni.showModal({content:'请选择正确的评论方式'})
+						uni.showModal({
+							content: '请选择正确的评论方式'
+						})
 						return
 				}
 				console.log(data)
 				this.comment_data = data
 			},
-			async SpeakCommentDo(){
-				if(this.comment == ''){
-					this.comment_show = false 
+			async SpeakCommentDo() {
+				if (this.comment == '') {
+					this.comment_show = false
 					return
 				}
-				this.comment_show = false 
-				this.comment_data.comment = this.comment 
+				this.comment_show = false
+				this.comment_data.comment = this.comment
 				this.comment = ''
 				//return 
 				let result = await this.$request({
-					method:'/api/group-comment',
-					data:this.comment_data
+					method: '/api/group-comment',
+					data: this.comment_data
 				})
 				console.log(result)
-				if(result.code != 10000){
-					uni.showModal({content:result.msg})
+				if (result.code != 10000) {
+					uni.showModal({
+						content: result.msg
+					})
 				}
 				this.SpeakDetail()
 			},
@@ -185,15 +200,15 @@
 			InputBlur(e) {
 				this.InputBottom = 0
 			},
-			Input(e){
+			Input(e) {
 				//console.log(e.detail.value)
 				this.comment = e.detail.value
 			},
-			proviewImg(){
+			proviewImg() {
 				// 预览图片
 				uni.previewImage({
 					urls: this.contents.images,
-					loop:true,
+					loop: true,
 					longPressActions: {
 						itemList: ['发送给朋友', '保存图片', '收藏'],
 						success: function(data) {
