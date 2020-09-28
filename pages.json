@@ -202,12 +202,6 @@
 			}
 		},
 		{
-		    "path" : "pages/public/share",
-		    "style" : {
-				"navigationBarTitleText": "分享"
-			}
-		},
-		{
 		    "path" : "pages/my/friend",
 		    "style" : {
 				"navigationBarTitleText": "好友"

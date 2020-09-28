@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "邀请",
-  "usingComponents": {}
+  "navigationBarTitleText": "个人名片",
+  "usingComponents": {
+    "qrcode-poster": "/components/zhangyu-qrcode-poster/zhangyu-qrcode-poster"
+  }
 }

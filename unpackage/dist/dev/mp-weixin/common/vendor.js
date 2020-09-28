@@ -1936,9 +1936,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 13:
-/*!*********************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/Json.js ***!
-  \*********************************************************/
+/*!********************************************************************!*\
+  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/Json.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2112,8 +2112,7 @@ var newNewsList = [{
 
 
 //常用菜单
-var ofenUseMenuList = [
-{
+var ofenUseMenuList = [{
   icon: "location",
   name: "到校签到",
   id: "1",
@@ -2163,12 +2162,10 @@ var ofenUseMenuList = [
 
 
 //所有菜单
-var allMenuGridList = [
-{
+var allMenuGridList = [{
   icon: "",
   title: "通用功能",
-  menuList: [
-  {
+  menuList: [{
     icon: "location",
     name: "到校签到",
     id: "1",
@@ -2287,8 +2284,7 @@ var allMenuGridList = [
 {
   icon: "",
   title: "学习功能",
-  menuList: [
-  {
+  menuList: [{
     icon: "location",
     name: "到校签到",
     id: "1",
@@ -2407,8 +2403,7 @@ var allMenuGridList = [
 {
   icon: "",
   title: "圈子功能",
-  menuList: [
-  {
+  menuList: [{
     icon: "location",
     name: "到校签到",
     id: "1",
@@ -2527,8 +2522,7 @@ var allMenuGridList = [
 {
   icon: "",
   title: "管理功能",
-  menuList: [
-  {
+  menuList: [{
     icon: "location",
     name: "到校",
     id: "1",
@@ -2658,25 +2652,136 @@ var allClassList = [
 '九年级2'];
 
 //课表数据
-var courseTableList = [
+var courseTableList = [{
+  table_id: 1,
+  table_date: "2020年9月8日",
+  table_class: "四年级",
+  courseList: [
+  [{
+    course_id: 1,
+    title: '上午第一节',
+    name: "英语",
+    teacher_: 5,
+    teacher_name: "刘老师" },
+
+  {
+    course_id: 2,
+    title: '上午第二节',
+    name: "数学",
+    teacher_: 5,
+    teacher_name: "林老师" },
+
+  {
+    course_id: 3,
+    title: '上午第三节',
+    name: "语文",
+    teacher_: 5,
+    teacher_name: "姜老师" }],
+
+
+  [{
+    course_id: 1,
+    title: '下午第一节',
+    name: "物理",
+    teacher_: 5,
+    teacher_name: "刘老师" },
+
+  {
+    course_id: 2,
+    title: '下午第二节',
+    name: "化学",
+    teacher_: 5,
+    teacher_name: "林老师" },
+
+  {
+    course_id: 3,
+    title: '下午第三节',
+    name: "单词突击",
+    teacher_: 5,
+    teacher_name: "姜老师" }],
+
+
+  [{
+    course_id: 1,
+    title: '晚辅第一节',
+    name: "政治",
+    teacher_: 5,
+    teacher_name: "刘老师" },
+
+  {
+    course_id: 2,
+    title: '晚辅第二节',
+    name: "历史",
+    teacher_: 5,
+    teacher_name: "林老师" }]] },
+
+
+
+
+
 {
   table_id: 1,
   table_date: "2020年9月8日",
   table_class: "四年级",
   courseList: [
-  [
-  { course_id: 1, title: '上午第一节', name: "英语", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '上午第二节', name: "数学", teacher_: 5, teacher_name: "林老师" },
-  { course_id: 3, title: '上午第三节', name: "语文", teacher_: 5, teacher_name: "姜老师" }],
+  [{
+    course_id: 1,
+    title: '上午第一节',
+    name: "英语",
+    teacher_: 5,
+    teacher_name: "刘老师" },
 
-  [
-  { course_id: 1, title: '下午第一节', name: "物理", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '下午第二节', name: "化学", teacher_: 5, teacher_name: "林老师" },
-  { course_id: 3, title: '下午第三节', name: "单词突击", teacher_: 5, teacher_name: "姜老师" }],
+  {
+    course_id: 2,
+    title: '上午第二节',
+    name: "数学",
+    teacher_: 5,
+    teacher_name: "林老师" },
 
-  [
-  { course_id: 1, title: '晚辅第一节', name: "政治", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '晚辅第二节', name: "历史", teacher_: 5, teacher_name: "林老师" }]] },
+  {
+    course_id: 3,
+    title: '上午第三节',
+    name: "语文",
+    teacher_: 5,
+    teacher_name: "姜老师" }],
+
+
+  [{
+    course_id: 1,
+    title: '下午第一节',
+    name: "物理",
+    teacher_: 5,
+    teacher_name: "刘老师" },
+
+  {
+    course_id: 2,
+    title: '下午第二节',
+    name: "化学",
+    teacher_: 5,
+    teacher_name: "林老师" },
+
+  {
+    course_id: 3,
+    title: '下午第四节',
+    name: "单词突击",
+    teacher_: 5,
+    teacher_name: "姜老师" }],
+
+
+  [{
+    course_id: 1,
+    title: '晚辅第一节',
+    name: "政治",
+    teacher_: 5,
+    teacher_name: "刘老师" },
+
+  {
+    course_id: 2,
+    title: '晚辅第二节',
+    name: "历史",
+    teacher_: 5,
+    teacher_name: "林老师" }]] },
+
 
 
 
@@ -2686,41 +2791,64 @@ var courseTableList = [
   table_date: "2020年9月8日",
   table_class: "四年级",
   courseList: [
-  [
-  { course_id: 1, title: '上午第一节', name: "英语", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '上午第二节', name: "数学", teacher_: 5, teacher_name: "林老师" },
-  { course_id: 3, title: '上午第三节', name: "语文", teacher_: 5, teacher_name: "姜老师" }],
+  [{
+    course_id: 1,
+    title: '上午第一节',
+    name: "英语",
+    teacher_: 5,
+    teacher_name: "刘老师" },
 
-  [
-  { course_id: 1, title: '下午第一节', name: "物理", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '下午第二节', name: "化学", teacher_: 5, teacher_name: "林老师" },
-  { course_id: 3, title: '下午第四节', name: "单词突击", teacher_: 5, teacher_name: "姜老师" }],
+  {
+    course_id: 2,
+    title: '上午第二节',
+    name: "数学",
+    teacher_: 5,
+    teacher_name: "林老师" },
 
-  [
-  { course_id: 1, title: '晚辅第一节', name: "政治", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '晚辅第二节', name: "历史", teacher_: 5, teacher_name: "林老师" }]] },
+  {
+    course_id: 3,
+    title: '上午第三节',
+    name: "语文",
+    teacher_: 5,
+    teacher_name: "姜老师" }],
 
 
+  [{
+    course_id: 1,
+    title: '下午第一节',
+    name: "物理",
+    teacher_: 5,
+    teacher_name: "刘老师" },
+
+  {
+    course_id: 2,
+    title: '下午第二节',
+    name: "化学",
+    teacher_: 5,
+    teacher_name: "林老师" },
+
+  {
+    course_id: 3,
+    title: '下午第四节',
+    name: "单词突击",
+    teacher_: 5,
+    teacher_name: "姜老师" }],
 
 
-{
-  table_id: 1,
-  table_date: "2020年9月8日",
-  table_class: "四年级",
-  courseList: [
-  [
-  { course_id: 1, title: '上午第一节', name: "英语", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '上午第二节', name: "数学", teacher_: 5, teacher_name: "林老师" },
-  { course_id: 3, title: '上午第三节', name: "语文", teacher_: 5, teacher_name: "姜老师" }],
+  [{
+    course_id: 1,
+    title: '晚辅第一节',
+    name: "政治",
+    teacher_: 5,
+    teacher_name: "刘老师" },
 
-  [
-  { course_id: 1, title: '下午第一节', name: "物理", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '下午第二节', name: "化学", teacher_: 5, teacher_name: "林老师" },
-  { course_id: 3, title: '下午第四节', name: "单词突击", teacher_: 5, teacher_name: "姜老师" }],
+  {
+    course_id: 2,
+    title: '晚辅第二节',
+    name: "历史",
+    teacher_: 5,
+    teacher_name: "林老师" }]] }];
 
-  [
-  { course_id: 1, title: '晚辅第一节', name: "政治", teacher_: 5, teacher_name: "刘老师" },
-  { course_id: 2, title: '晚辅第二节', name: "历史", teacher_: 5, teacher_name: "林老师" }]] }];
 
 
 
@@ -2744,44 +2872,87 @@ var allCourseList = [
 '不安排'];
 
 //所有教师
-var allTeacherList = [
-{ id: 0, teacher_name: '选择老师' },
-{ id: 1, teacher_name: '刘老师' },
-{ id: 2, teacher_name: '姜老师' },
-{ id: 3, teacher_name: '林老师' },
-{ id: 4, teacher_name: '王老师' },
-{ id: 5, teacher_name: '薛老师' },
-{ id: 6, teacher_name: '赵老师' },
-{ id: 7, teacher_name: '蒙老师' },
-{ id: 8, teacher_name: '屈老师' },
-{ id: 0, teacher_name: '不安排' }];
+var allTeacherList = [{
+  id: 0,
+  teacher_name: '选择老师' },
+
+{
+  id: 1,
+  teacher_name: '刘老师' },
+
+{
+  id: 2,
+  teacher_name: '姜老师' },
+
+{
+  id: 3,
+  teacher_name: '林老师' },
+
+{
+  id: 4,
+  teacher_name: '王老师' },
+
+{
+  id: 5,
+  teacher_name: '薛老师' },
+
+{
+  id: 6,
+  teacher_name: '赵老师' },
+
+{
+  id: 7,
+  teacher_name: '蒙老师' },
+
+{
+  id: 8,
+  teacher_name: '屈老师' },
+
+{
+  id: 0,
+  teacher_name: '不安排' }];
+
 
 //学生数据
-var allStudentList = [
-{
-  id: 1, name: '张三',
+var allStudentList = [{
+  id: 1,
+  name: '张三',
   headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21002.jpg",
-  area: "大宋", gradeClass: "8年级4班", signStatus: 0 },
+  area: "大宋",
+  gradeClass: "8年级4班",
+  signStatus: 0 },
 
 {
-  id: 2, name: '李四',
+  id: 2,
+  name: '李四',
   headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21003.jpg",
-  area: "陆河", gradeClass: "8年级4班", signStatus: 1 },
+  area: "陆河",
+  gradeClass: "8年级4班",
+  signStatus: 1 },
 
 {
-  id: 3, name: '赵五',
+  id: 3,
+  name: '赵五',
   headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21004.jpg",
-  area: "华昌", gradeClass: "8年级4班", signStatus: 1 },
+  area: "华昌",
+  gradeClass: "8年级4班",
+  signStatus: 1 },
 
 {
-  id: 4, name: '王二麻子',
+  id: 4,
+  name: '王二麻子',
   headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21005.jpg",
-  area: "西老庄", gradeClass: "8年级4班", signStatus: 0 },
+  area: "西老庄",
+  gradeClass: "8年级4班",
+  signStatus: 0 },
 
 {
-  id: 5, name: '小乔',
+  id: 5,
+  name: '小乔',
   headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21006.jpg",
-  area: "淮安", gradeClass: "8年级4班", signStatus: 0 }];
+  area: "淮安",
+  gradeClass: "8年级4班",
+  signStatus: 0 }];
 
 
 var courseInfo = {
@@ -2795,39 +2966,64 @@ var courseInfo = {
     date: "2020-9-9",
     class_no: "上午第四节",
     class_name: '7年纪',
-    plan_list: [
-    { id: 1, title: '古诗四首背过', num_4_comment: 4 },
-    { id: 2, title: '古诗四首默写', num_4_comment: 4 },
-    { id: 3, title: '散文理解', num_4_comment: 10 }],
+    plan_list: [{
+      id: 1,
+      title: '古诗四首背过',
+      num_4_comment: 4 },
+
+    {
+      id: 2,
+      title: '古诗四首默写',
+      num_4_comment: 4 },
+
+    {
+      id: 3,
+      title: '散文理解',
+      num_4_comment: 10 }],
+
 
     comment_list: [],
 
 
-    student_list: [
-    {
-      id: 1, name: '张三',
+    student_list: [{
+      id: 1,
+      name: '张三',
       headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21002.jpg",
-      area: "大宋", gradeClass: "8年级4班", signStatus: 0 },
+      area: "大宋",
+      gradeClass: "8年级4班",
+      signStatus: 0 },
 
     {
-      id: 2, name: '李四',
+      id: 2,
+      name: '李四',
       headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21003.jpg",
-      area: "陆河", gradeClass: "8年级4班", signStatus: 1 },
+      area: "陆河",
+      gradeClass: "8年级4班",
+      signStatus: 1 },
 
     {
-      id: 3, name: '赵五',
+      id: 3,
+      name: '赵五',
       headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21004.jpg",
-      area: "华昌", gradeClass: "8年级4班", signStatus: 1 },
+      area: "华昌",
+      gradeClass: "8年级4班",
+      signStatus: 1 },
 
     {
-      id: 4, name: '王二麻子',
+      id: 4,
+      name: '王二麻子',
       headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21005.jpg",
-      area: "西老庄", gradeClass: "8年级4班", signStatus: 0 },
+      area: "西老庄",
+      gradeClass: "8年级4班",
+      signStatus: 0 },
 
     {
-      id: 5, name: '小乔',
+      id: 5,
+      name: '小乔',
       headpic: "https://ossweb-img.qq.com/images/lol/web201310/skin/big21006.jpg",
-      area: "淮安", gradeClass: "8年级4班", signStatus: 0 }] } };
+      area: "淮安",
+      gradeClass: "8年级4班",
+      signStatus: 0 }] } };
 
 
 
@@ -2837,12 +3033,31 @@ var bookMenus = {
   id: 1,
   name: "语文",
   title: "语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟语文是个好东西呐，哟哟",
-  menu_list: [
-  { id: 2, name: "英语", title: "" },
-  { id: 3, name: "数学", title: "" },
-  { id: 4, name: "物理", title: "" },
-  { id: 5, name: "化学", title: "" },
-  { id: 6, name: "地理", title: "" }] };
+  menu_list: [{
+    id: 2,
+    name: "英语",
+    title: "" },
+
+  {
+    id: 3,
+    name: "数学",
+    title: "" },
+
+  {
+    id: 4,
+    name: "物理",
+    title: "" },
+
+  {
+    id: 5,
+    name: "化学",
+    title: "" },
+
+  {
+    id: 6,
+    name: "地理",
+    title: "" }] };
+
 
 
 
@@ -9844,9 +10059,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!*********************************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/components/u-charts/u-charts.js ***!
-  \*********************************************************************************/
+/*!********************************************************************************************!*\
+  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/components/u-charts/u-charts.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14902,9 +15117,9 @@ if ( true && typeof module.exports === "object") {
 /***/ }),
 
 /***/ 4:
-/*!************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/pages.json ***!
-  \************************************************************/
+/*!***********************************************************************!*\
+  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/pages.json ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14912,10 +15127,10 @@ if ( true && typeof module.exports === "object") {
 
 /***/ }),
 
-/***/ 420:
-/*!*******************************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/components/uni-icons/icons.js ***!
-  \*******************************************************************************/
+/***/ 421:
+/*!******************************************************************************************!*\
+  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/components/uni-icons/icons.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15055,9 +15270,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 5:
-/*!****************************************************************!*\
-  !*** D:/工作/code/yc_shool_study/yc_school_study/store/index.js ***!
-  \****************************************************************/
+/*!***************************************************************************!*\
+  !*** C:/works/uniapp_code/yingchao_uniapp/yc_school_study/store/index.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
