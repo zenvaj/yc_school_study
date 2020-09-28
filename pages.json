@@ -178,7 +178,7 @@
 		{
 		    "path" : "pages/my/make-join",
 		    "style" : {
-				"navigationBarTitleText": "邀请"
+				"navigationBarTitleText": "个人名片"
 			}
 		},
 		{
@@ -252,7 +252,7 @@
 		{
 		    "path" : "pages/index/best-user",
 		    "style" : {
-				"navigationBarTitleText": "龙虎榜",
+				"navigationBarTitleText": "排行榜单",
 				"enablePullDownRefresh":true
 			}
 		},

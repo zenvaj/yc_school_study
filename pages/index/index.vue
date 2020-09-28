@@ -49,10 +49,10 @@
 				})
 			}else{
 				this.authLogin(user)
+				this.menuGridInit()
 			}
 			console.log(this.user)
 			this.swiperInit()
-			this.menuGridInit()
 			this.hotNewsInit()
 		},
 		methods: {

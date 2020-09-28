@@ -9,10 +9,10 @@
 		<!-- #ifdef APP-PLUS -->
 		<view class="cu-bar fixed cu-form-group" :style="[{top:'0px'},{zIndex:2}]">
 		<!-- #endif -->
-			<view class="title">龙虎榜类型</view>
+			<view class="title">类型</view>
 			<picker @change="PickerChange" :value="type_index" :range="type_range">
 				<view class="picker">
-					{{type_index>-1?type_range[type_index]:'龙虎榜类型'}}
+					{{type_index>-1?type_range[type_index]:'类型'}}
 				</view>
 			</picker>
 		</view>
@@ -25,18 +25,21 @@
 		<!-- #ifdef APP-PLUS -->
 		<view class="cu-list menu-avatar " :style="{marginTop:(CustomBar - 6) + 'px'}">
 		<!-- #endif -->
-			<view class="cu-item" v-for="(item,index) in 22" :key="index">
+			<view class="cu-item" v-for="(v, i) in 10" :key="i">
+				<view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);"></view>
 				<view class="content">
-					<view class="text-grey">佣金{{index}}</view>
+					<view class="text-grey">
+						<view class="text-cut">塔里克{{i}}</view>
+					</view>
 					<view class="text-gray text-sm flex">
-						<view class="text-cut">我已天理为凭，踏入这片荒。我已天理为凭，踏入这片荒。我已天理为凭，踏入这片荒。我已天理为凭，踏入这片荒。</view> 
+						<view class="text-cut"><view class="cu-tag round bg-orange sm" v-for="(item,index) in 3">神兽{{index}}</view></view>
 					</view>
 				</view>
-				<view class="action padding-lr">
-					<view class="text-grey text-xs">2020-09-11 22:20:00</view>
-					<view class="cu-tag radius light bg-red ">￥5</view>
+				<view class="action">
+					<view class="text-price">{{364*(22 - i)}}</view>
 				</view>
 			</view>
+			
 		</view>
 		</view>
 	</view>
@@ -87,11 +90,4 @@
 </script>  
 
 <style lang="scss">
-	.cu-list.menu-avatar>.cu-item .content {
-	    left: 40rpx;
-	}
-	.cu-list.menu-avatar>.cu-item .action {
-		width: 330upx;
-		text-align: right
-	}
 </style>
